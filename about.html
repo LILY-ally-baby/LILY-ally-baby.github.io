@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Me | LIYI</title>
+
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    height:100vh;
+    overflow:hidden;
+
+    background:#020817;
+
+    font-family:"KaiTi","STKaiti","SimKai",serif;
+
+}
+
+
+
+/* 背景图片 */
+
+.background{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:url("tree-bg.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    filter:
+    brightness(0.55)
+    contrast(1.1)
+    saturate(0.9);
+
+
+    z-index:0;
+
+}
+
+
+
+/* 左到右自然渐变 */
+
+.gradient{
+
+    position:absolute;
+
+    inset:0;
+
+
+    background:
+
+    linear-gradient(
+    90deg,
+    rgba(2,8,23,0.95) 0%,
+    rgba(3,12,35,0.75) 25%,
+    rgba(5,15,40,0.25) 60%,
+    rgba(5,10,25,0.1) 100%
+    );
+
+
+    z-index:1;
+
+}
+
+
+
+
+/* 玻璃氛围层 */
+
+.glass{
+
+    position:absolute;
+
+    inset:0;
+
+
+    backdrop-filter:blur(3px);
+
+
+    background:
+
+    rgba(255,255,255,0.04);
+
+
+    z-index:2;
+
+
+}
+
+
+
+/* 内容 */
+
+.container{
+
+
+    position:relative;
+
+    z-index:3;
+
+
+    height:100vh;
+
+
+    display:flex;
+
+
+    justify-content:flex-end;
+
+
+    align-items:center;
+
+
+    padding-right:15%;
+
+
+    color:#eee;
+
+
+}
+
+
+
+/* 文字区域 */
+
+
+.about{
+
+
+    max-width:520px;
+
+
+    animation:
+    fadeUp 2s ease;
+
+
+}
+
+
+
+.title{
+
+
+    font-size:68px;
+
+    letter-spacing:15px;
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+.subtitle{
+
+
+    font-size:22px;
+
+    letter-spacing:6px;
+
+    margin-bottom:50px;
+
+
+    opacity:0.85;
+
+
+}
+
+
+
+.text{
+
+
+    font-size:25px;
+
+    line-height:2.2;
+
+    letter-spacing:4px;
+
+
+}
+
+
+
+.line{
+
+    width:120px;
+
+    height:1px;
+
+    background:#ddd;
+
+    margin:30px 0;
+
+    opacity:.6;
+
+}
+
+
+
+/* 鼠标 */
+
+.cursor{
+
+
+position:fixed;
+
+width:70px;
+
+height:70px;
+
+
+border-radius:50%;
+
+
+background:
+
+radial-gradient(
+circle,
+rgba(255,255,255,0.35),
+rgba(255,255,255,0)
+);
+
+
+pointer-events:none;
+
+
+transform:translate(-50%,-50%);
+
+
+z-index:10;
+
+
+transition:
+transform .15s ease;
+
+
+}
+
+
+
+
+
+@keyframes fadeUp{
+
+
+from{
+
+opacity:0;
+
+transform:
+translateY(40px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="background"></div>
+
+
+<div class="gradient"></div>
+
+
+<div class="glass"></div>
+
+
+
+
+<div class="container">
+
+
+<div class="about">
+
+
+<div class="title">
+
+ABOUT ME
+
+</div>
+
+
+<div class="subtitle">
+
+LIYI · Creative Portfolio
+
+</div>
+
+
+
+<div class="line"></div>
+
+
+
+<div class="text">
+
+
+我是一名关注品牌、消费者与文化关系的创意探索者。  
+
+
+<br><br>
+
+
+通过观察社会情绪，
+
+寻找人与品牌之间的连接方式。
+
+
+<br><br>
+
+
+我相信设计不仅是视觉表达，
+
+更是一种理解世界的方法。
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="cursor"></div>
+
+
+
+<script>
+
+
+const cursor=document.querySelector(".cursor");
+
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+
+cursor.style.left=e.clientX+"px";
+
+cursor.style.top=e.clientY+"px";
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+
+</html>
