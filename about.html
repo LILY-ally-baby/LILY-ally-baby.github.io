@@ -4,7 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
+
 <title>About Me</title>
+
 
 <style>
 
@@ -12,80 +14,111 @@
 @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
 
 
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
 }
+
 
 
 body{
 
-    width:100%;
-    height:100vh;
-    overflow:hidden;
 
-    background:#06152f;
+width:100%;
+height:100vh;
 
-    color:white;
+overflow:hidden;
 
-    cursor:none;
+
+background:#06142d;
+
+
+color:white;
+
+
+cursor:none;
+
 
 }
 
 
 
-/* 背景区域 */
+
+/* ===================
+背景图片
+=================== */
+
 
 .background{
 
 
-    position:absolute;
-
-    left:0;
-    top:0;
-
-    width:100%;
-    height:100%;
+position:absolute;
 
 
-    background-image:url("tree-bg.jpg");
-
-    background-size:cover;
-
-    background-position:left center;
+left:0;
+top:0;
 
 
-    filter:
-    brightness(0.65)
-    blur(0.5px);
+width:100%;
+height:100%;
 
 
 
-    /*
-    图片右侧渐变消失
-    */
+background-image:url("tree-bg.jpg");
 
-    mask-image:
+background-size:cover;
 
-    linear-gradient(
-        to right,
-        black 0%,
-        black 45%,
-        transparent 90%
-    );
+
+background-position:left center;
+
+
+
+filter:
+
+brightness(0.65)
+contrast(1.05);
+
+
+
+/* 图片右侧自然消失 */
+
+
+mask-image:
+
+linear-gradient(
+
+90deg,
+
+black 0%,
+
+black 45%,
+
+rgba(0,0,0,.8) 65%,
+
+transparent 95%
+
+);
+
 
 
 }
 
 
 
-/* 右侧蓝色融合层 */
+/* ===================
+蓝色融合层
+=================== */
+
 
 .overlay{
 
 
 position:absolute;
+
 
 width:100%;
 height:100%;
@@ -93,43 +126,53 @@ height:100%;
 
 background:
 
+
 linear-gradient(
 
 90deg,
 
-rgba(5,15,35,0)
+rgba(5,15,40,0)
 
-20%,
+0%,
 
-rgba(5,15,35,0.7)
 
-65%,
+rgba(5,15,40,0.25)
 
-#06152f
+40%,
+
+
+rgba(6,20,45,0.8)
+
+75%,
+
+
+#06142d
 
 100%
 
 );
 
 
+
 }
 
 
 
-/* 氛围玻璃雾 */
+
+/* ===================
+玻璃雾化
+=================== */
+
 
 .glass{
 
 
 position:absolute;
 
+
 width:100%;
 height:100%;
 
-
-backdrop-filter:
-
-blur(2px);
 
 
 background:
@@ -138,67 +181,300 @@ rgba(10,20,45,0.15);
 
 
 
+backdrop-filter:
+
+blur(2px);
+
+
+
 }
 
 
 
+/* ===================
+内容区域
+=================== */
 
-/* 内容区域 */
 
 .content{
 
 
 position:absolute;
 
-right:12%;
+
+right:13%;
+
 
 top:15%;
 
 
-width:520px;
+width:560px;
+
 
 
 }
 
 
 
-/* 标题 */
+/* ===================
+标题
+=================== */
 
 
 .title{
 
 
-writing-mode:vertical-rl;
-
-
 font-family:
+
 "Ma Shan Zheng",
-cursive;
+"STKaiti",
+serif;
 
 
-font-size:72px;
+
+font-size:76px;
 
 
-letter-spacing:15px;
+
+letter-spacing:22px;
 
 
-line-height:1.5;
+
+line-height:1.2;
+
+
+
+margin-bottom:35px;
+
 
 
 }
 
 
 
+/* 小标题 */
+
+
 .subtitle{
 
 
-margin-top:30px;
+font-family:
 
-font-family:serif;
+serif;
 
-letter-spacing:8px;
+
 
 font-size:15px;
+
+
+
+letter-spacing:10px;
+
+
+
+opacity:.8;
+
+
+
+margin-bottom:70px;
+
+
+}
+
+
+
+/* ===================
+正文
+=================== */
+
+
+.text{
+
+
+font-family:
+
+"KaiTi",
+"STKaiti",
+serif;
+
+
+
+font-size:18px;
+
+
+
+line-height:2.8;
+
+
+
+letter-spacing:5px;
+
+
+
+color:
+
+rgba(255,255,255,.9);
+
+
+
+}
+
+
+
+/* 段落错落 */
+
+
+.text p{
+
+
+margin-bottom:45px;
+
+
+}
+
+
+
+.text p:nth-child(1){
+
+
+margin-left:0;
+
+
+width:430px;
+
+
+}
+
+
+
+.text p:nth-child(2){
+
+
+margin-left:4em;
+
+
+width:390px;
+
+
+}
+
+
+
+.text p:nth-child(3){
+
+
+margin-left:8em;
+
+
+width:360px;
+
+
+}
+
+
+
+
+/* ===================
+鼠标
+=================== */
+
+
+.cursor{
+
+
+position:fixed;
+
+
+width:32px;
+
+
+height:32px;
+
+
+border-radius:50%;
+
+
+background:
+
+rgba(255,255,255,.35);
+
+
+
+backdrop-filter:
+
+blur(8px);
+
+
+
+pointer-events:none;
+
+
+
+transform:
+
+translate(-50%,-50%);
+
+
+
+z-index:999;
+
+
+
+transition:
+
+width .25s,
+height .25s;
+
+
+
+}
+
+
+
+/* 鼠标光晕 */
+
+
+.cursor::after{
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:100%;
+
+height:100%;
+
+
+border-radius:50%;
+
+
+background:
+
+rgba(120,160,255,.25);
+
+
+
+animation:
+
+pulse 2s infinite;
+
+
+
+}
+
+
+
+@keyframes pulse{
+
+
+0%{
+
+
+transform:scale(1);
+
 
 opacity:.8;
 
@@ -207,99 +483,24 @@ opacity:.8;
 
 
 
-/* 正文 */
+100%{
 
 
-.text{
+transform:scale(2);
 
 
-margin-top:70px;
-
-
-font-family:"KaiTi","STKaiti",serif;
-
-
-font-size:22px;
-
-
-line-height:2.4;
-
-
-letter-spacing:4px;
+opacity:0;
 
 
 }
 
 
-
-/* 三段递进 */
-
-
-.text p:nth-child(1){
-
-margin-left:0;
-
 }
-
-
-
-.text p:nth-child(2){
-
-margin-left:4em;
-
-}
-
-
-
-.text p:nth-child(3){
-
-margin-left:8em;
-
-}
-
-
-
-/* 鼠标 */
-
-.cursor{
-
-
-position:fixed;
-
-width:30px;
-
-height:30px;
-
-
-border-radius:50%;
-
-
-background:
-
-rgba(255,255,255,0.35);
-
-
-backdrop-filter:blur(8px);
-
-
-pointer-events:none;
-
-
-transform:translate(-50%,-50%);
-
-
-z-index:10;
-
-
-transition:.15s;
-
-
-}
-
 
 
 
 </style>
+
 
 
 </head>
@@ -309,15 +510,20 @@ transition:.15s;
 <body>
 
 
+
 <div class="background"></div>
 
+
 <div class="overlay"></div>
+
 
 <div class="glass"></div>
 
 
 
+
 <div class="content">
+
 
 
 <div class="title">
@@ -336,31 +542,44 @@ LIYI · CREATIVE PORTFOLIO
 
 
 
+
 <div class="text">
 
 
+
 <p>
+
 我是一名关注品牌、消费者与文化关系的创意探索者。
+
 </p>
 
 
+
 <p>
+
 通过观察社会情绪，
 寻找人与品牌之间新的连接方式。
+
 </p>
+
 
 
 <p>
+
 我相信设计不仅是视觉表达，
 更是一种理解世界的方法。
+
 </p>
 
 
+
+</div>
+
+
+
 </div>
 
 
-
-</div>
 
 
 
@@ -368,10 +587,13 @@ LIYI · CREATIVE PORTFOLIO
 
 
 
+
 <script>
 
 
+
 const cursor=document.querySelector(".cursor");
+
 
 
 document.addEventListener(
@@ -390,18 +612,18 @@ cursor.style.top=e.clientY+"px";
 
 
 
+
 document.addEventListener(
 "mousedown",
 ()=>{
 
 
-cursor.style.width="45px";
+cursor.style.width="48px";
 
-cursor.style.height="45px";
+cursor.style.height="48px";
 
 
 }
-
 );
 
 
@@ -411,18 +633,18 @@ document.addEventListener(
 ()=>{
 
 
-cursor.style.width="30px";
+cursor.style.width="32px";
 
-cursor.style.height="30px";
+cursor.style.height="32px";
 
 
 }
-
 );
 
 
 
 </script>
+
 
 
 </body>
