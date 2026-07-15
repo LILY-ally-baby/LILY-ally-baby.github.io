@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
 
@@ -7,14 +7,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-<title>Liyi | Creative Portfolio</title>
+<title>Lily Portfolio</title>
 
 
 <style>
-
-
-/* ===== 全局 ===== */
 
 
 *{
@@ -26,84 +22,142 @@
 
 body{
 
-    min-height:100vh;
-
-    overflow-x:hidden;
-
-    color:#3b3833;
+    height:100vh;
+    overflow:hidden;
 
     font-family:
+    "Times New Roman",
     "Noto Serif SC",
-    "Songti SC",
     serif;
 
 
-    background-color:#f8f5ee;
-
-
-    /* 宣纸肌理 */
-
-    background-image:
-
-    radial-gradient(
-    rgba(120,100,70,.08) 1px,
-    transparent 1px
-    ),
-
-    radial-gradient(
-    rgba(255,255,255,.8) 1px,
-    transparent 1px
+    background:
+    linear-gradient(
+        90deg,
+        #020611 0%,
+        #07152b 45%,
+        #0b1830 100%
     );
 
-    background-size:
-    18px 18px,
-    25px 25px;
+
+    color:white;
 
 }
 
 
-/* ===== 自定义鼠标 ===== */
+/* 背景图片 */
+
+.background{
 
 
-.cursor{
+position:absolute;
 
-position:fixed;
+right:0;
 
-width:35px;
+top:0;
 
-height:35px;
+width:75%;
 
-border-radius:50%;
+height:100%;
+
+
+background-image:
+
+linear-gradient(
+90deg,
+rgba(2,6,17,1) 0%,
+rgba(2,6,17,.7) 25%,
+rgba(2,6,17,.15) 60%,
+transparent 100%
+),
+
+url("leopard-bg.jpg");
+
+
+
+background-size:cover;
+
+background-position:center;
+
+
+
+z-index:0;
+
+
+}
+
+
+/* 暗色覆盖 */
+
+.overlay{
+
+
+position:absolute;
+
+inset:0;
+
 
 background:
 
-rgba(224,145,145,.25);
+radial-gradient(
+circle at 70% 40%,
+rgba(100,130,180,.15),
+transparent 40%
+);
+
+
+z-index:1;
+
+}
+
+
+
+/* 鼠标光晕 */
+
+.cursor{
+
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+
+border-radius:50%;
+
+
+background:
+
+radial-gradient(
+circle,
+rgba(150,180,255,.18),
+transparent 70%
+);
 
 
 pointer-events:none;
 
+
 transform:translate(-50%,-50%);
 
-z-index:999;
 
+z-index:5;
 
-backdrop-filter:blur(5px);
-
-
-transition:
-width .3s,
-height .3s;
 
 }
 
 
 
+/* 主内容 */
 
 
-/* ===== 首页 ===== */
+.container{
 
 
-.hero{
+position:relative;
+
+z-index:3;
 
 
 height:100vh;
@@ -118,124 +172,58 @@ align-items:center;
 justify-content:center;
 
 
-position:relative;
-
-
-text-align:center;
+flex-direction:column;
 
 
 }
 
 
 
-/* ===== 顶部文字 ===== */
+
+h1{
 
 
-.intro{
+font-size:80px;
 
 
-position:absolute;
-
-top:90px;
+letter-spacing:15px;
 
 
-animation:fadeIn 2s ease;
+font-weight:300;
+
+
+margin-bottom:20px;
+
+
+text-shadow:
+
+0 0 30px rgba(255,255,255,.3);
 
 
 }
 
 
 
-.intro h1{
+.subtitle{
 
 
-font-size:52px;
-
-font-weight:400;
+font-size:18px;
 
 
 letter-spacing:8px;
 
 
-}
-
-
-
-.intro p{
-
-
-margin-top:20px;
-
-font-size:16px;
-
-color:#81786d;
-
-letter-spacing:3px;
+opacity:.75;
 
 
 }
 
 
 
-/* ===== 牡丹 ===== */
+/* 导航 */
 
 
-
-.peony{
-
-
-width:360px;
-
-
-cursor:pointer;
-
-
-animation:
-
-float 5s infinite ease-in-out;
-
-
-filter:
-
-drop-shadow(
-0 20px 30px
-rgba(150,100,80,.15)
-);
-
-
-transition:.5s;
-
-
-}
-
-
-
-.peony:hover{
-
-
-transform:
-
-scale(1.08);
-
-
-filter:
-
-drop-shadow(
-0 30px 50px
-rgba(210,130,130,.35)
-);
-
-
-}
-
-
-
-
-
-/* ===== 导航卡片 ===== */
-
-
-.cards{
+.nav{
 
 
 position:absolute;
@@ -247,7 +235,7 @@ bottom:80px;
 display:flex;
 
 
-gap:30px;
+gap:40px;
 
 
 }
@@ -257,54 +245,52 @@ gap:30px;
 .card{
 
 
-width:150px;
+width:180px;
 
 height:90px;
 
 
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+
 background:
 
-rgba(255,255,255,.45);
+rgba(255,255,255,.08);
 
 
 
 border:
 
-1px solid
-
-rgba(160,140,120,.15);
+1px solid rgba(255,255,255,.25);
 
 
 
-border-radius:18px;
-
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-
-font-size:15px;
-
-
-letter-spacing:2px;
-
-
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 
 
 
-transition:.4s;
+border-radius:20px;
 
 
-cursor:pointer;
 
+font-size:18px;
+
+
+letter-spacing:4px;
+
+
+
+transition:.5s;
 
 
 }
-
 
 
 
@@ -313,208 +299,117 @@ cursor:pointer;
 
 transform:
 
-translateY(-12px);
+translateY(-15px)
+scale(1.05);
 
 
 
 background:
 
-rgba(255,255,255,.75);
+rgba(255,255,255,.18);
 
 
 
 box-shadow:
 
-0 20px 40px
-rgba(120,90,60,.12);
-
-
-
-}
-
-
-
-
-
-/* ===== 动画 ===== */
-
-
-@keyframes float{
-
-
-0%,100%{
-
-transform:
-translateY(0);
-
-}
-
-
-50%{
-
-transform:
-translateY(-18px);
-
-}
+0 20px 50px rgba(0,0,0,.4);
 
 
 }
 
 
 
-@keyframes fadeIn{
+
+/* 小文字 */
 
 
-from{
-
-opacity:0;
-
-transform:
-translateY(30px);
-
-}
+.quote{
 
 
-to{
-
-opacity:1;
-
-transform:
-translateY(0);
-
-}
-
-}
+position:absolute;
 
 
+bottom:35px;
 
 
-/* ===== 手机适配 ===== */
+font-size:14px;
 
 
-@media(max-width:700px){
+letter-spacing:5px;
 
 
-.peony{
-
-width:250px;
-
-}
-
-
-.intro h1{
-
-font-size:36px;
-
-}
-
-
-.cards{
-
-gap:10px;
-
-bottom:40px;
-
-}
-
-
-
-.card{
-
-width:100px;
-
-height:70px;
-
-font-size:12px;
-
-}
-
+opacity:.5;
 
 
 }
+
 
 
 
 
 </style>
 
+
 </head>
-
-
 
 
 <body>
 
 
-<!-- 鼠标光点 -->
+
+<div class="background"></div>
+
+<div class="overlay"></div>
+
 
 <div class="cursor"></div>
 
 
 
-
-<section class="hero">
-
+<div class="container">
 
 
-<div class="intro">
-
-<h1>
-Liyi
-</h1>
+<h1>LILY</h1>
 
 
-<p>
-Humanities × Design × AI
-</p>
+<div class="subtitle">
 
+CREATIVE PORTFOLIO
 
 </div>
 
 
 
-<!-- 牡丹图片 -->
-
-<img
-
-class="peony"
-
-src="peony.png"
-
-alt="Chinese Peony">
-
-
-<div class="cards">
+<div class="nav">
 
 
 <div class="card">
-
 About Me
-
 </div>
 
 
-
 <div class="card">
-
 Works
-
 </div>
-
 
 
 <div class="card">
-
 Contact
-
 </div>
 
 
 </div>
 
 
+<div class="quote">
 
-</section>
+Silence · Wildness · Creation
+
+</div>
+
+
+
+</div>
 
 
 
@@ -523,11 +418,7 @@ Contact
 <script>
 
 
-// 鼠标跟随
-
-
-const cursor =
-document.querySelector(".cursor");
+const cursor=document.querySelector(".cursor");
 
 
 document.addEventListener(
@@ -535,45 +426,14 @@ document.addEventListener(
 (e)=>{
 
 
-cursor.style.left =
-e.clientX+"px";
+cursor.style.left=e.clientX+"px";
 
-
-cursor.style.top =
-e.clientY+"px";
-
-
-});
-
-
-
-
-
-// 点击牡丹反馈
-
-
-const peony =
-document.querySelector(".peony");
-
-
-peony.onclick=()=>{
-
-
-peony.style.transform=
-"scale(1.15)";
-
-
-setTimeout(()=>{
-
-
-peony.style.transform="";
-
-
-},500)
-
+cursor.style.top=e.clientY+"px";
 
 
 }
+
+);
 
 
 
