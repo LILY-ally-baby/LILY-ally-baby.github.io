@@ -2,240 +2,116 @@
 <html lang="zh-CN">
 
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>LILY Portfolio</title>
-
+<title>LIYI Creative Portfolio</title>
 
 <style>
 
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
 
 body{
-
-height:100vh;
-overflow:hidden;
-
-font-family:
-"Times New Roman",
-"Noto Serif SC",
-serif;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#020817;
+    font-family:"Times New Roman","Songti SC",serif;
+}
 
 
-background:#020611;
+/* 背景图片 */
 
-color:white;
+.background{
+    position:absolute;
+    inset:0;
+
+    background-image:
+    linear-gradient(
+        to left,
+        rgba(2,8,23,0) 0%,
+        rgba(2,8,23,0.25) 35%,
+        rgba(2,8,23,0.8) 75%,
+        rgba(2,8,23,1) 100%
+    ),
+    url("your-image-name.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    filter:none;
+
+    transform:scale(1.03);
+
+}
+
+
+/* 增加整体暗夜质感 */
+
+.overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at 70% 40%,
+        rgba(40,70,130,0.25),
+        transparent 40%
+    );
 
 }
 
 
 
-/* ===== 背景图片层 ===== */
-
-
-.bg{
-
-
-position:absolute;
-
-inset:0;
-
-
-background-image:
-
-linear-gradient(
-90deg,
-
-#020611 0%,
-
-rgba(2,6,17,.95) 18%,
-
-rgba(2,6,17,.65) 38%,
-
-rgba(2,6,17,.15) 70%,
-
-rgba(2,6,17,0) 100%
-
-),
-
-url("leopard-bg.jpg");
-
-
-
-background-size:cover;
-
-
-background-position:center;
-
-
-filter:
-blur(1.5px);
-
-
-
-transform:scale(1.05);
-
-
-z-index:0;
-
-
-}
-
-
-
-/* 深蓝氛围 */
-
-
-.dark-layer{
-
-
-position:absolute;
-
-inset:0;
-
-
-background:
-
-radial-gradient(
-
-circle at 75% 45%,
-
-rgba(50,100,180,.25),
-
-transparent 35%
-
-);
-
-
-z-index:1;
-
-
-}
-
-
-
-
-/* 鼠标光 */
-
-
-.cursor{
-
-
-position:absolute;
-
-
-width:260px;
-
-height:260px;
-
-
-border-radius:50%;
-
-
-background:
-
-radial-gradient(
-
-circle,
-
-rgba(150,190,255,.22),
-
-transparent 70%
-
-);
-
-
-pointer-events:none;
-
-
-transform:
-translate(-50%,-50%);
-
-
-
-z-index:5;
-
-
-}
-
-
-
-/* 主区域 */
-
+/* 主内容 */
 
 .container{
 
+    position:relative;
 
-position:relative;
+    width:100%;
+    height:100vh;
 
-z-index:3;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-
-height:100vh;
-
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-
-flex-direction:column;
-
+    color:white;
 
 }
 
 
-
-/* 名字 */
-
+/* 标题 */
 
 .logo{
 
+    font-size:110px;
 
-font-size:90px;
+    letter-spacing:25px;
 
+    font-weight:300;
 
-font-weight:300;
+    margin-left:25px;
 
-
-letter-spacing:25px;
-
-
-margin-bottom:20px;
-
-
-
-text-shadow:
-
-0 0 40px rgba(255,255,255,.35);
-
-
+    text-shadow:
+    0 0 30px rgba(255,255,255,.2);
 
 }
 
 
+.subtitle{
 
-.desc{
+    margin-top:20px;
 
+    font-size:22px;
 
-font-size:18px;
+    letter-spacing:14px;
 
-
-letter-spacing:10px;
-
-
-opacity:.8;
-
+    color:rgba(255,255,255,.75);
 
 }
 
@@ -243,127 +119,62 @@ opacity:.8;
 
 /* 导航 */
 
-
 .nav{
 
+    position:absolute;
 
-position:absolute;
+    bottom:90px;
+
+    display:flex;
+
+    gap:90px;
+
+}
 
 
-bottom:100px;
+.nav a{
 
+    color:white;
 
-display:flex;
+    text-decoration:none;
 
+    font-size:22px;
 
-gap:45px;
+    letter-spacing:8px;
 
+    opacity:.85;
+
+    transition:.4s;
 
 }
 
 
 
-.item{
+.nav a:hover{
 
+    opacity:1;
 
-width:190px;
-
-
-height:90px;
-
-
-
-display:flex;
-
-
-align-items:center;
-
-justify-content:center;
-
-
-
-border-radius:25px;
-
-
-background:
-
-rgba(255,255,255,.08);
-
-
-
-border:
-
-1px solid rgba(255,255,255,.25);
-
-
-
-backdrop-filter:
-
-blur(15px);
-
-
-
-font-size:18px;
-
-
-letter-spacing:5px;
-
-
-
-transition:.5s;
-
+    transform:translateY(-8px);
 
 }
 
 
 
-.item:hover{
+/* 底部文字 */
 
+.footer{
 
-transform:
+    position:absolute;
 
-translateY(-15px);
+    bottom:35px;
 
+    color:rgba(255,255,255,.55);
 
+    letter-spacing:10px;
 
-background:
-
-rgba(255,255,255,.18);
-
-
-
-box-shadow:
-
-0 20px 50px rgba(0,0,0,.5);
-
+    font-size:14px;
 
 }
-
-
-
-/* 底部 */
-
-
-.bottom{
-
-
-position:absolute;
-
-
-bottom:35px;
-
-
-font-size:14px;
-
-
-letter-spacing:6px;
-
-
-opacity:.5;
-
-
-}
-
 
 
 </style>
@@ -371,99 +182,59 @@ opacity:.5;
 </head>
 
 
-
 <body>
 
 
+<div class="background"></div>
 
-<div class="bg"></div>
-
-<div class="dark-layer"></div>
-
-
-<div class="cursor"></div>
-
+<div class="overlay"></div>
 
 
 <div class="container">
 
 
-<div class="logo">
-
-LILY
-
-</div>
+    <div class="logo">
+        LIYI
+    </div>
 
 
-<div class="desc">
-
-CREATIVE PORTFOLIO
-
-</div>
+    <div class="subtitle">
+        CREATIVE PORTFOLIO
+    </div>
 
 
 
-<div class="nav">
+    <div class="nav">
+
+        <a href="#">
+            About Me
+        </a>
 
 
-<div class="item">
-ABOUT ME
-</div>
+        <a href="#">
+            Works
+        </a>
 
 
-<div class="item">
-WORKS
-</div>
+        <a href="#">
+            Contact
+        </a>
 
 
-<div class="item">
-CONTACT
-</div>
+    </div>
 
 
 
-</div>
+    <div class="footer">
 
+        Silence · Wildness · Creation
 
-<div class="bottom">
-
-SILENCE · WILDNESS · CREATION
-
-</div>
-
+    </div>
 
 
 </div>
-
-
-
-<script>
-
-
-const cursor=document.querySelector(".cursor");
-
-
-document.addEventListener(
-"mousemove",
-(e)=>{
-
-
-cursor.style.left=e.clientX+"px";
-
-cursor.style.top=e.clientY+"px";
-
-
-}
-
-);
-
-
-
-</script>
-
 
 
 </body>
-
 
 </html>
