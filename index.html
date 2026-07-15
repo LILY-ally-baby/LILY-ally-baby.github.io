@@ -2,10 +2,13 @@
 <html lang="zh-CN">
 
 <head>
+
 <meta charset="UTF-8">
 <title>LIYI Creative Portfolio</title>
 
+
 <style>
+
 
 *{
     margin:0;
@@ -13,228 +16,357 @@
     box-sizing:border-box;
 }
 
+
 body{
+
     width:100%;
     height:100vh;
+
     overflow:hidden;
+
     background:#020817;
-    font-family:"Times New Roman","Songti SC",serif;
+
 }
 
 
-/* 背景图片 */
+/* 背景 */
 
 .background{
+
     position:absolute;
+
     inset:0;
 
+
     background-image:
+
     linear-gradient(
+
         to left,
+
         rgba(2,8,23,0) 0%,
-        rgba(2,8,23,0.25) 35%,
-        rgba(2,8,23,0.8) 75%,
+
+        rgba(2,8,23,0.15) 25%,
+
+        rgba(2,8,23,0.55) 55%,
+
+        rgba(2,8,23,0.92) 85%,
+
         rgba(2,8,23,1) 100%
+
     ),
+
     url("leopard-bg.jpg");
 
+
+
     background-size:cover;
+
+
     background-position:center;
 
-    filter:none;
 
-    transform:scale(1.03);
+    transform:scale(1.05);
+
 
 }
 
 
-/* 增加整体暗夜质感 */
+
+
+/* 增加夜色层次 */
 
 .overlay{
 
+
     position:absolute;
+
     inset:0;
 
+
     background:
+
+
     radial-gradient(
-        circle at 70% 40%,
-        rgba(40,70,130,0.25),
-        transparent 40%
+
+        circle at 70% 45%,
+
+        rgba(35,70,130,0.25),
+
+        transparent 45%
+
     );
+
 
 }
 
 
 
-/* 主内容 */
+/* 页面主体 */
+
 
 .container{
 
+
     position:relative;
 
+
     width:100%;
+
     height:100vh;
 
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
+
 
     color:white;
 
+
 }
 
 
-/* 标题 */
+
+/* LOGO */
+
 
 .logo{
 
-    font-size:110px;
 
-    letter-spacing:25px;
+    font-family:"Times New Roman",serif;
+
+
+    font-size:105px;
+
+
+    letter-spacing:28px;
+
+
+    margin-left:28px;
+
 
     font-weight:300;
 
-    margin-left:25px;
 
     text-shadow:
-    0 0 30px rgba(255,255,255,.2);
+
+
+    0 0 35px rgba(255,255,255,.18);
+
 
 }
+
+
 
 
 .subtitle{
 
-    margin-top:20px;
 
-    font-size:22px;
+    margin-top:18px;
+
+
+    font-family:"Times New Roman",serif;
+
+
+    font-size:18px;
+
 
     letter-spacing:14px;
 
-    color:rgba(255,255,255,.75);
+
+    color:rgba(255,255,255,.7);
+
 
 }
+
 
 
 
 /* 导航 */
 
+
 .nav{
+
 
     position:absolute;
 
-    bottom:90px;
+
+    bottom:95px;
+
 
     display:flex;
 
-    gap:90px;
+
+    gap:120px;
+
 
 }
+
+
 
 
 .nav a{
 
-    color:white;
+
+    font-family:"KaiTi","STKaiti","楷体",serif;
+
+
+    font-size:18px;
+
+
+    letter-spacing:7px;
+
+
+    color:rgba(255,255,255,.88);
+
 
     text-decoration:none;
 
-    font-size:22px;
 
-    letter-spacing:8px;
+    transition:.5s;
 
-    opacity:.85;
-
-    transition:.4s;
 
 }
 
+
+
+/* 鼠标效果 */
 
 
 .nav a:hover{
 
-    opacity:1;
+
+    color:white;
+
 
     transform:translateY(-8px);
 
+
+    text-shadow:
+
+    0 0 20px rgba(255,255,255,.5);
+
+
 }
 
 
 
-/* 底部文字 */
+/* 底部 */
+
 
 .footer{
 
+
     position:absolute;
 
-    bottom:35px;
 
-    color:rgba(255,255,255,.55);
+    bottom:38px;
 
-    letter-spacing:10px;
+
+    font-family:"KaiTi","STKaiti",serif;
+
 
     font-size:14px;
 
+
+    letter-spacing:10px;
+
+
+    color:rgba(255,255,255,.45);
+
+
 }
+
 
 
 </style>
 
+
 </head>
+
 
 
 <body>
 
 
+
 <div class="background"></div>
 
+
 <div class="overlay"></div>
+
 
 
 <div class="container">
 
 
-    <div class="logo">
-        LIYI
-    </div>
 
+<div class="logo">
 
-    <div class="subtitle">
-        CREATIVE PORTFOLIO
-    </div>
+LIYI
 
-
-
-    <div class="nav">
-
-        <a href="#">
-            About Me
-        </a>
-
-
-        <a href="#">
-            Works
-        </a>
-
-
-        <a href="#">
-            Contact
-        </a>
-
-
-    </div>
+</div>
 
 
 
-    <div class="footer">
+<div class="subtitle">
 
-        Silence · Wildness · Creation
+CREATIVE PORTFOLIO
 
-    </div>
+</div>
+
+
+
+
+<div class="nav">
+
+
+<a href="#">
+
+About Me
+
+</a>
+
+
+<a href="#">
+
+Works
+
+</a>
+
+
+<a href="#">
+
+Contact
+
+</a>
+
 
 
 </div>
 
 
+
+
+<div class="footer">
+
+Silence · Wildness · Creation
+
+</div>
+
+
+
+</div>
+
+
+
+
 </body>
+
 
 </html>
