@@ -14,7 +14,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
 
 
-
 *{
 
 margin:0;
@@ -24,17 +23,17 @@ box-sizing:border-box;
 }
 
 
-
 body{
 
 
 width:100%;
 height:100vh;
 
+
 overflow:hidden;
 
 
-background:#06142d;
+background:#06152f;
 
 
 color:white;
@@ -48,9 +47,9 @@ cursor:none;
 
 
 
-/* ===================
+/* =====================
 背景图片
-=================== */
+===================== */
 
 
 .background{
@@ -59,18 +58,23 @@ cursor:none;
 position:absolute;
 
 
-left:5;
+left:0;
+
 top:0;
 
 
 width:100%;
+
 height:100%;
 
 
 
 background-image:url("tree-bg.jpg");
 
+
+
 background-size:cover;
+
 
 
 background-position:left center;
@@ -80,14 +84,15 @@ background-position:left center;
 filter:
 
 brightness(0.65)
-contrast(1.05);
+contrast(1.1);
 
 
 
-/* 图片右侧自然消失 */
+/* 图片向右自然消失 */
 
 
 mask-image:
+
 
 linear-gradient(
 
@@ -95,11 +100,15 @@ linear-gradient(
 
 black 0%,
 
-black 45%,
 
-rgba(0,0,0,.8) 65%,
+black 50%,
 
-transparent 95%
+
+rgba(0,0,0,0.75) 70%,
+
+
+transparent 100%
+
 
 );
 
@@ -109,9 +118,9 @@ transparent 95%
 
 
 
-/* ===================
-蓝色融合层
-=================== */
+/* =====================
+颜色融合
+===================== */
 
 
 .overlay{
@@ -121,7 +130,9 @@ position:absolute;
 
 
 width:100%;
+
 height:100%;
+
 
 
 background:
@@ -131,24 +142,26 @@ linear-gradient(
 
 90deg,
 
-rgba(5,15,40,0)
 
-0%,
+rgba(4,15,35,0)
 
-
-rgba(5,15,40,0.25)
-
-40%,
+20%,
 
 
-rgba(6,20,45,0.8)
+rgba(5,18,40,0.25)
+
+45%,
+
+
+rgba(6,18,45,0.75)
 
 75%,
 
 
-#06142d
+#06152f
 
 100%
+
 
 );
 
@@ -159,41 +172,11 @@ rgba(6,20,45,0.8)
 
 
 
-/* ===================
-玻璃雾化
-=================== */
 
 
-.glass{
-
-
-position:absolute;
-
-
-width:100%;
-height:100%;
-
-
-
-background:
-
-rgba(10,20,45,0.15);
-
-
-
-backdrop-filter:
-
-blur(1px);
-
-
-
-}
-
-
-
-/* ===================
-内容区域
-=================== */
+/* =====================
+文字区域
+===================== */
 
 
 .content{
@@ -202,13 +185,16 @@ blur(1px);
 position:absolute;
 
 
-right:13%;
+
+right:12%;
 
 
-top:15%;
+
+top:16%;
 
 
-width:560px;
+
+width:600px;
 
 
 
@@ -216,9 +202,10 @@ width:560px;
 
 
 
-/* ===================
-标题
-=================== */
+
+/* =====================
+ABOUT ME标题
+===================== */
 
 
 .title{
@@ -226,17 +213,20 @@ width:560px;
 
 font-family:
 
+
 "Ma Shan Zheng",
+
 "STKaiti",
+
 serif;
 
 
 
-font-size:70px;
+font-size:72px;
 
 
 
-letter-spacing:20px;
+letter-spacing:18px;
 
 
 
@@ -252,15 +242,10 @@ margin-bottom:35px;
 
 
 
-/* 小标题 */
-
-
 .subtitle{
 
 
-font-family:
-
-serif;
+font-family:serif;
 
 
 
@@ -272,20 +257,24 @@ letter-spacing:10px;
 
 
 
-opacity:.8;
+opacity:0.75;
 
 
 
-margin-bottom:70px;
+margin-bottom:65px;
+
 
 
 }
 
 
 
-/* ===================
+
+
+
+/* =====================
 正文
-=================== */
+===================== */
 
 
 .text{
@@ -293,8 +282,11 @@ margin-bottom:70px;
 
 font-family:
 
+
 "KaiTi",
+
 "STKaiti",
+
 serif;
 
 
@@ -313,7 +305,7 @@ letter-spacing:5px;
 
 color:
 
-rgba(255,255,255,.9);
+rgba(255,255,255,0.9);
 
 
 
@@ -330,7 +322,9 @@ rgba(255,255,255,.9);
 margin-bottom:45px;
 
 
+
 }
+
 
 
 
@@ -340,10 +334,13 @@ margin-bottom:45px;
 margin-left:0;
 
 
+
 width:430px;
 
 
+
 }
+
 
 
 
@@ -353,10 +350,13 @@ width:430px;
 margin-left:4em;
 
 
+
 width:390px;
 
 
+
 }
+
 
 
 
@@ -366,7 +366,9 @@ width:390px;
 margin-left:8em;
 
 
+
 width:360px;
+
 
 
 }
@@ -374,9 +376,12 @@ width:360px;
 
 
 
-/* ===================
-鼠标
-=================== */
+
+
+
+/* =====================
+鼠标跟随
+===================== */
 
 
 .cursor{
@@ -385,24 +390,22 @@ width:360px;
 position:fixed;
 
 
-width:32px;
+
+width:30px;
 
 
-height:32px;
+
+height:30px;
+
 
 
 border-radius:50%;
 
 
+
 background:
 
-rgba(255,255,255,.35);
-
-
-
-backdrop-filter:
-
-blur(8px);
+rgba(255,255,255,0.35);
 
 
 
@@ -422,16 +425,12 @@ z-index:999;
 
 transition:
 
-width .25s,
-height .25s;
+0.2s;
 
 
 
 }
 
-
-
-/* 鼠标光晕 */
 
 
 .cursor::after{
@@ -440,7 +439,15 @@ height .25s;
 content:"";
 
 
+
 position:absolute;
+
+
+
+left:0;
+
+top:0;
+
 
 
 width:100%;
@@ -448,22 +455,23 @@ width:100%;
 height:100%;
 
 
+
 border-radius:50%;
+
 
 
 background:
 
-rgba(120,160,255,.25);
+rgba(120,160,255,0.25);
 
 
 
-animation:
-
-pulse 2s infinite;
+animation:pulse 2s infinite;
 
 
 
 }
+
 
 
 
@@ -476,31 +484,35 @@ pulse 2s infinite;
 transform:scale(1);
 
 
+
 opacity:.8;
 
 
-}
 
+}
 
 
 100%{
 
 
-transform:scale(2);
+transform:scale(2.2);
+
 
 
 opacity:0;
 
 
+
 }
 
 
+
 }
+
 
 
 
 </style>
-
 
 
 </head>
@@ -511,15 +523,18 @@ opacity:0;
 
 
 
+<!-- 背景 -->
+
 <div class="background"></div>
 
 
 <div class="overlay"></div>
 
 
-<div class="glass"></div>
 
 
+
+<!-- 内容 -->
 
 
 <div class="content">
@@ -534,6 +549,7 @@ ABOUT ME
 
 
 
+
 <div class="subtitle">
 
 LIYI · CREATIVE PORTFOLIO
@@ -544,7 +560,6 @@ LIYI · CREATIVE PORTFOLIO
 
 
 <div class="text">
-
 
 
 <p>
@@ -577,13 +592,17 @@ LIYI · CREATIVE PORTFOLIO
 
 
 
+
 </div>
 
 
 
 
 
+<!-- 鼠标 -->
+
 <div class="cursor"></div>
+
 
 
 
@@ -603,12 +622,13 @@ document.addEventListener(
 
 cursor.style.left=e.clientX+"px";
 
+
 cursor.style.top=e.clientY+"px";
 
 
-}
 
-);
+});
+
 
 
 
@@ -618,13 +638,15 @@ document.addEventListener(
 ()=>{
 
 
-cursor.style.width="48px";
-
-cursor.style.height="48px";
+cursor.style.width="45px";
 
 
-}
-);
+cursor.style.height="45px";
+
+
+});
+
+
 
 
 
@@ -633,13 +655,14 @@ document.addEventListener(
 ()=>{
 
 
-cursor.style.width="32px";
-
-cursor.style.height="32px";
+cursor.style.width="30px";
 
 
-}
-);
+cursor.style.height="30px";
+
+
+});
+
 
 
 
