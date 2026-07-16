@@ -1107,41 +1107,218 @@ PHOTOGRAPHY
 ===================================== */
 
 
-.photo-feature{
+.photography{
+
+padding:40px 4%;
+background:#fff;
+color:#111;
+
+}
+
+
+
+
+/* 顶部 */
+
+.photo-header{
+
+display:flex;
+
+align-items:center;
+
+gap:30px;
+
+font-size:12px;
+
+letter-spacing:3px;
+
+}
+
+
+
+.photo-header div{
+
+height:1px;
+
+background:#aaa;
+
+flex:1;
+
+}
+
+
+
+
+
+/* 标题 */
+
+.photo-title{
+
+display:grid;
+
+grid-template-columns:120px 1fr 300px;
+
+align-items:center;
+
+margin-top:50px;
+
+}
+
+
+.number{
+
+font-family:serif;
+
+font-size:80px;
+
+}
+
+
+
+.photo-title h1{
+
+font-family:serif;
+
+font-size:90px;
+
+font-weight:400;
+
+margin:0;
+
+}
+
+
+
+.photo-title p{
+
+font-size:13px;
+
+letter-spacing:3px;
+
+line-height:2;
+
+}
+
+
+
+
+
+/* 主区域 */
+
+
+.photo-main{
+
+display:grid;
+
+grid-template-columns:130px 1fr 300px;
+
+gap:40px;
+
+margin-top:60px;
+
+align-items:center;
+
+}
+
+
+
+
+
+.photo-intro{
+
+font-size:16px;
+
+line-height:2;
+
+}
+
+
+.photo-intro a{
+
+display:block;
+
+margin-top:50px;
+
+font-size:13px;
+
+letter-spacing:2px;
+
+border-bottom:1px solid;
+
+width:max-content;
+
+}
+
+
+
+
+.dots{
+
+margin-top:80px;
+
+}
+
+
+.dots span{
+
+display:block;
+
+width:6px;
+
+height:6px;
+
+border-radius:50%;
+
+background:#ccc;
+
+margin:15px;
+
+}
+
+
+.dots span:first-child{
+
+background:#111;
+
+}
+
+
+
+
+/* 大图 */
+
+.main-image{
 
 position:relative;
 
-width:85%;
-
-margin:0 auto 120px;
-
 }
 
 
-
-.photo-feature img{
+.main-image img{
 
 width:100%;
 
-height:650px;
+height:370px;
 
 object-fit:cover;
 
+border-radius:8px;
+
 box-shadow:
 
-0 25px 50px rgba(0,0,0,.15);
+0 20px 40px rgba(0,0,0,.15);
 
 }
 
 
 
-.photo-caption{
+.image-text{
 
 position:absolute;
 
-bottom:40px;
+bottom:25px;
 
-left:50px;
+left:30px;
 
 color:white;
 
@@ -1149,132 +1326,154 @@ color:white;
 
 
 
+.image-text h3{
 
+font-size:15px;
 
-/* =========================
-摄影胶片区域
-========================= */
-
-
-.gallery-section{
-
-
-position:relative;
-
-width:100%;
-
-height:420px;
-
-overflow:hidden;
-
-background:#111;
-
-padding:50px 0;
-
+letter-spacing:3px;
 
 }
 
 
 
+.image-text p{
 
+font-size:12px;
 
-/* 八张照片横向排列 */
-
-
-.magazine-gallery{
-
-
-display:flex;
-
-align-items:center;
-
-gap:25px;
+border-bottom:1px solid white;
 
 width:max-content;
 
-padding-left:80px;
-
-
 }
 
 
 
-
-
-.magazine-gallery img{
-
-
-width:260px;
-
-height:320px;
-
-object-fit:cover;
-
-
-box-shadow:
-
-0 20px 40px rgba(0,0,0,.25);
-
-
-transition:.5s;
-
-
-}
-
-
-
-
-.magazine-gallery img:hover{
-
-
-transform:
-
-translateY(-20px);
-
-
-}
-
-
-
-
-
-
-/* 胶片上下边缘 */
-
-.gallery-section::before,
-.gallery-section::after{
-
-
-content:"";
+.main-image button{
 
 position:absolute;
 
-left:0;
+right:25px;
+
+bottom:25px;
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+border:none;
+
+background:white;
+
+font-size:20px;
+
+}
+
+
+
+
+
+/*右侧四张*/
+
+
+.small-images{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+
+}
+
+
+
+.small-images img{
+
+width:140px;
+
+height:170px;
+
+object-fit:cover;
+
+border-radius:5px;
+
+}
+
+
+
+
+
+/*底部胶片墙*/
+
+.photo-grid{
+
+margin-top:100px;
+
+display:grid;
+
+grid-template-columns:repeat(5,1fr);
+
+gap:15px;
+
+}
+
+
+
+.photo-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.photo-card img{
 
 width:100%;
 
-height:25px;
+height:230px;
+
+object-fit:cover;
+
+border-radius:5px;
+
+transition:.5s;
+
+}
 
 
-background:
 
-repeating-linear-gradient(
+.photo-card:hover img{
 
-90deg,
+transform:scale(1.05);
 
-#fafafa 0px,
-
-#fafafa 30px,
-
-transparent 30px,
-
-transparent 55px
-
-);
+}
 
 
-z-index:5;
 
+.photo-card button{
+
+position:absolute;
+
+right:12px;
+
+top:12px;
+
+width:35px;
+
+height:35px;
+
+border-radius:50%;
+
+border:none;
+
+background:white;
+
+font-size:20px;
 
 }
 
@@ -1282,17 +1481,23 @@ z-index:5;
 
 
 
-.gallery-section::before{
+/*底部*/
 
-top:0;
+.photo-footer{
 
-}
+margin-top:60px;
 
+padding-top:30px;
 
+border-top:1px solid #ddd;
 
-.gallery-section::after{
+display:flex;
 
-bottom:0;
+justify-content:space-between;
+
+font-size:12px;
+
+letter-spacing:3px;
 
 }
 
