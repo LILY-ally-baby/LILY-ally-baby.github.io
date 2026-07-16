@@ -1099,3 +1099,87 @@ font-size:50px;
 
 
 }
+/* JS reveal animation */
+
+
+.reveal{
+
+opacity:0;
+
+transform:
+translateY(60px);
+
+transition:
+all 1s ease;
+
+}
+
+
+.reveal.active{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+
+
+/* particle */
+
+
+.particle{
+
+position:absolute;
+
+width:3px;
+
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+animation:
+particleFloat linear infinite;
+
+opacity:.6;
+
+}
+
+
+
+@keyframes particleFloat{
+
+
+0%{
+
+transform:
+translateY(0)
+scale(1);
+
+opacity:0;
+
+}
+
+
+30%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+translateY(-200px)
+scale(1.5);
+
+opacity:0;
+
+}
+
+
+}
