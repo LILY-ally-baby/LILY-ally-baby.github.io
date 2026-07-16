@@ -1,17 +1,20 @@
+/* =========================
+        GLOBAL
+========================= */
+
+
 *{
 
-margin:0;
-padding:0;
-
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 
 }
 
 
-
 html{
 
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 
 }
 
@@ -19,89 +22,34 @@ scroll-behavior:smooth;
 
 body{
 
-font-family:
-"Helvetica Neue",
-Arial,
-sans-serif;
+    font-family:
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 
+    overflow-x:hidden;
 
-background:white;
-
-color:#111;
-
-
-overflow-x:hidden;
+    color:#111;
 
 }
 
 
 
 
-
-
-/* ================= HOME ================= */
+/* =========================
+        HOME
+========================= */
 
 
 .hero{
 
-height:100vh;
+    height:100vh;
 
-position:relative;
+    position:relative;
 
-overflow:hidden;
+    overflow:hidden;
 
-}
-
-
-
-.background{
-
-
-position:absolute;
-
-inset:-5%;
-
-
-width:110%;
-
-height:110%;
-
-z-index:1;
-
-
-
-background-size:cover;
-
-background-position:center;
-
-
-
-animation:
-
-breathing 18s infinite alternate ease-in-out;
-
-
-}
-
-
-
-
-@keyframes breathing{
-
-
-from{
-
-transform:scale(1);
-
-}
-
-
-to{
-
-transform:scale(1.08);
-
-}
-
+    background:#05070d;
 
 }
 
@@ -109,105 +57,132 @@ transform:scale(1.08);
 
 
 
+/* background image */
 
-/* ================= PARTICLES ================= */
+
+.hero-bg{
+
+
+    position:absolute;
+
+    inset:-5%;
+
+
+    width:110%;
+
+    height:110%;
+
+
+    background-image:
+
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.65)
+    ),
+
+    url("./leopard-bg.jpg");
+
+
+    background-size:cover;
+
+
+    background-position:center;
+
+
+
+    animation:
+
+    heroZoom 18s infinite alternate;
+
+
+
+    z-index:1;
+
+
+}
+
+
+
+
+@keyframes heroZoom{
+
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+
+    to{
+
+        transform:scale(1.08);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+        PARTICLES
+========================= */
 
 
 #particles{
 
 
-position:absolute;
+    position:absolute;
 
-inset:0;
+    inset:0;
 
 
-z-index:3;
+    overflow:hidden;
 
-pointer-events:none;
+
+    z-index:3;
+
+
+    pointer-events:none;
 
 
 }
-
 
 
 
 .particle{
 
 
-position:absolute;
+    position:absolute;
 
 
-width:4px;
+    width:4px;
 
-height:4px;
-
-
-
-background:white;
+    height:4px;
 
 
-border-radius:50%;
+    border-radius:50%;
 
 
-opacity:.8;
+    background:white;
 
 
-filter:
-
-blur(.6px);
+    opacity:.7;
 
 
-
-animation:
-
-particleMove linear infinite;
-
-
-}
+    filter:
+    blur(.5px);
 
 
 
+    animation:
 
-@keyframes particleMove{
-
-
-0%{
-
-
-transform:
-
-translateY(100vh);
-
-
-opacity:0;
-
-
-}
-
-
-
-30%{
-
-opacity:1;
-
-}
-
-
-
-
-100%{
-
-
-transform:
-
-translateY(-20vh);
-
-
-
-opacity:0;
-
-
-}
+    floatParticle linear infinite;
 
 
 }
@@ -215,58 +190,105 @@ opacity:0;
 
 
 
+@keyframes floatParticle{
+
+
+    0%{
+
+
+        transform:
+        translateY(110vh)
+        scale(.5);
+
+
+        opacity:0;
+
+
+    }
 
 
 
+    20%{
+
+        opacity:.9;
+
+    }
 
 
-header{
+
+    100%{
 
 
-position:absolute;
+        transform:
+        translateY(-20vh)
+        scale(1.3);
 
 
-top:40px;
+        opacity:0;
 
 
-left:50px;
-
-
-right:50px;
-
-
-display:flex;
-
-
-justify-content:space-between;
-
-
-align-items:center;
-
-
-z-index:10;
-
+    }
 
 
 }
+
+
+
+
+
+
+
+/* =========================
+        HEADER
+========================= */
+
+
+.header{
+
+
+    position:absolute;
+
+
+    top:40px;
+
+
+    left:60px;
+
+
+    right:60px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    z-index:20;
+
+
+}
+
 
 
 
 .logo{
 
 
-font-size:30px;
+    color:white;
 
 
-letter-spacing:6px;
+    font-size:32px;
 
 
-font-weight:700;
-color:white;
+    font-weight:700;
 
-position:relative;
 
-z-index:30;
+    letter-spacing:8px;
+
 
 }
 
@@ -276,178 +298,44 @@ z-index:30;
 nav{
 
 
-display:flex;
+    display:flex;
 
 
-gap:50px;
+    gap:55px;
 
 
 }
-
 
 
 
 nav a{
 
 
-color:white;
+    color:white;
 
 
-text-decoration:none;
+    text-decoration:none;
 
 
-}
+    font-size:16px;
 
 
-
-.active{
-
-
-border-bottom:2px solid white;
-
-
-padding-bottom:8px;
+    opacity:.9;
 
 
 }
 
 
 
+nav a.active{
 
 
+    border-bottom:
 
-.intro{
+    2px solid white;
 
 
-position:absolute;
-
-
-left:80px;
-
-
-top:38%;
-
-
-z-index:20;
-
-color:white;
-
-}
-
-
-
-
-
-.intro h1{
-
-
-font-size:72px;
-
-font-weight:700;
-
-color:white;
-
-position:relative;
-
-z-index:30;
-
-text-shadow:
-0 0 20px rgba(0,0,0,.5);
-
-
-
-margin-bottom:25px;
-
-
-}
-
-
-
-
-
-.intro p{
-
-
-font-size:22px;
-
-
-line-height:1.6;
-
-
-}
-
-
-
-
-
-
-button{
-
-
-margin-top:35px;
-
-
-padding:15px 35px;
-
-
-background:transparent;
-
-
-border:1px solid white;
-
-
-color:white;
-
-
-}
-
-
-
-
-
-
-.scroll{
-
-
-position:absolute;
-
-
-right:70px;
-
-
-bottom:40px;
-
-
-z-index:5;
-
-
-}
-
-
-
-.scroll a{
-
-
-color:white;
-
-
-text-decoration:none;
-
-
-}
-
-
-
-.scroll span{
-
-
-display:block;
-
-
-font-size:35px;
-
-
-text-align:center;
+    padding-bottom:8px;
 
 
 }
@@ -458,47 +346,182 @@ text-align:center;
 
 
 
+/* =========================
+        HERO TEXT
+========================= */
+
+
+
+.hero-content{
+
+
+    position:absolute;
+
+
+    left:80px;
+
+
+    top:38%;
+
+
+    z-index:15;
+
+
+    color:white;
+
+
+}
 
 
 
 
-/* =================================================
-ABOUT
-================================================= */
 
+.hero-content h1{
+
+
+    font-size:76px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:-2px;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+.hero-content p{
+
+
+    font-size:24px;
+
+
+    line-height:1.6;
+
+
+}
+
+
+
+
+.hero-content button{
+
+
+    margin-top:40px;
+
+
+    padding:
+
+    15px 38px;
+
+
+
+    background:transparent;
+
+
+    border:
+
+    1px solid white;
+
+
+
+    color:white;
+
+
+    font-size:16px;
+
+
+}
+
+
+
+
+
+
+
+/* scroll */
+
+
+.scroll-down{
+
+
+    position:absolute;
+
+
+    right:70px;
+
+
+    bottom:40px;
+
+
+    z-index:20;
+
+
+}
+
+
+
+.scroll-down a{
+
+
+    color:white;
+
+
+    text-decoration:none;
+
+
+}
+
+
+
+.scroll-down span{
+
+
+    display:block;
+
+
+    text-align:center;
+
+
+    font-size:30px;
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+        ABOUT
+========================= */
 
 
 .about{
 
 
-height:100vh;
+    height:100vh;
 
 
-width:100%;
+    background:#fafafa;
 
 
-background:
-
-linear-gradient(
-rgba(255,255,255,.65),
-rgba(245,248,255,.8)
-),
-
-url("./tree.png");
+    position:relative;
 
 
-background-size:cover;
-
-background-position:center bottom;
+    overflow:hidden;
 
 
-position:relative;
-
-
-overflow:hidden;
-
-
-color:#111;
+    color:#111;
 
 
 }
@@ -509,140 +532,42 @@ color:#111;
 
 
 
-/* =================
-玻璃流动背景
-================= */
+/* soft blue atmosphere */
 
 
+.about-glow{
 
-.about::before{
 
+    position:absolute;
 
-content:"";
 
+    width:700px;
 
-position:absolute;
 
+    height:700px;
 
-top:-250px;
 
+    left:-250px;
 
-left:-200px;
 
+    bottom:-250px;
 
-width:120%;
 
+    background:
 
-height:300px;
 
+    radial-gradient(
 
+        circle,
 
-background:
+        rgba(60,90,255,.18),
 
+        transparent 70%
 
-linear-gradient(
+    );
 
-90deg,
 
-rgba(30,70,180,.25),
-
-rgba(80,130,255,.18),
-
-rgba(255,255,255,.5),
-
-rgba(40,80,200,.2)
-
-);
-
-
-
-filter:blur(25px);
-
-
-border-radius:50%;
-
-
-
-animation:
-
-waveMove 12s ease-in-out infinite alternate;
-
-
-
-}
-
-
-
-
-
-@keyframes waveMove{
-
-
-from{
-
-transform:
-
-translateX(-80px);
-
-}
-
-
-to{
-
-transform:
-
-translateX(120px);
-
-}
-
-
-}
-
-
-
-
-
-
-
-/* 第二层透明波浪 */
-
-
-
-.about::after{
-
-
-content:"";
-
-
-position:absolute;
-
-
-top:100px;
-
-
-right:-200px;
-
-
-width:700px;
-
-
-height:250px;
-
-
-
-border-radius:50%;
-
-
-
-background:
-
-rgba(70,110,255,.12);
-
-
-
-filter:
-
-blur(50px);
+    filter:blur(40px);
 
 
 
@@ -656,67 +581,59 @@ blur(50px);
 
 
 
-/* =================
-编号
-================= */
-
-
-.about-number{
-
-
-position:absolute;
-
-
-top:40px;
-
-
-left:60px;
-
-
-font-size:18px;
-
-
-color:#888;
-
-
-}
-
-
-
-
-
-/* =================
-标题
-================= */
+/* TITLE */
 
 
 .about-title{
 
 
-position:absolute;
+    position:absolute;
 
 
-top:70px;
+    left:80px;
 
 
-left:120px;
+    top:50px;
+
+
+    z-index:5;
+
+
+}
 
 
 
-font-size:100px;
+.about-title span{
 
 
-line-height:.85;
+    font-size:18px;
 
 
-font-weight:700;
+    color:#777;
 
 
-letter-spacing:-5px;
+}
 
 
-color:#111;
 
+
+
+.about-title h2{
+
+
+    margin-top:15px;
+
+
+    font-size:100px;
+
+
+    line-height:.85;
+
+
+    letter-spacing:-5px;
+
+
+    font-weight:700;
 
 
 }
@@ -727,485 +644,315 @@ color:#111;
 
 
 
-/* =================
-TREE
-================= */
+
+/* =========================
+        TREE
+========================= */
 
 
 .tree-container{
 
 
-position:absolute;
+    position:absolute;
 
 
-left:0;
+    left:0;
 
 
-bottom:-20px;
+    bottom:0;
 
 
-height:100%;
+    width:55%;
 
 
-z-index:2;
+    height:100%;
 
 
-
-overflow:hidden;
-
+    overflow:hidden;
 
 
-}
+    display:flex;
 
 
+    align-items:flex-end;
 
 
-.tree{
-
-
-height:120%;
-
-
-width:auto;
-
-
-
-transform-origin:bottom;
-
-
-animation:
-
-
-growTree 4s ease forwards,
-
-treeMove 8s ease-in-out infinite alternate;
+    z-index:2;
 
 
 }
 
 
 
+.tree-image{
 
 
-@keyframes growTree{
+    width:100%;
 
 
-0%{
+    height:auto;
 
-transform:
 
-scaleY(0);
+    object-fit:contain;
 
 
-opacity:0;
+    transform-origin:
 
+    bottom;
 
-}
 
 
+    animation:
 
-100%{
-
-transform:
-
-scaleY(1);
-
-
-opacity:1;
-
-
-}
-
-
-}
-
-
-
-
-
-@keyframes treeMove{
-
-
-from{
-
-translate:0 0;
-
-}
-
-
-
-to{
-
-translate:10px 0;
-
-}
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =================
-名字
-================= */
-
-
-.about-name{
-
-
-position:absolute;
-
-
-left:120px;
-
-
-bottom:100px;
-
-
-
-font-size:70px;
-
-
-
-font-weight:600;
-
-
-
-letter-spacing:18px;
-
-
-
-z-index:4;
-
-
-
-color:#222;
-
-
-}
-
-
-
-
-
-
-
-
-/* =================
-文字
-================= */
-
-
-.about-content{
-
-
-position:absolute;
-
-
-right:120px;
-
-
-top:35%;
-
-
-
-width:520px;
-
-
-
-z-index:5;
-
-
-}
-
-
-
-
-
-.about-content p{
-
-
-font-size:24px;
-
-
-line-height:1.9;
-
-
-
-color:#333;
-
-
-
-opacity:0;
-
-
-
-transform:
-
-translateY(40px);
-
-
-
-animation:
-
-textReveal 1s forwards;
+    treeGrow 3s ease forwards;
 
 
 
 }
 
-
-
-.about-content p:nth-child(1){
-
-
-animation-delay:.8s;
-
-
-}
-
-
-
-.about-content p:nth-child(2){
-
-
-margin-top:45px;
-
-
-animation-delay:2.8s;
-
-
-}
-
-
-
-
-
-@keyframes textReveal{
-
-
-to{
-
-
-opacity:1;
-
-
-transform:
-
-translateY(0);
-
-
-}
-
-
-}
-
-
-
-
-
-
-
-
-/* =================
-流动线
-================= */
-
-
-.flow-line{
-
-
-position:absolute;
-
-
-top:55%;
-
-
-right:0;
-
-
-width:600px;
-
-
-height:1px;
-
-
-background:
-
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-rgba(50,100,255,.5),
-
-transparent
-
-);
-
-
-
-animation:
-
-lineMove 6s infinite;
-
-
-}
-
-
-
-.line-two{
-
-
-top:25%;
-
-
-width:900px;
-
-
-animation-delay:2s;
-
-
-}
-
-
-
-.line-three{
-
-
-top:75%;
-
-
-width:500px;
-
-
-animation-delay:4s;
-
-
-}
-
-
-
-
-
-
-@keyframes lineMove{
-
-
-0%{
-
-
-transform:
-
-translateX(-300px);
-
-
-opacity:0;
-
-
-}
-
-
-
-50%{
-
-
-opacity:1;
-
-
-}
-
-
-
-
-100%{
-
-
-transform:
-
-translateX(300px);
-
-
-opacity:0;
-
-
-}
-
-
-
-}
-.tree-grow{
-
-position:absolute;
-
-left:0;
-
-bottom:0;
-
-width:100%;
-
-height:100%;
-
-
-background:url("./tree.png");
-
-
-background-size:cover;
-
-
-background-position:center bottom;
-
-
-z-index:1;
-
-
-clip-path:polygon(
-0 100%,
-100% 100%,
-100% 100%,
-0 100%
-);
-
-
-animation:treeGrow 4s ease forwards;
-
-}
 
 
 
 @keyframes treeGrow{
 
 
-0%{
+    from{
 
-clip-path:polygon(
-0 100%,
-100% 100%,
-100% 100%,
-0 100%
-);
+
+        transform:
+
+        scaleY(0);
+
+
+        opacity:0;
+
+
+    }
+
+
+
+    to{
+
+
+        transform:
+
+        scaleY(1);
+
+
+        opacity:1;
+
+
+    }
+
 
 }
 
 
 
-100%{
 
-clip-path:polygon(
-0 0,
-100% 0,
-100% 100%,
-0 100%
-);
+
+
+
+
+/* =========================
+        LIYI NAME
+========================= */
+
+
+.about-logo{
+
+
+    position:absolute;
+
+
+    left:80px;
+
+
+    bottom:80px;
+
+
+    z-index:5;
+
+
+    font-size:90px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:20px;
+
+
+    color:#111;
+
 
 }
+
+
+
+
+
+
+
+
+/* =========================
+        TEXT
+========================= */
+
+
+
+.about-text{
+
+
+    position:absolute;
+
+
+    right:120px;
+
+
+    top:35%;
+
+
+    width:520px;
+
+
+    z-index:10;
+
+
+}
+
+
+
+
+
+.about-text p{
+
+
+    font-size:27px;
+
+
+    line-height:1.8;
+
+
+    color:#222;
+
+
+    opacity:0;
+
+
+    transform:translateY(40px);
+
+
+}
+
+
+
+
+
+.about-text p:nth-child(1){
+
+
+    animation:
+
+    textShow 1s ease forwards;
+
+
+    animation-delay:.8s;
+
+
+}
+
+
+
+
+
+.about-text p:nth-child(2){
+
+
+    margin-top:55px;
+
+
+    animation:
+
+    textShow 1s ease forwards;
+
+
+    animation-delay:2.8s;
+
+
+}
+
+
+
+
+
+
+
+@keyframes textShow{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:
+        translateY(40px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+        translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+/* responsive */
+
+
+@media(max-width:900px){
+
+
+    .hero-content h1{
+
+        font-size:50px;
+
+    }
+
+
+    .about-text{
+
+        right:40px;
+
+        width:400px;
+
+    }
+
+
+
+    .about-logo{
+
+        font-size:60px;
+
+    }
+
 
 }
