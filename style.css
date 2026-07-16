@@ -613,161 +613,168 @@ MY JOURNEY
 
 background:#fafafa;
 
+padding:40px 6%;
+
+overflow:hidden;
+
 }
 
 
 
-.journey-header{
+
+/* 顶部 */
+
+.journey-top{
+
+display:flex;
+
+align-items:center;
+
+gap:30px;
+
+font-size:12px;
+
+letter-spacing:4px;
+
+}
+
+
+
+.top-line{
+
+height:1px;
+
+background:#222;
+
+flex:1;
+
+}
+
+
+
+
+/* 标题 */
+
+
+.journey-title{
 
 display:flex;
 
 justify-content:space-between;
 
-align-items:flex-end;
+align-items:flex-start;
 
-margin-bottom:100px;
+margin-top:50px;
+
+margin-bottom:80px;
 
 }
 
 
+.journey-title h1{
 
-.journey-header h2{
+font-family:serif;
 
-font-size:80px;
+font-size:95px;
 
 line-height:.85;
 
+font-weight:400;
+
+letter-spacing:-3px;
+
 }
 
 
-
-.journey-header p{
-
-width:200px;
+.journey-title p{
 
 font-size:13px;
 
+letter-spacing:5px;
+
+line-height:2;
+
+margin-top:50px;
+
 }
 
 
+
+
+
+/* 时间轴 */
 
 .timeline{
 
 position:relative;
 
-width:100%;
-
-padding:120px 0;
-
 }
 
-.journey-path{
+
+
+.journey-line{
 
 position:absolute;
 
+left:50%;
+
 top:0;
 
-left:50%;
+bottom:0;
 
 width:1px;
 
-height:100%;
-
-background:#111;
-
-transform:translateX(-50%);
-
-z-index:0;
+background:#222;
 
 }
 
 
-.journey-path path{
 
-fill:none;
 
-stroke:#111;
 
-stroke-width:1.5px;
-
-stroke-linecap:round;
-
-}
+/* 每一行 */
 
 
 .journey-item{
 
 position:relative;
 
-width:100%;
-
 display:flex;
 
 align-items:center;
 
-margin-bottom:260px;
+margin-bottom:80px;
 
-z-index:2;
+min-height:280px;
 
 }
 
 
 
-.journey-item.left{
+
+.left{
 
 justify-content:flex-start;
 
-padding-left:7%;
-
 }
 
 
 
-.journey-item.right{
+.right{
 
 justify-content:flex-end;
 
-padding-right:7%;
-
-}
-.journey-item.left .journey-info{
-
-margin-left:80px;
-
-}
-
-
-.journey-item.right .journey-info{
-
-margin-right:80px;
-
 }
 
 
 
+
+
+/* 图片 */
 
 .journey-image{
 
-width:470px;
-
-height:630px;
-
-overflow:hidden;
-
-background:white;
-
-box-shadow:
-
-0 30px 60px rgba(0,0,0,.12);
-
-}
-
-.journey-image:hover{
-
-transform:
-
-translateY(-20px)
-rotate(2deg);
+width:480px;
 
 }
 
@@ -777,17 +784,14 @@ rotate(2deg);
 
 width:100%;
 
-height:100%;
+height:auto;
 
-object-fit:cover;
+display:block;
 
-}
+border-radius:12px;
 
-
-
-.journey-image:hover img{
-
-transform:scale(1.08);
+box-shadow:
+0 25px 45px rgba(0,0,0,.15);
 
 }
 
@@ -795,30 +799,121 @@ transform:scale(1.08);
 
 
 
-.journey-info{
-
-width:300px;
-
-margin-left:80px;
-
-}
+/* 文字 */
 
 
-.journey-info h3{
+.journey-text{
 
-font-size:40px;
+width:360px;
 
 }
 
 
 
-.journey-info h4{
+.left .journey-text{
 
-letter-spacing:2px;
+margin-left:60px;
 
-font-size:13px;
+}
+
+
+.right .journey-text{
+
+margin-right:60px;
+
+text-align:left;
+
+}
+
+
+
+.journey-text h2{
+
+font-family:serif;
+
+font-size:45px;
+
+font-weight:400;
+
+margin:0;
+
+}
+
+
+
+.dash{
+
+width:25px;
+
+height:1px;
+
+background:#111;
 
 margin:20px 0;
+
+}
+
+
+
+
+.journey-text h3{
+
+font-size:14px;
+
+letter-spacing:5px;
+
+margin-bottom:25px;
+
+}
+
+
+
+.journey-text p{
+
+font-size:15px;
+
+line-height:2;
+
+color:#333;
+
+}
+
+
+
+
+
+/* 中间节点 */
+
+
+.journey-dot{
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:12px;
+
+height:12px;
+
+background:#111;
+
+border-radius:50%;
+
+z-index:3;
+
+}
+
+
+
+
+
+/* 底部 */
+
+.journey-item:last-child{
+
+margin-bottom:0;
 
 }
 
