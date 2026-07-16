@@ -1,12 +1,12 @@
 *{
 
 margin:0;
-
 padding:0;
 
 box-sizing:border-box;
 
 }
+
 
 
 html{
@@ -16,21 +16,24 @@ scroll-behavior:smooth;
 }
 
 
+
 body{
 
 font-family:
-
 "Helvetica Neue",
 Arial,
 sans-serif;
 
-background:#050505;
 
-color:white;
+background:white;
+
+color:#111;
+
 
 overflow-x:hidden;
 
 }
+
 
 
 
@@ -41,15 +44,11 @@ overflow-x:hidden;
 
 .hero{
 
-
 height:100vh;
-
 
 position:relative;
 
-
 overflow:hidden;
-
 
 }
 
@@ -60,14 +59,12 @@ overflow:hidden;
 
 position:absolute;
 
-
 inset:-5%;
 
 
 width:110%;
 
 height:110%;
-
 
 
 background-image:
@@ -92,8 +89,8 @@ animation:
 breathing 18s infinite alternate ease-in-out;
 
 
-
 }
+
 
 
 
@@ -113,6 +110,7 @@ transform:scale(1.08);
 
 }
 
+
 }
 
 
@@ -120,7 +118,7 @@ transform:scale(1.08);
 
 
 
-/* 粒子 */
+/* ================= PARTICLES ================= */
 
 
 #particles{
@@ -129,6 +127,7 @@ transform:scale(1.08);
 position:absolute;
 
 inset:0;
+
 
 z-index:3;
 
@@ -139,10 +138,17 @@ pointer-events:none;
 
 
 
+
 .particle{
 
 
 position:absolute;
+
+
+width:4px;
+
+height:4px;
+
 
 
 background:white;
@@ -151,10 +157,13 @@ background:white;
 border-radius:50%;
 
 
-opacity:6;
+opacity:.8;
 
 
-filter:blur(.5px);
+filter:
+
+blur(.6px);
+
 
 
 animation:
@@ -162,8 +171,8 @@ animation:
 particleMove linear infinite;
 
 
-
 }
+
 
 
 
@@ -174,6 +183,7 @@ particleMove linear infinite;
 
 
 transform:
+
 translateY(100vh);
 
 
@@ -183,20 +193,23 @@ opacity:0;
 }
 
 
-20%{
 
+30%{
 
-opacity:.8;
-
+opacity:1;
 
 }
+
+
 
 
 100%{
 
 
 transform:
+
 translateY(-20vh);
+
 
 
 opacity:0;
@@ -206,6 +219,9 @@ opacity:0;
 
 
 }
+
+
+
 
 
 
@@ -239,6 +255,7 @@ align-items:center;
 z-index:10;
 
 
+
 }
 
 
@@ -248,11 +265,16 @@ z-index:10;
 
 font-size:30px;
 
+
 letter-spacing:6px;
+
 
 font-weight:700;
 
+
+
 }
+
 
 
 
@@ -261,10 +283,12 @@ nav{
 
 display:flex;
 
+
 gap:50px;
 
 
 }
+
 
 
 
@@ -273,7 +297,9 @@ nav a{
 
 color:white;
 
+
 text-decoration:none;
+
 
 }
 
@@ -284,10 +310,11 @@ text-decoration:none;
 
 border-bottom:2px solid white;
 
+
 padding-bottom:8px;
 
-}
 
+}
 
 
 
@@ -313,6 +340,8 @@ z-index:5;
 
 
 
+
+
 .intro h1{
 
 
@@ -326,6 +355,8 @@ margin-bottom:25px;
 
 
 
+
+
 .intro p{
 
 
@@ -336,6 +367,8 @@ line-height:1.6;
 
 
 }
+
+
 
 
 
@@ -359,6 +392,8 @@ color:white;
 
 
 }
+
+
 
 
 
@@ -387,7 +422,9 @@ z-index:5;
 
 color:white;
 
+
 text-decoration:none;
+
 
 }
 
@@ -398,9 +435,12 @@ text-decoration:none;
 
 display:block;
 
+
 font-size:35px;
 
+
 text-align:center;
+
 
 }
 
@@ -412,105 +452,101 @@ text-align:center;
 
 
 
-/* =========================
-   ABOUT SECTION
-========================= */
+
+
+/* =================================================
+ABOUT
+================================================= */
+
 
 
 .about{
 
-    height:100vh;
-    width:100%;
 
-    background:
-    linear-gradient(
-        120deg,
-        #090b14,
-        #11182b,
-        #090b14
-    );
+height:100vh;
 
-    color:white;
 
-    position:relative;
+width:100%;
 
-    overflow:hidden;
+
+background:#fafafa;
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+color:#111;
+
 
 }
 
 
 
 
-/* =========================
-   LEFT BOTTOM COLOR BLOCK
-========================= */
+
+
+
+/* =================
+玻璃流动背景
+================= */
+
 
 
 .about::before{
 
 
-    content:"";
+content:"";
 
 
-    position:absolute;
+position:absolute;
 
 
-    width:900px;
-
-    height:900px;
+top:-250px;
 
 
-    left:-260px;
-
-    bottom:-350px;
+left:-200px;
 
 
+width:120%;
 
-    background:
 
-    radial-gradient(
-
-        circle,
-
-        rgba(78,108,255,.55),
-
-        rgba(60,70,170,.28),
-
-        transparent 70%
-
-    );
+height:300px;
 
 
 
-    filter:blur(35px);
+background:
+
+
+linear-gradient(
+
+90deg,
+
+rgba(30,70,180,.25),
+
+rgba(80,130,255,.18),
+
+rgba(255,255,255,.5),
+
+rgba(40,80,200,.2)
+
+);
 
 
 
-    animation:
-
-    glowMove 10s ease-in-out infinite alternate;
+filter:blur(25px);
 
 
-
-}
+border-radius:50%;
 
 
 
-@keyframes glowMove{
+animation:
 
+waveMove 12s ease-in-out infinite alternate;
 
-    from{
-
-        transform:translate(0,0);
-
-    }
-
-
-    to{
-
-        transform:translate(80px,-60px);
-
-    }
 
 
 }
@@ -519,59 +555,74 @@ text-align:center;
 
 
 
-/* =========================
-   BIG FLOWING CIRCLE
-========================= */
+@keyframes waveMove{
+
+
+from{
+
+transform:
+
+translateX(-80px);
+
+}
+
+
+to{
+
+transform:
+
+translateX(120px);
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* 第二层透明波浪 */
 
 
 
 .about::after{
 
 
-    content:"";
+content:"";
 
 
-    position:absolute;
+position:absolute;
 
 
-    width:1000px;
-
-    height:1000px;
+top:100px;
 
 
-
-    right:-400px;
-
-    top:-350px;
+right:-200px;
 
 
+width:700px;
 
-    border-radius:50%;
+
+height:250px;
 
 
 
-    border:
-
-    1px solid rgba(130,170,255,.25);
+border-radius:50%;
 
 
 
-    box-shadow:
+background:
 
-
-    0 0 0 100px rgba(120,160,255,.05),
-
-
-    0 0 0 220px rgba(120,160,255,.035),
-
-
-    0 0 0 350px rgba(120,160,255,.02);
+rgba(70,110,255,.12);
 
 
 
-    animation:
+filter:
 
-    rotateCircle 30s linear infinite;
+blur(50px);
 
 
 
@@ -581,92 +632,31 @@ text-align:center;
 
 
 
-@keyframes rotateCircle{
-
-
-    from{
-
-        transform:rotate(0deg);
-
-    }
-
-
-    to{
-
-        transform:rotate(360deg);
-
-    }
-
-
-}
 
 
 
 
-
-/* =========================
-   EXTRA FLOW LINES
-========================= */
-
+/* =================
+编号
+================= */
 
 
-.about .line{
+.about-number{
 
 
-    position:absolute;
+position:absolute;
 
 
-    border-radius:50%;
+top:40px;
 
 
-    border:
-
-    1px solid rgba(255,255,255,.12);
+left:60px;
 
 
-
-    animation:
-
-    lineFloat 14s ease-in-out infinite alternate;
+font-size:18px;
 
 
-
-}
-
-
-
-
-.about .line.one{
-
-
-    width:550px;
-
-    height:550px;
-
-
-    right:120px;
-
-    bottom:-250px;
-
-
-}
-
-
-
-.about .line.two{
-
-
-    width:350px;
-
-    height:350px;
-
-
-    left:45%;
-
-    top:15%;
-
-
-    animation-delay:3s;
+color:#888;
 
 
 }
@@ -675,21 +665,38 @@ text-align:center;
 
 
 
-@keyframes lineFloat{
+/* =================
+标题
+================= */
 
 
-    from{
-
-        transform:translateY(0);
-
-    }
+.about-title{
 
 
-    to{
+position:absolute;
 
-        transform:translateY(-80px);
 
-    }
+top:70px;
+
+
+left:120px;
+
+
+
+font-size:100px;
+
+
+line-height:.85;
+
+
+font-weight:700;
+
+
+letter-spacing:-5px;
+
+
+color:#111;
+
 
 
 }
@@ -699,38 +706,33 @@ text-align:center;
 
 
 
-/* =========================
-   TITLE
-========================= */
+
+/* =================
+TREE
+================= */
+
+
+.tree-container{
+
+
+position:absolute;
+
+
+left:0;
+
+
+bottom:-20px;
+
+
+height:100%;
+
+
+z-index:2;
 
 
 
-.about-header{
+overflow:hidden;
 
-
-    position:absolute;
-
-
-    top:45px;
-
-
-    left:80px;
-
-
-    z-index:3;
-
-
-}
-
-
-
-.section-number{
-
-
-    font-size:18px;
-
-
-    color:rgba(255,255,255,.45);
 
 
 }
@@ -738,22 +740,25 @@ text-align:center;
 
 
 
-.about-header h2{
+.tree{
 
 
-    margin-top:10px;
+height:120%;
 
 
-    font-size:92px;
+width:auto;
 
 
-    line-height:.9;
+
+transform-origin:bottom;
 
 
-    font-weight:700;
+animation:
 
 
-    letter-spacing:-4px;
+growTree 4s ease forwards,
+
+treeMove 8s ease-in-out infinite alternate;
 
 
 }
@@ -762,38 +767,105 @@ text-align:center;
 
 
 
-/* =========================
-   LIYI BRAND NAME
-========================= */
+@keyframes growTree{
 
+
+0%{
+
+transform:
+
+scaleY(0);
+
+
+opacity:0;
+
+
+}
+
+
+
+100%{
+
+transform:
+
+scaleY(1);
+
+
+opacity:1;
+
+
+}
+
+
+}
+
+
+
+
+
+@keyframes treeMove{
+
+
+from{
+
+translate:0 0;
+
+}
+
+
+
+to{
+
+translate:10px 0;
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =================
+名字
+================= */
 
 
 .about-name{
 
 
-    position:absolute;
+position:absolute;
 
 
-    left:70px;
+left:120px;
 
 
-    bottom:150px;
+bottom:100px;
 
 
-    z-index:3;
+
+font-size:70px;
 
 
-    font-size:105px;
+
+font-weight:600;
 
 
-    font-weight:700;
+
+letter-spacing:18px;
 
 
-    letter-spacing:22px;
+
+z-index:4;
 
 
-    color:rgba(255,255,255,.88);
 
+color:#222;
 
 
 }
@@ -802,29 +874,32 @@ text-align:center;
 
 
 
-/* =========================
-   RIGHT DESCRIPTION
-========================= */
 
+
+
+/* =================
+文字
+================= */
 
 
 .about-content{
 
 
-    position:absolute;
+position:absolute;
 
 
-    right:120px;
+right:120px;
 
 
-    top:42%;
+top:35%;
 
 
-    width:560px;
+
+width:520px;
 
 
-    z-index:3;
 
+z-index:5;
 
 
 }
@@ -836,61 +911,54 @@ text-align:center;
 .about-content p{
 
 
-    font-size:28px;
+font-size:24px;
 
 
-    line-height:1.8;
-
-
-    letter-spacing:.5px;
-
-
-    color:rgba(255,255,255,.88);
+line-height:1.9;
 
 
 
-    opacity:0;
-
-
-    transform:translateY(40px);
+color:#333;
 
 
 
-    animation:
+opacity:0;
 
-    textReveal 1s ease forwards;
+
+
+transform:
+
+translateY(40px);
+
+
+
+animation:
+
+textReveal 1s forwards;
 
 
 
 }
 
 
-
-
-/* 第一段 */
 
 .about-content p:nth-child(1){
 
 
-    animation-delay:.6s;
+animation-delay:.8s;
 
 
 }
 
-
-
-
-/* 第二段延迟2秒 */
 
 
 .about-content p:nth-child(2){
 
 
-    margin-top:50px;
+margin-top:45px;
 
 
-    animation-delay:2.6s;
-
+animation-delay:2.8s;
 
 
 }
@@ -902,51 +970,32 @@ text-align:center;
 @keyframes textReveal{
 
 
-    from{
-
-
-        opacity:0;
-
-        transform:translateY(40px);
-
-
-    }
-
-
-
-    to{
-
-
-        opacity:1;
-
-        transform:translateY(0);
-
-
-    }
-
-
-
-}
-
-
-
-
-
-@keyframes showText{
-
-
 to{
+
 
 opacity:1;
 
-transform:translateY(0);
+
+transform:
+
+translateY(0);
+
 
 }
 
+
 }
 
 
 
+
+
+
+
+
+/* =================
+流动线
+================= */
 
 
 .flow-line{
@@ -955,7 +1004,13 @@ transform:translateY(0);
 position:absolute;
 
 
-width:700px;
+top:55%;
+
+
+right:0;
+
+
+width:600px;
 
 
 height:1px;
@@ -963,26 +1018,61 @@ height:1px;
 
 background:
 
+
 linear-gradient(
+
 90deg,
+
 transparent,
-white,
+
+rgba(50,100,255,.5),
+
 transparent
+
 );
 
-
-top:55%;
-
-
-left:40%;
 
 
 animation:
 
-lineMove 5s infinite;
+lineMove 6s infinite;
 
 
 }
+
+
+
+.line-two{
+
+
+top:25%;
+
+
+width:900px;
+
+
+animation-delay:2s;
+
+
+}
+
+
+
+.line-three{
+
+
+top:75%;
+
+
+width:500px;
+
+
+animation-delay:4s;
+
+
+}
+
+
 
 
 
@@ -992,27 +1082,43 @@ lineMove 5s infinite;
 
 0%{
 
-transform:translateX(-300px);
+
+transform:
+
+translateX(-300px);
+
 
 opacity:0;
 
+
 }
+
 
 
 50%{
 
-opacity:.8;
+
+opacity:1;
+
 
 }
+
+
 
 
 100%{
 
-transform:translateX(300px);
+
+transform:
+
+translateX(300px);
+
 
 opacity:0;
 
+
 }
+
 
 
 }
