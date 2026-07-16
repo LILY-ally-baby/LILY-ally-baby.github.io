@@ -384,15 +384,17 @@ z-index:3;
 
 position:absolute;
 
-width:4px;
+width:5px;
 
-height:4px;
+height:5px;
+
+bottom:-20px;
 
 background:white;
 
 border-radius:50%;
 
-opacity:.6;
+opacity:3;
 
 animation:
 
@@ -432,7 +434,7 @@ transform:
 
 translateY(-100vh);
 
-opacity:0;
+opacity:0.5;
 
 }
 
