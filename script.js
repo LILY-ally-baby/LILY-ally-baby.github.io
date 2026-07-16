@@ -1,61 +1,66 @@
-/* =================================
-
-LIYI PORTFOLIO JAVASCRIPT
-
-================================= */
-
+/* =====================================
+   LIYI PORTFOLIO JAVASCRIPT
+===================================== */
 
 
 document.addEventListener(
 "DOMContentLoaded",
-()=>{
+function(){
 
 
 
-/* =================================
-
+/* =====================================
 1. HERO PARTICLES
-
-首页光粒子动态增强
-
-================================= */
+首页光粒子效果
+===================================== */
 
 
-const particles =
+const particleContainer =
 document.querySelector(".particles");
 
 
-if(particles){
+
+if(particleContainer){
 
 
-for(let i=0;i<35;i++){
+for(let i=0;i<45;i++){
 
 
-let particle =
+const particle =
 document.createElement("span");
 
 
 particle.className="particle";
 
 
+
 particle.style.left =
 Math.random()*100+"%";
 
 
-particle.style.top =
-Math.random()*100+"%";
+
+particle.style.animationDuration =
+(
+8+
+Math.random()*12
+)
++
+"s";
+
 
 
 particle.style.animationDelay =
-Math.random()*10+"s";
+(
+Math.random()*10
+)
++
+"s";
 
 
-particle.style.animationDuration =
-(8+Math.random()*12)+"s";
 
-
-
-particles.appendChild(particle);
+particleContainer.appendChild(
+particle
+);
 
 
 
@@ -71,34 +76,171 @@ particles.appendChild(particle);
 
 
 
-/* =================================
 
-2. SCROLL FADE EFFECT
 
-页面进入渐显
+/* =====================================
+2. HERO MOUSE PARALLAX
+首页背景轻微移动
+===================================== */
 
-================================= */
+
+const heroBackground =
+document.querySelector(
+".hero-background"
+);
+
+
+
+if(heroBackground){
+
+
+
+window.addEventListener(
+"mousemove",
+(e)=>{
+
+
+let x =
+(e.clientX /
+window.innerWidth
+-
+0.5)
+*
+20;
+
+
+
+let y =
+(e.clientY /
+window.innerHeight
+-
+0.5)
+*
+20;
+
+
+
+heroBackground.style.transform =
+
+`
+scale(1.08)
+translate(${x}px,${y}px)
+`;
+
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================
+3. JOURNEY CARD HOVER ENHANCE
+MY JOURNEY悬浮效果
+===================================== */
+
+
+const journeyCards =
+document.querySelectorAll(
+".journey-image"
+);
+
+
+
+journeyCards.forEach(
+(card)=>{
+
+
+card.addEventListener(
+"mouseenter",
+()=>{
+
+
+card.style.boxShadow =
+"0 30px 60px rgba(0,0,0,.25)";
+
+
+
+});
+
+
+
+
+
+card.addEventListener(
+"mouseleave",
+()=>{
+
+
+card.style.boxShadow =
+"0 20px 40px rgba(0,0,0,.15)";
+
+
+});
+
+
+
+});
+
+
+
+
+
+
+
+
+
+/* =====================================
+4. SCROLL REVEAL
+滚动进入动画
+===================================== */
 
 
 const revealElements =
 document.querySelectorAll(
 
-".about,\
-.journey-item,\
-.photo-grid img,\
-.main-photo,\
-.story-text,\
-.contact-content"
+".journey-item,"
++
+".photo-feature,"
++
+".photo-grid img,"
++
+".story-description,"
++
+".contact-info"
 
 );
 
 
 
-revealElements.forEach(el=>{
+revealElements.forEach(
+(element)=>{
 
-el.classList.add("reveal");
+
+element.style.opacity="0";
+
+
+element.style.transform=
+"translateY(60px)";
+
+
+element.style.transition=
+"all 1s ease";
+
+
 
 });
+
 
 
 
@@ -110,40 +252,60 @@ new IntersectionObserver(
 (entries)=>{
 
 
-entries.forEach(entry=>{
+entries.forEach(
+(entry)=>{
 
 
 if(entry.isIntersecting){
 
 
-entry.target.classList.add(
-"active"
+
+entry.target.style.opacity="1";
+
+
+
+entry.target.style.transform=
+"translateY(0)";
+
+
+
+revealObserver.unobserve(
+entry.target
 );
+
 
 
 }
 
 
+
 });
+
 
 
 },
 
-
 {
 
-threshold:0.15
+threshold:0.2
 
 }
 
+
+
 );
 
 
 
 
-revealElements.forEach(el=>{
 
-revealObserver.observe(el);
+revealElements.forEach(
+(element)=>{
+
+
+revealObserver.observe(
+element
+);
 
 
 });
@@ -156,56 +318,10 @@ revealObserver.observe(el);
 
 
 
-/* =================================
-
-3. MY JOURNEY CARD EFFECT
-
-卡片进入动画
-
-================================= */
-
-
-const journeyCards =
-document.querySelectorAll(
-
-".journey-item"
-
-);
-
-
-
-journeyCards.forEach(
-(card,index)=>{
-
-
-card.style.transitionDelay =
-(index*0.15)+"s";
-
-
-});
-
-
-
-
-
-
-
-
-
-/* =================================
-
-4. STORYTELLING FAN ANIMATION
-
-七张图片依次展开
-
-================================= */
-
-
-const storySection =
-document.querySelector(
-".storytelling"
-);
-
+/* =====================================
+5. STORYTELLING FAN OPENING
+七张图片左到右展开
+===================================== */
 
 
 const storyFan =
@@ -215,10 +331,66 @@ document.querySelector(
 
 
 
-if(
-storySection &&
-storyFan
-){
+if(storyFan){
+
+
+
+const storyImages =
+storyFan.querySelectorAll(
+"img"
+);
+
+
+
+const fanPositions=[
+
+
+{
+x:-360,
+rotate:-35
+},
+
+
+{
+x:-240,
+rotate:-25
+},
+
+
+{
+x:-120,
+rotate:-15
+},
+
+
+{
+x:0,
+rotate:0
+},
+
+
+{
+x:120,
+rotate:15
+},
+
+
+{
+x:240,
+rotate:25
+},
+
+
+{
+x:360,
+rotate:35
+}
+
+
+
+];
+
+
 
 
 
@@ -228,7 +400,8 @@ new IntersectionObserver(
 (entries)=>{
 
 
-entries.forEach(entry=>{
+entries.forEach(
+(entry)=>{
 
 
 if(
@@ -236,69 +409,66 @@ entry.isIntersecting
 ){
 
 
-storyFan.classList.add(
-"show"
-);
+
+storyImages.forEach(
+(img,index)=>{
 
 
-
-const cards =
-storyFan.querySelectorAll(
-"img"
-);
+setTimeout(
+()=>{
 
 
-
-cards.forEach(
-(card,index)=>{
+img.style.opacity="1";
 
 
-setTimeout(()=>{
+img.style.transform=
 
-
-card.style.opacity=1;
-
-
-card.style.transform =
-getFanPosition(index);
+`
+translateX(${fanPositions[index].x}px)
+rotate(${fanPositions[index].rotate}deg)
+`;
 
 
 
 },
-
-index*300);
+index*250
+);
 
 
 
 });
+
 
 
 
 storyObserver.disconnect();
 
 
+
 }
 
 
-});
 
+});
 
 
 },
 
-
 {
+
 threshold:.3
+
 }
 
 
 
 );
+
 
 
 
 storyObserver.observe(
-storySection
+storyFan
 );
 
 
@@ -311,140 +481,13 @@ storySection
 
 
 
-function getFanPosition(index){
 
 
-const positions=[
 
 
-"rotate(-45deg) translateX(-300px)",
-
-"rotate(-30deg) translateX(-200px)",
-
-"rotate(-15deg) translateX(-100px)",
-
-"rotate(0deg) translateX(0)",
-
-"rotate(15deg) translateX(100px)",
-
-"rotate(30deg) translateX(200px)",
-
-"rotate(45deg) translateX(300px)"
-
-
-];
-
-
-
-return positions[index];
-
-
-}
-
-
-
-
-
-
-
-
-
-
-/* =================================
-
-5. IMAGE HOVER PARALLAX
-
-图片轻微移动
-
-================================= */
-
-
-const images =
-document.querySelectorAll(
-".photo-grid img"
-);
-
-
-
-images.forEach(img=>{
-
-
-img.addEventListener(
-"mousemove",
-(e)=>{
-
-
-const rect =
-img.getBoundingClientRect();
-
-
-
-const x =
-e.clientX-rect.left;
-
-
-
-const y =
-e.clientY-rect.top;
-
-
-
-const rotateX =
-(y-rect.height/2)/20;
-
-
-
-const rotateY =
-(x-rect.width/2)/20;
-
-
-
-img.style.transform =
-
-`
-scale(1.08)
-rotateX(${-rotateX}deg)
-rotateY(${rotateY}deg)
-`;
-
-
-
-});
-
-
-
-
-
-img.addEventListener(
-"mouseleave",
-()=>{
-
-
-img.style.transform =
-"scale(1)";
-
-
-});
-
-
-
-});
-
-
-
-
-
-
-
-
-
-/* =================================
-
-6. NAVBAR COLOR CHANGE
-
-滚动后导航变化
-
-================================= */
+/* =====================================
+6. NAVBAR SCROLL EFFECT
+===================================== */
 
 
 const navbar =
@@ -464,16 +507,13 @@ window.scrollY>80
 ){
 
 
-navbar.style.position=
-"fixed";
-
-
 navbar.style.background=
-"rgba(0,0,0,.8)";
+"rgba(0,0,0,.35)";
 
 
 navbar.style.backdropFilter=
 "blur(10px)";
+
 
 
 }
@@ -485,7 +525,13 @@ navbar.style.background=
 "transparent";
 
 
+navbar.style.backdropFilter=
+"none";
+
+
+
 }
+
 
 
 });
@@ -497,26 +543,23 @@ navbar.style.background=
 
 
 
-/* =================================
 
-7. SMOOTH BUTTON
-
-Learn More
-
-================================= */
+/* =====================================
+7. LEARN MORE BUTTON
+===================================== */
 
 
-const button =
+const learnButton =
 document.querySelector(
-".hero-content button"
+".learn-btn"
 );
 
 
 
-if(button){
+if(learnButton){
 
 
-button.addEventListener(
+learnButton.addEventListener(
 "click",
 ()=>{
 
@@ -524,11 +567,15 @@ button.addEventListener(
 document.querySelector(
 "#about"
 )
-.scrollIntoView({
+.scrollIntoView(
+
+{
 
 behavior:"smooth"
 
-});
+}
+
+);
 
 
 });
