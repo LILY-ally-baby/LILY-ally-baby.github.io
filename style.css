@@ -391,9 +391,9 @@ z-index:3;
 
 position:absolute;
 
-width:3px;
+width:5px;
 
-height:3px;
+height:5px;
 
 bottom:-20px;
 
@@ -429,7 +429,7 @@ opacity:0;
 
 40%{
 
-opacity:0.8;
+opacity:1;
 
 }
 
