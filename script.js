@@ -1,55 +1,63 @@
-const eye =
-document.getElementById("eye");
+const particles =
+document.getElementById("particles");
 
 
 
-function blink(){
+for(let i=0;i<100;i++){
 
 
-eye.src =
-"assets/eye-close.png";
+const particle =
+document.createElement("div");
 
 
 
-setTimeout(()=>{
+particle.className="particle";
 
 
-eye.src =
-"assets/eye-open.png";
+
+particle.style.left =
+Math.random()*100+"%";
 
 
-},350);
+
+particle.style.top =
+Math.random()*100+"%";
+
+
+
+let size =
+Math.random()*3+1;
+
+
+particle.style.width =
+size+"px";
+
+
+particle.style.height =
+size+"px";
+
+
+
+particle.style.animationDuration =
+(
+6+
+Math.random()*10
+
+)
++"s";
+
+
+
+particle.style.animationDelay =
+(
+Math.random()*8
+
+)
++"s";
+
+
+
+particles.appendChild(particle);
 
 
 }
-
-
-
-
-function randomBlink(){
-
-
-let time =
-Math.random()*3000+5000;
-
-
-// 5-8秒
-
-
-setTimeout(()=>{
-
-
-blink();
-
-
-randomBlink();
-
-
-},time);
-
-
-}
-
-
-
-randomBlink();
