@@ -1,11 +1,12 @@
 *{
 
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
 
 }
-
 
 
 html{
@@ -15,28 +16,27 @@ scroll-behavior:smooth;
 }
 
 
-
 body{
 
-width:100%;
-
 font-family:
+
 "Helvetica Neue",
 Arial,
 sans-serif;
 
-overflow-x:hidden;
-
 background:#050505;
 
 color:white;
+
+overflow-x:hidden;
 
 }
 
 
 
 
-/* ================= HERO ================= */
+
+/* ================= HOME ================= */
 
 
 .hero{
@@ -44,15 +44,14 @@ color:white;
 
 height:100vh;
 
-width:100%;
 
 position:relative;
+
 
 overflow:hidden;
 
 
 }
-
 
 
 
@@ -62,9 +61,7 @@ overflow:hidden;
 position:absolute;
 
 
-top:-5%;
-
-left:-5%;
+inset:-5%;
 
 
 width:110%;
@@ -77,7 +74,7 @@ background-image:
 
 linear-gradient(
 rgba(0,0,0,.35),
-rgba(0,0,0,.6)
+rgba(0,0,0,.65)
 ),
 
 url("./leopard-bg.jpg");
@@ -92,12 +89,11 @@ background-position:center;
 
 animation:
 
-breathing 18s ease-in-out infinite alternate;
+breathing 18s infinite alternate ease-in-out;
+
 
 
 }
-
-
 
 
 
@@ -117,12 +113,14 @@ transform:scale(1.08);
 
 }
 
-
 }
 
 
 
 
+
+
+/* 粒子 */
 
 
 #particles{
@@ -132,12 +130,83 @@ position:absolute;
 
 inset:0;
 
-z-index:2;
+z-index:3;
 
 pointer-events:none;
 
 
 }
+
+
+
+.particle{
+
+
+position:absolute;
+
+
+background:white;
+
+
+border-radius:50%;
+
+
+opacity:0;
+
+
+filter:blur(.5px);
+
+
+animation:
+
+particleMove linear infinite;
+
+
+
+}
+
+
+
+@keyframes particleMove{
+
+
+0%{
+
+
+transform:
+translateY(100vh);
+
+
+opacity:0;
+
+
+}
+
+
+20%{
+
+
+opacity:.8;
+
+
+}
+
+
+100%{
+
+
+transform:
+translateY(-20vh);
+
+
+opacity:0;
+
+
+}
+
+
+}
+
 
 
 
@@ -151,23 +220,26 @@ position:absolute;
 
 top:40px;
 
+
 left:50px;
+
 
 right:50px;
 
 
 display:flex;
 
+
 justify-content:space-between;
+
 
 align-items:center;
 
 
-z-index:5;
+z-index:10;
 
 
 }
-
 
 
 
@@ -176,14 +248,11 @@ z-index:5;
 
 font-size:30px;
 
-font-weight:700;
-
 letter-spacing:6px;
 
+font-weight:700;
 
 }
-
-
 
 
 
@@ -199,7 +268,6 @@ gap:50px;
 
 
 
-
 nav a{
 
 
@@ -207,27 +275,19 @@ color:white;
 
 text-decoration:none;
 
-font-size:16px;
-
-opacity:.85;
-
-
 }
 
 
 
-nav .active{
+.active{
 
 
-border-bottom:
-
-2px solid white;
-
+border-bottom:2px solid white;
 
 padding-bottom:8px;
 
-
 }
+
 
 
 
@@ -242,6 +302,7 @@ position:absolute;
 
 left:80px;
 
+
 top:38%;
 
 
@@ -252,16 +313,11 @@ z-index:5;
 
 
 
-
-
 .intro h1{
 
 
 font-size:72px;
 
-font-weight:600;
-
-letter-spacing:-2px;
 
 margin-bottom:25px;
 
@@ -270,17 +326,16 @@ margin-bottom:25px;
 
 
 
-
 .intro p{
 
 
 font-size:22px;
 
+
 line-height:1.6;
 
 
 }
-
 
 
 
@@ -303,11 +358,7 @@ border:1px solid white;
 color:white;
 
 
-font-size:16px;
-
-
 }
-
 
 
 
@@ -320,13 +371,11 @@ position:absolute;
 
 right:70px;
 
+
 bottom:40px;
 
 
 z-index:5;
-
-
-text-align:center;
 
 
 }
@@ -340,7 +389,6 @@ color:white;
 
 text-decoration:none;
 
-
 }
 
 
@@ -352,10 +400,10 @@ display:block;
 
 font-size:35px;
 
-margin-top:10px;
-
+text-align:center;
 
 }
+
 
 
 
@@ -367,23 +415,120 @@ margin-top:10px;
 /* ================= ABOUT ================= */
 
 
-
 .about{
 
 
-min-height:100vh;
+height:100vh;
 
 
 background:#050505;
 
 
-padding:120px 80px;
+padding:90px 80px;
 
 
 position:relative;
 
 
+overflow:hidden;
+
+
 }
+
+
+
+
+
+
+.about::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:800px;
+
+
+height:800px;
+
+
+border-radius:50%;
+
+
+border:1px solid rgba(100,140,255,.18);
+
+
+right:-300px;
+
+
+top:-300px;
+
+
+animation:
+
+rotateCircle 20s linear infinite;
+
+
+}
+
+
+
+.about::after{
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:500px;
+
+
+height:500px;
+
+
+left:-150px;
+
+
+bottom:-150px;
+
+
+background:
+
+radial-gradient(
+circle,
+rgba(50,80,255,.35),
+transparent 70%
+);
+
+
+filter:blur(50px);
+
+
+
+}
+
+
+
+
+
+
+@keyframes rotateCircle{
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
 
 
 
@@ -394,43 +539,35 @@ position:relative;
 
 display:flex;
 
-align-items:flex-start;
-
-
 gap:40px;
+
+position:relative;
+
+z-index:2;
 
 
 }
-
 
 
 
 .about-header span{
 
 
-font-size:18px;
+color:#777;
 
-opacity:.5;
+font-size:20px;
 
 
 }
 
 
 
-
 .about-header h2{
 
 
-font-size:80px;
+font-size:100px;
 
-
-line-height:.9;
-
-
-font-weight:600;
-
-
-letter-spacing:-3px;
+line-height:.85;
 
 
 }
@@ -444,7 +581,13 @@ letter-spacing:-3px;
 .about-content{
 
 
-margin-top:120px;
+position:relative;
+
+
+z-index:2;
+
+
+margin-top:100px;
 
 
 display:flex;
@@ -465,16 +608,13 @@ align-items:center;
 .about-name{
 
 
-font-size:120px;
+font-size:150px;
+
+
+letter-spacing:20px;
 
 
 font-weight:700;
-
-
-letter-spacing:10px;
-
-
-opacity:.9;
 
 
 }
@@ -482,11 +622,10 @@ opacity:.9;
 
 
 
-
 .about-text{
 
 
-width:420px;
+width:430px;
 
 
 font-size:22px;
@@ -499,53 +638,37 @@ line-height:1.8;
 
 
 
-.about-text p+p{
+.about-text p{
 
 
-margin-top:40px;
+opacity:0;
 
 
-}
-/* ================= NIGHT PARTICLES ================= */
-
-
-#particles{
-
-position:absolute;
-
-inset:0;
-
-z-index:3;
-
-pointer-events:none;
-
-overflow:hidden;
-
-}
-
-
-
-
-.particle{
-
-
-position:absolute;
-
-
-background:white;
-
-
-border-radius:50%;
-
-
-opacity:.7;
-
-
-filter:blur(.3px);
+transform:translateY(40px);
 
 
 animation:
-particleFloat linear infinite;
+
+showText 1s forwards;
+
+
+}
+
+
+
+.about-text p:nth-child(1){
+
+
+animation-delay:.5s;
+
+
+}
+
+
+.about-text p:nth-child(2){
+
+
+animation-delay:2.5s;
 
 
 }
@@ -553,52 +676,86 @@ particleFloat linear infinite;
 
 
 
-@keyframes particleFloat{
+
+@keyframes showText{
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+
+.flow-line{
+
+
+position:absolute;
+
+
+width:700px;
+
+
+height:1px;
+
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+white,
+transparent
+);
+
+
+top:55%;
+
+
+left:40%;
+
+
+animation:
+
+lineMove 5s infinite;
+
+
+}
+
+
+
+
+@keyframes lineMove{
 
 
 0%{
 
-
-transform:
-translateY(30vh);
-
+transform:translateX(-300px);
 
 opacity:0;
 
-
 }
-
-
-
-20%{
-
-
-opacity:.8;
-
-
-}
-
 
 
 50%{
 
-
-opacity:1;
-
+opacity:.8;
 
 }
 
 
-
 100%{
 
-
-transform:
-translateY(-120vh);
-
+transform:translateX(300px);
 
 opacity:0;
-
 
 }
 
