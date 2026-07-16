@@ -264,6 +264,9 @@ letter-spacing:6px;
 font-weight:700;
 color:white;
 
+position:relative;
+
+z-index:30;
 
 }
 
@@ -326,6 +329,7 @@ top:38%;
 
 
 z-index:20;
+
 color:white;
 
 }
