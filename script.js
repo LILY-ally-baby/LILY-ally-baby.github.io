@@ -1,98 +1,342 @@
-/* =========================
-        PARTICLES SYSTEM
-========================= */
+/* =================================
 
+LIYI PORTFOLIO JAVASCRIPT
 
-const particleContainer = document.getElementById("particles");
-
-
-
-const particleCount = 120;
+================================= */
 
 
 
-for(let i = 0; i < particleCount; i++){
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
 
 
 
-    const particle = document.createElement("div");
+/* =================================
+
+1. HERO PARTICLES
+
+首页光粒子动态增强
+
+================================= */
 
 
-    particle.className = "particle";
+const particles =
+document.querySelector(".particles");
 
 
-
-    // random position
-
-    particle.style.left =
-    Math.random() * 100 + "%";
+if(particles){
 
 
-
-    particle.style.bottom =
-    Math.random() * -20 + "%";
+for(let i=0;i<35;i++){
 
 
+let particle =
+document.createElement("span");
 
 
-    // random size
+particle.className="particle";
 
 
-    const size =
-    Math.random() * 5 + 2;
+particle.style.left =
+Math.random()*100+"%";
 
 
-
-    particle.style.width =
-    size + "px";
-
-
-    particle.style.height =
-    size + "px";
+particle.style.top =
+Math.random()*100+"%";
 
 
+particle.style.animationDelay =
+Math.random()*10+"s";
 
 
-
-    // random opacity
-
-
-    particle.style.opacity =
-    Math.random() * .7 + .2;
+particle.style.animationDuration =
+(8+Math.random()*12)+"s";
 
 
 
+particles.appendChild(particle);
 
 
 
-    // random speed
+}
 
 
-    const duration =
-    Math.random() * 15 + 8;
-
-
-
-    particle.style.animationDuration =
-    duration + "s";
+}
 
 
 
 
 
-    // random delay
-
-
-    particle.style.animationDelay =
-
-    Math.random() * 10 + "s";
 
 
 
+/* =================================
+
+2. SCROLL FADE EFFECT
+
+页面进入渐显
+
+================================= */
 
 
-    particleContainer.appendChild(particle);
+const revealElements =
+document.querySelectorAll(
 
+".about,\
+.journey-item,\
+.photo-grid img,\
+.main-photo,\
+.story-text,\
+.contact-content"
+
+);
+
+
+
+revealElements.forEach(el=>{
+
+el.classList.add("reveal");
+
+});
+
+
+
+
+
+const revealObserver =
+new IntersectionObserver(
+
+(entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(entry.isIntersecting){
+
+
+entry.target.classList.add(
+"active"
+);
+
+
+}
+
+
+});
+
+
+},
+
+
+{
+
+threshold:0.15
+
+}
+
+);
+
+
+
+
+revealElements.forEach(el=>{
+
+revealObserver.observe(el);
+
+
+});
+
+
+
+
+
+
+
+
+
+/* =================================
+
+3. MY JOURNEY CARD EFFECT
+
+卡片进入动画
+
+================================= */
+
+
+const journeyCards =
+document.querySelectorAll(
+
+".journey-item"
+
+);
+
+
+
+journeyCards.forEach(
+(card,index)=>{
+
+
+card.style.transitionDelay =
+(index*0.15)+"s";
+
+
+});
+
+
+
+
+
+
+
+
+
+/* =================================
+
+4. STORYTELLING FAN ANIMATION
+
+七张图片依次展开
+
+================================= */
+
+
+const storySection =
+document.querySelector(
+".storytelling"
+);
+
+
+
+const storyFan =
+document.querySelector(
+".story-fan"
+);
+
+
+
+if(
+storySection &&
+storyFan
+){
+
+
+
+const storyObserver =
+new IntersectionObserver(
+
+(entries)=>{
+
+
+entries.forEach(entry=>{
+
+
+if(
+entry.isIntersecting
+){
+
+
+storyFan.classList.add(
+"show"
+);
+
+
+
+const cards =
+storyFan.querySelectorAll(
+"img"
+);
+
+
+
+cards.forEach(
+(card,index)=>{
+
+
+setTimeout(()=>{
+
+
+card.style.opacity=1;
+
+
+card.style.transform =
+getFanPosition(index);
+
+
+
+},
+
+index*300);
+
+
+
+});
+
+
+
+storyObserver.disconnect();
+
+
+}
+
+
+});
+
+
+
+},
+
+
+{
+threshold:.3
+}
+
+
+
+);
+
+
+
+storyObserver.observe(
+storySection
+);
+
+
+
+}
+
+
+
+
+
+
+
+function getFanPosition(index){
+
+
+const positions=[
+
+
+"rotate(-45deg) translateX(-300px)",
+
+"rotate(-30deg) translateX(-200px)",
+
+"rotate(-15deg) translateX(-100px)",
+
+"rotate(0deg) translateX(0)",
+
+"rotate(15deg) translateX(100px)",
+
+"rotate(30deg) translateX(200px)",
+
+"rotate(45deg) translateX(300px)"
+
+
+];
+
+
+
+return positions[index];
 
 
 }
@@ -105,21 +349,143 @@ for(let i = 0; i < particleCount; i++){
 
 
 
-/* =========================
-        PAGE LOAD EFFECT
-========================= */
+
+/* =================================
+
+5. IMAGE HOVER PARALLAX
+
+图片轻微移动
+
+================================= */
+
+
+const images =
+document.querySelectorAll(
+".photo-grid img"
+);
+
+
+
+images.forEach(img=>{
+
+
+img.addEventListener(
+"mousemove",
+(e)=>{
+
+
+const rect =
+img.getBoundingClientRect();
+
+
+
+const x =
+e.clientX-rect.left;
+
+
+
+const y =
+e.clientY-rect.top;
+
+
+
+const rotateX =
+(y-rect.height/2)/20;
+
+
+
+const rotateY =
+(x-rect.width/2)/20;
+
+
+
+img.style.transform =
+
+`
+scale(1.08)
+rotateX(${-rotateX}deg)
+rotateY(${rotateY}deg)
+`;
+
+
+
+});
+
+
+
+
+
+img.addEventListener(
+"mouseleave",
+()=>{
+
+
+img.style.transform =
+"scale(1)";
+
+
+});
+
+
+
+});
+
+
+
+
+
+
+
+
+
+/* =================================
+
+6. NAVBAR COLOR CHANGE
+
+滚动后导航变化
+
+================================= */
+
+
+const navbar =
+document.querySelector(
+".navbar"
+);
 
 
 
 window.addEventListener(
-"load",
+"scroll",
 ()=>{
 
 
-    document.body.classList.add(
-        "loaded"
-    );
+if(
+window.scrollY>80
+){
 
+
+navbar.style.position=
+"fixed";
+
+
+navbar.style.background=
+"rgba(0,0,0,.8)";
+
+
+navbar.style.backdropFilter=
+"blur(10px)";
+
+
+}
+
+else{
+
+
+navbar.style.background=
+"transparent";
+
+
+}
 
 
 });
@@ -131,106 +497,48 @@ window.addEventListener(
 
 
 
+/* =================================
 
-/* =========================
-        KEEP HERO ELEMENTS SAFE
-========================= */
+7. SMOOTH BUTTON
 
+Learn More
 
-
-const heroLogo =
-document.querySelector(".logo");
+================================= */
 
 
-
-const heroText =
-document.querySelector(".hero-content");
-
+const button =
+document.querySelector(
+".hero-content button"
+);
 
 
 
-if(heroLogo){
+if(button){
 
 
-    heroLogo.style.zIndex="50";
+button.addEventListener(
+"click",
+()=>{
 
 
-}
+document.querySelector(
+"#about"
+)
+.scrollIntoView({
 
-
-
-if(heroText){
-
-
-    heroText.style.zIndex="50";
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-        TREE RESTART WHEN VIEW
-========================= */
-
-
-const tree =
-document.querySelector(".tree-image");
-
-
-
-const observer =
-new IntersectionObserver(
-(entries)=>{
-
-
-    entries.forEach(
-    entry=>{
-
-
-        if(entry.isIntersecting){
-
-
-            tree.style.animation =
-            "none";
-
-
-
-            setTimeout(()=>{
-
-
-                tree.style.animation =
-                "treeGrow 3s ease forwards";
-
-
-            },100);
-
-
-
-        }
-
-
-
-    });
-
-
-},
-{
-
-threshold:.4
+behavior:"smooth"
 
 });
 
 
+});
 
-if(tree){
-
-    observer.observe(tree);
 
 }
+
+
+
+
+
+
+});
