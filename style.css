@@ -1134,3 +1134,70 @@ opacity:0;
 
 
 }
+.tree-grow{
+
+position:absolute;
+
+left:0;
+
+bottom:0;
+
+width:100%;
+
+height:100%;
+
+
+background:url("./tree.png");
+
+
+background-size:cover;
+
+
+background-position:center bottom;
+
+
+z-index:1;
+
+
+clip-path:polygon(
+0 100%,
+100% 100%,
+100% 100%,
+0 100%
+);
+
+
+animation:treeGrow 4s ease forwards;
+
+}
+
+
+
+@keyframes treeGrow{
+
+
+0%{
+
+clip-path:polygon(
+0 100%,
+100% 100%,
+100% 100%,
+0 100%
+);
+
+}
+
+
+
+100%{
+
+clip-path:polygon(
+0 0,
+100% 0,
+100% 100%,
+0 100%
+);
+
+}
+
+}
