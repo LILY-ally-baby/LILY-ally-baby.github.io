@@ -1,43 +1,40 @@
-const particles = document.getElementById("particles");
+const container =
+document.getElementById("particles");
 
 
-const particleCount = 80;
+for(let i=0;i<120;i++){
 
 
-for(let i = 0; i < particleCount; i++){
+let p=document.createElement("div");
 
 
-    const p = document.createElement("div");
+p.className="particle";
 
 
-    p.className = "particle";
+let size=Math.random()*4+1;
 
 
-    p.style.left = Math.random() * 100 + "%";
+p.style.width=size+"px";
+
+p.style.height=size+"px";
 
 
-    p.style.top = Math.random() * 100 + "%";
+p.style.left=Math.random()*100+"%";
 
 
-    const size = Math.random() * 3 + 1;
+p.style.top=Math.random()*100+"%";
 
 
-    p.style.width = size + "px";
-    p.style.height = size + "px";
+p.style.animationDuration=
+(8+Math.random()*15)+"s";
 
 
-
-    p.style.animationDuration =
-    (8 + Math.random()*15) + "s";
-
-
-
-    p.style.animationDelay =
-    (-Math.random()*20) + "s";
+p.style.animationDelay=
+(-Math.random()*20)+"s";
 
 
 
-    particles.appendChild(p);
+container.appendChild(p);
 
 
 }
