@@ -1022,22 +1022,79 @@ align-items:center;
 
 position:absolute;
 
-width:220px;
+width:180px;
 
-height:360px;
+height:550px;
 
 object-fit:cover;
 
-opacity:0;
+
+/* 梯形裁切 */
+clip-path:polygon(
+20% 0,
+100% 0,
+80% 100%,
+0 100%
+);
+
+
+/* 圆润边缘 */
+border-radius:20px;
+
+
+/* 默认显示 */
+opacity:1;
+
 
 transition:1s;
 
-box-shadow:
 
-0 20px 40px rgba(0,0,0,.2);
+/* 杂志阴影 */
+box-shadow:
+0 25px 50px rgba(0,0,0,.18);
 
 }
 
+.story-fan img:nth-child(1){
+    transform:rotate(-28deg) translateY(40px);
+    left:5%;
+}
+
+
+.story-fan img:nth-child(2){
+    transform:rotate(-20deg) translateY(20px);
+    left:18%;
+}
+
+
+.story-fan img:nth-child(3){
+    transform:rotate(-10deg);
+    left:30%;
+}
+
+
+.story-fan img:nth-child(4){
+    transform:rotate(0deg) translateY(-20px);
+    left:42%;
+}
+
+
+.story-fan img:nth-child(5){
+    transform:rotate(10deg);
+    left:54%;
+}
+
+
+.story-fan img:nth-child(6){
+    transform:rotate(20deg) translateY(20px);
+    left:66%;
+}
+
+
+.story-fan img:nth-child(7){
+    transform:rotate(28deg) translateY(40px);
+    left:78%;
+}
 
 
 
