@@ -651,30 +651,41 @@ font-size:13px;
 
 position:relative;
 
+height:1100px;
+
+overflow:hidden;
+
 }
 
-
-
-
-.timeline::before{
-
-content:"";
+.journey-path{
 
 position:absolute;
 
-left:50%;
-
 top:0;
+
+left:0;
+
+width:100%;
 
 height:100%;
 
-width:1px;
-
-background:#111;
+z-index:0;
 
 }
 
 
+
+.journey-path path{
+
+fill:none;
+
+stroke:#111;
+
+stroke-width:1.5px;
+
+stroke-linecap:round;
+
+}
 
 
 .journey-item{
