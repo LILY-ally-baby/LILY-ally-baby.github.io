@@ -2,7 +2,7 @@ const container =
 document.getElementById("particles");
 
 
-for(let i=0;i<120;i++){
+for(let i=0;i<160;i++){
 
 
 let p=document.createElement("div");
