@@ -497,37 +497,35 @@ ABOUT
 
 
 .about{
-
-min-height:100vh;
-
-display:grid;
-
-grid-template-columns:
-
-1fr 1fr 1fr;
-
-align-items:center;
-
+    position:relative;
+    min-height:100vh;
+    background:#fff;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 
 
 .about-title h2{
-
-font-size:80px;
+font-size:90px;
 
 line-height:.85;
+
+font-family:your-font;
 
 }
 
 .about-title{
 
-position:absolute;
+  position:absolute;
 
-left:80px;
+    left:8%;
 
-top:120px;
+    top:18%;
 
+    z-index:2;
 }
 
 .name{
@@ -557,12 +555,18 @@ height:650px;
 
 
 
-.about-tree{
+.tree-image{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
 
-height:100%;
+    width:650px;
+    height:900px;
 
-object-fit:contain;
-mix-blend-mode:multiply;
+    object-fit:contain;
+
+    z-index:1;
 }
 
 
