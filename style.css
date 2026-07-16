@@ -8,7 +8,15 @@ box-sizing:border-box;
 
 
 
-html,body{
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+
+body{
 
 width:100%;
 
@@ -19,11 +27,16 @@ sans-serif;
 
 overflow-x:hidden;
 
-overflow-y:auto;
+background:#050505;
+
+color:white;
+
 }
 
 
 
+
+/* ================= HERO ================= */
 
 
 .hero{
@@ -37,20 +50,17 @@ position:relative;
 
 overflow:hidden;
 
-color:white;
-
 
 }
 
 
 
 
-/* 背景图片 */
-
 .background{
 
 
 position:absolute;
+
 
 top:-5%;
 
@@ -62,11 +72,12 @@ width:110%;
 height:110%;
 
 
+
 background-image:
 
 linear-gradient(
 rgba(0,0,0,.35),
-rgba(0,0,0,.55)
+rgba(0,0,0,.6)
 ),
 
 url("./leopard-bg.jpg");
@@ -74,7 +85,6 @@ url("./leopard-bg.jpg");
 
 
 background-size:cover;
-
 
 background-position:center;
 
@@ -90,20 +100,18 @@ breathing 18s ease-in-out infinite alternate;
 
 
 
-/* 呼吸缩放 */
-
 
 @keyframes breathing{
 
 
-0%{
+from{
 
 transform:scale(1);
 
 }
 
 
-100%{
+to{
 
 transform:scale(1.08);
 
@@ -115,8 +123,6 @@ transform:scale(1.08);
 
 
 
-
-/* 粒子容器 */
 
 
 #particles{
@@ -132,86 +138,6 @@ pointer-events:none;
 
 
 }
-
-
-
-
-
-.particle{
-
-
-position:absolute;
-
-
-width:3px;
-
-height:3px;
-
-
-background:white;
-
-
-border-radius:50%;
-
-
-opacity:0;
-
-
-filter:blur(.5px);
-
-
-
-animation:
-
-particleMove linear infinite;
-
-
-}
-
-
-
-
-
-@keyframes particleMove{
-
-
-0%{
-
-
-transform:
-
-translateY(20vh);
-
-opacity:0;
-
-
-}
-
-
-20%{
-
-opacity:.8;
-
-}
-
-
-100%{
-
-
-transform:
-
-translateY(-120vh);
-
-
-opacity:0;
-
-
-}
-
-
-
-}
-
 
 
 
@@ -234,7 +160,6 @@ display:flex;
 
 justify-content:space-between;
 
-
 align-items:center;
 
 
@@ -246,20 +171,18 @@ z-index:5;
 
 
 
-
 .logo{
 
 
-font-size:28px;
-
+font-size:30px;
 
 font-weight:700;
 
-
-letter-spacing:5px;
+letter-spacing:6px;
 
 
 }
+
 
 
 
@@ -269,11 +192,11 @@ nav{
 
 display:flex;
 
-
 gap:50px;
 
 
 }
+
 
 
 
@@ -282,12 +205,9 @@ nav a{
 
 color:white;
 
-
 text-decoration:none;
 
-
 font-size:16px;
-
 
 opacity:.85;
 
@@ -313,6 +233,7 @@ padding-bottom:8px;
 
 
 
+
 .intro{
 
 
@@ -320,7 +241,6 @@ position:absolute;
 
 
 left:80px;
-
 
 top:38%;
 
@@ -339,18 +259,14 @@ z-index:5;
 
 font-size:72px;
 
-
 font-weight:600;
 
+letter-spacing:-2px;
 
 margin-bottom:25px;
 
 
-letter-spacing:-2px;
-
-
 }
-
 
 
 
@@ -360,11 +276,11 @@ letter-spacing:-2px;
 
 font-size:22px;
 
-
 line-height:1.6;
 
 
 }
+
 
 
 
@@ -375,28 +291,19 @@ button{
 margin-top:35px;
 
 
-padding:
-
-15px 35px;
+padding:15px 35px;
 
 
-background:
-
-transparent;
+background:transparent;
 
 
-border:
-
-1px solid white;
+border:1px solid white;
 
 
 color:white;
 
 
 font-size:16px;
-
-
-cursor:pointer;
 
 
 }
@@ -413,8 +320,7 @@ position:absolute;
 
 right:70px;
 
-
-bottom:60px;
+bottom:40px;
 
 
 z-index:5;
@@ -423,7 +329,16 @@ z-index:5;
 text-align:center;
 
 
-font-size:15px;
+}
+
+
+
+.scroll a{
+
+
+color:white;
+
+text-decoration:none;
 
 
 }
@@ -435,11 +350,159 @@ font-size:15px;
 
 display:block;
 
-
-font-size:32px;
-
+font-size:35px;
 
 margin-top:10px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ================= ABOUT ================= */
+
+
+
+.about{
+
+
+min-height:100vh;
+
+
+background:#050505;
+
+
+padding:120px 80px;
+
+
+position:relative;
+
+
+}
+
+
+
+
+
+.about-header{
+
+
+display:flex;
+
+align-items:flex-start;
+
+
+gap:40px;
+
+
+}
+
+
+
+
+.about-header span{
+
+
+font-size:18px;
+
+opacity:.5;
+
+
+}
+
+
+
+
+.about-header h2{
+
+
+font-size:80px;
+
+
+line-height:.9;
+
+
+font-weight:600;
+
+
+letter-spacing:-3px;
+
+
+}
+
+
+
+
+
+
+
+.about-content{
+
+
+margin-top:120px;
+
+
+display:flex;
+
+
+justify-content:space-between;
+
+
+align-items:center;
+
+
+}
+
+
+
+
+
+.about-name{
+
+
+font-size:120px;
+
+
+font-weight:700;
+
+
+letter-spacing:10px;
+
+
+opacity:.9;
+
+
+}
+
+
+
+
+
+.about-text{
+
+
+width:420px;
+
+
+font-size:22px;
+
+
+line-height:1.8;
+
+
+}
+
+
+
+.about-text p+p{
+
+
+margin-top:40px;
 
 
 }
