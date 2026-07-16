@@ -497,103 +497,280 @@ ABOUT
 
 
 .about{
-    position:relative;
-    min-height:100vh;
-    background:#fff;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+
+position:relative;
+
+height:100vh;
+
+min-height:900px;
+
+background:#fafafa;
+
+overflow:hidden;
+
+padding:60px 6%;
+
+font-family:Arial,sans-serif;
+
 }
 
 
 
-.about-title h2{
-font-size:90px;
+
+
+/* 编号 */
+
+
+.about-number{
+
+position:absolute;
+
+top:80px;
+
+left:6%;
+
+font-size:18px;
+
+color:#536aa5;
+
+}
+
+
+
+
+
+/* 左侧 */
+
+
+.about-left{
+
+position:absolute;
+
+left:6%;
+
+top:170px;
+
+z-index:2;
+
+}
+
+
+
+.about-left h1{
+
+font-size:120px;
 
 line-height:.85;
 
-font-family:your-font;
+letter-spacing:-5px;
 
-}
+font-weight:700;
 
-.about-title{
+margin:0;
 
-  position:absolute;
-
-    left:8%;
-
-    top:18%;
-
-    z-index:2;
-}
-
-.name{
-
-margin-top:60px;
-
-font-size:60px;
-
-letter-spacing:20px;
-
-color:#16244a;
+color:#111;
 
 }
 
 
 
 
-.tree-container{
 
-display:flex;
+.about-line{
 
-justify-content:center;
+width:120px;
 
-height:650px;
+height:3px;
+
+background:#526aa5;
+
+margin:70px 0;
 
 }
 
 
 
-.tree-image{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
 
-    width:650px;
-    height:900px;
+.about-left h2{
 
-    object-fit:contain;
+font-size:90px;
 
-    z-index:1;
+font-weight:500;
+
+letter-spacing:45px;
+
+margin:0;
+
+color:#26375d;
+
 }
 
 
 
-.about-text{
 
-font-size:13px;
+
+.tags{
+
+margin-top:35px;
+
+font-size:15px;
+
+letter-spacing:8px;
+
+color:#536aa5;
+
+}
+
+
+
+
+
+/* 树 */
+
+
+.about-tree{
+
+position:absolute;
+
+left:34%;
+
+top:-5%;
+
+width:45%;
+
+height:110%;
+
+}
+
+
+
+.about-tree img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+filter:
+grayscale(100%)
+contrast(130%);
+
+mix-blend-mode:multiply;
+
+}
+
+
+
+
+
+/* 右侧 */
+
+.about-content{
+
+position:absolute;
+
+right:8%;
+
+top:240px;
+
+width:350px;
+
+border-left:1px solid #ddd;
+
+padding-left:45px;
+
+}
+
+
+
+
+
+.about-item{
+
+position:relative;
+
+padding-bottom:45px;
+
+margin-bottom:35px;
+
+border-bottom:1px solid #eee;
+
+}
+
+
+
+.about-item:last-child{
+
+border:none;
+
+}
+
+
+
+
+.node{
+
+position:absolute;
+
+left:-52px;
+
+top:5px;
+
+width:12px;
+
+height:12px;
+
+border-radius:50%;
+
+background:#a9b5db;
+
+}
+
+
+
+
+.about-item h3{
+
+font-size:22px;
+
+margin:0 0 20px;
+
+}
+
+
+
+
+.about-item p{
+
+font-size:18px;
 
 line-height:2;
 
-}
-
-
-
-.about-text div{
-
-margin-bottom:45px;
+color:#222;
 
 }
 
 
 
-.about-text h3{
 
-font-size:16px;
 
-margin-bottom:15px;
+/* 地点 */
+
+
+.location{
+
+position:absolute;
+
+right:7%;
+
+bottom:45px;
+
+font-size:14px;
+
+letter-spacing:6px;
+
+color:#536aa5;
 
 }
 
