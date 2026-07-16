@@ -1022,9 +1022,9 @@ align-items:center;
 
 position:absolute;
 
-width:180px;
+width:230px;
 
-height:550px;
+height:380px;
 
 object-fit:cover;
 
@@ -1052,50 +1052,56 @@ transition:1s;
 /* 杂志阴影 */
 box-shadow:
 0 25px 50px rgba(0,0,0,.18);
-
+margin-left:-80px;
 }
 
 .story-fan img:nth-child(1){
-    transform:rotate(-25deg) translateY(35px);
-    left:18%;
+    transform:rotate(-28deg) translateY(50px);
+    left:24%;
+    z-index:1;
 }
 
 
 .story-fan img:nth-child(2){
-    transform:rotate(-15deg) translateY(15px);
-    left:28%;
+    transform:rotate(-20deg) translateY(30px);
+    left:30%;
+    z-index:2;
 }
 
 
 .story-fan img:nth-child(3){
-    transform:rotate(-8deg);
-    left:38%;
+    transform:rotate(-10deg) translateY(10px);
+    left:36%;
+    z-index:3;
 }
 
 
 .story-fan img:nth-child(4){
     transform:rotate(0deg) translateY(-20px);
-    left:48%;
+    left:42%;
+    z-index:4;
 }
 
 
 .story-fan img:nth-child(5){
-    transform:rotate(8deg);
-    left:58%;
+    transform:rotate(10deg) translateY(10px);
+    left:48%;
+    z-index:3;
 }
 
 
 .story-fan img:nth-child(6){
-    transform:rotate(15deg) translateY(15px);
-    left:68%;
+    transform:rotate(20deg) translateY(30px);
+    left:54%;
+    z-index:2;
 }
 
 
 .story-fan img:nth-child(7){
-    transform:rotate(25deg) translateY(35px);
-    left:78%;
+    transform:rotate(28deg) translateY(50px);
+    left:60%;
+    z-index:1;
 }
-
 
 .story-description{
 
