@@ -412,106 +412,170 @@ text-align:center;
 
 
 
-/* ================= ABOUT ================= */
+/* =========================
+   ABOUT SECTION
+========================= */
 
 
 .about{
 
+    height:100vh;
+    width:100%;
 
-height:100vh;
+    background:
+    linear-gradient(
+        120deg,
+        #090b14,
+        #11182b,
+        #090b14
+    );
 
+    color:white;
 
-background:#050505;
+    position:relative;
 
-
-padding:90px 80px;
-
-
-position:relative;
-
-
-overflow:hidden;
-
+    overflow:hidden;
 
 }
 
 
 
 
+/* =========================
+   LEFT BOTTOM COLOR BLOCK
+========================= */
 
 
 .about::before{
 
 
-content:"";
+    content:"";
 
 
-position:absolute;
+    position:absolute;
 
 
-width:800px;
+    width:900px;
+
+    height:900px;
 
 
-height:800px;
+    left:-260px;
+
+    bottom:-350px;
 
 
-border-radius:50%;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(78,108,255,.55),
+
+        rgba(60,70,170,.28),
+
+        transparent 70%
+
+    );
 
 
-border:1px solid rgba(100,140,255,.18);
+
+    filter:blur(35px);
 
 
-right:-300px;
 
+    animation:
 
-top:-300px;
+    glowMove 10s ease-in-out infinite alternate;
 
-
-animation:
-
-rotateCircle 20s linear infinite;
 
 
 }
+
+
+
+@keyframes glowMove{
+
+
+    from{
+
+        transform:translate(0,0);
+
+    }
+
+
+    to{
+
+        transform:translate(80px,-60px);
+
+    }
+
+
+}
+
+
+
+
+
+/* =========================
+   BIG FLOWING CIRCLE
+========================= */
 
 
 
 .about::after{
 
 
-content:"";
+    content:"";
 
 
-position:absolute;
+    position:absolute;
 
 
-width:500px;
+    width:1000px;
+
+    height:1000px;
 
 
-height:500px;
+
+    right:-400px;
+
+    top:-350px;
 
 
-left:-150px;
+
+    border-radius:50%;
 
 
-bottom:-150px;
+
+    border:
+
+    1px solid rgba(130,170,255,.25);
 
 
-background:
 
-radial-gradient(
-circle,
-rgba(50,80,255,.35),
-transparent 70%
-);
+    box-shadow:
 
 
-filter:blur(50px);
+    0 0 0 100px rgba(120,160,255,.05),
+
+
+    0 0 0 220px rgba(120,160,255,.035),
+
+
+    0 0 0 350px rgba(120,160,255,.02);
+
+
+
+    animation:
+
+    rotateCircle 30s linear infinite;
 
 
 
 }
-
 
 
 
@@ -520,101 +584,216 @@ filter:blur(50px);
 @keyframes rotateCircle{
 
 
-to{
+    from{
 
-transform:rotate(360deg);
+        transform:rotate(0deg);
+
+    }
+
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
 
 }
 
+
+
+
+
+/* =========================
+   EXTRA FLOW LINES
+========================= */
+
+
+
+.about .line{
+
+
+    position:absolute;
+
+
+    border-radius:50%;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.12);
+
+
+
+    animation:
+
+    lineFloat 14s ease-in-out infinite alternate;
+
+
+
 }
 
 
 
 
+.about .line.one{
+
+
+    width:550px;
+
+    height:550px;
+
+
+    right:120px;
+
+    bottom:-250px;
+
+
+}
+
+
+
+.about .line.two{
+
+
+    width:350px;
+
+    height:350px;
+
+
+    left:45%;
+
+    top:15%;
+
+
+    animation-delay:3s;
+
+
+}
+
+
+
+
+
+@keyframes lineFloat{
+
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+
+    to{
+
+        transform:translateY(-80px);
+
+    }
+
+
+}
+
+
+
+
+
+
+/* =========================
+   TITLE
+========================= */
 
 
 
 .about-header{
 
 
-display:flex;
+    position:absolute;
 
-gap:40px;
 
-position:relative;
+    top:45px;
 
-z-index:2;
+
+    left:80px;
+
+
+    z-index:3;
+
+
+}
+
+
+
+.section-number{
+
+
+    font-size:18px;
+
+
+    color:rgba(255,255,255,.45);
 
 
 }
 
-
-
-.about-header span{
-
-
-color:#777;
-
-font-size:20px;
-
-
-}
 
 
 
 .about-header h2{
 
 
-font-size:100px;
-
-line-height:.85;
+    margin-top:10px;
 
 
-}
+    font-size:92px;
 
 
+    line-height:.9;
 
 
+    font-weight:700;
 
 
-
-.about-content{
-
-
-position:relative;
-
-
-z-index:2;
-
-
-margin-top:100px;
-
-
-display:flex;
-
-
-justify-content:space-between;
-
-
-align-items:center;
+    letter-spacing:-4px;
 
 
 }
 
 
+
+
+
+/* =========================
+   LIYI BRAND NAME
+========================= */
 
 
 
 .about-name{
 
 
-font-size:150px;
+    position:absolute;
 
 
-letter-spacing:20px;
+    left:70px;
 
 
-font-weight:700;
+    bottom:150px;
+
+
+    z-index:3;
+
+
+    font-size:105px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:22px;
+
+
+    color:rgba(255,255,255,.88);
+
 
 
 }
@@ -622,53 +801,129 @@ font-weight:700;
 
 
 
-.about-text{
+
+/* =========================
+   RIGHT DESCRIPTION
+========================= */
 
 
-width:430px;
+
+.about-content{
 
 
-font-size:22px;
+    position:absolute;
 
 
-line-height:1.8;
+    right:120px;
+
+
+    top:42%;
+
+
+    width:560px;
+
+
+    z-index:3;
+
 
 
 }
 
 
 
-.about-text p{
 
 
-opacity:0;
+.about-content p{
 
 
-transform:translateY(40px);
+    font-size:28px;
 
 
-animation:
+    line-height:1.8;
 
-showText 1s forwards;
+
+    letter-spacing:.5px;
+
+
+    color:rgba(255,255,255,.88);
+
+
+
+    opacity:0;
+
+
+    transform:translateY(40px);
+
+
+
+    animation:
+
+    textReveal 1s ease forwards;
+
 
 
 }
 
 
 
-.about-text p:nth-child(1){
+
+/* 第一段 */
+
+.about-content p:nth-child(1){
 
 
-animation-delay:.5s;
+    animation-delay:.6s;
 
 
 }
 
 
-.about-text p:nth-child(2){
 
 
-animation-delay:2.5s;
+/* 第二段延迟2秒 */
+
+
+.about-content p:nth-child(2){
+
+
+    margin-top:50px;
+
+
+    animation-delay:2.6s;
+
+
+
+}
+
+
+
+
+
+@keyframes textReveal{
+
+
+    from{
+
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+        transform:translateY(0);
+
+
+    }
+
 
 
 }
