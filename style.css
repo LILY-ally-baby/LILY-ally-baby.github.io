@@ -675,13 +675,13 @@ color:#536aa5;
 
 position:absolute;
 
-left:34%;
+left:35%;
 
 top:-5%;
 
-width:45%;
+width:100%;
 
-height:110%;
+height:100%;
 z-index:1;
 }
 
@@ -695,7 +695,7 @@ z-index:1;
     left: -120px;
 
     /* 降低透明度 */
-    opacity:0.45;
+    opacity:0.75;
 
     /* 边缘柔化 */
     mask-image: linear-gradient(
