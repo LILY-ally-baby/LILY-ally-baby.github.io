@@ -2398,3 +2398,10 @@ display:none;
 
 
 }
+.photo::after{
+
+    content:none !important;
+
+    display:none !important;
+
+}
