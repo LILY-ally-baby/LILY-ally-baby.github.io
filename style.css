@@ -402,7 +402,7 @@ background:white;
 
 border-radius:50%;
 
-opacity:0.45;
+opacity:0.35;
 
 /* 发光效果 */
 box-shadow:
@@ -1123,61 +1123,20 @@ MY JOURNEY
         Journey Section
 ========================= */
 
-
-/* =========================
-        JOURNEY SECTION
-========================= */
-
 .journey{
 
 background:#fafafa;
 
-padding:40px 6%;
+padding:80px 6%;
 
 overflow:hidden;
 
 }
 
 
-
-/* =========================
-        顶部
-========================= */
-
-
-.journey-top{
-
-display:flex;
-
-align-items:center;
-
-gap:30px;
-
-font-size:12px;
-
-letter-spacing:4px;
-
-}
-
-
-
-.top-line{
-
-height:1px;
-
-background:#222;
-
-flex:1;
-
-}
-
-
-
-
-
-/* =========================
-        标题
-========================= */
+/* =====================
+      标题
+===================== */
 
 
 .journey-title{
@@ -1188,12 +1147,9 @@ justify-content:space-between;
 
 align-items:flex-start;
 
-margin-top:50px;
-
-margin-bottom:100px;
+margin-bottom:120px;
 
 }
-
 
 
 .journey-title h1{
@@ -1202,14 +1158,13 @@ font-family:serif;
 
 font-size:95px;
 
-line-height:.85;
-
 font-weight:400;
+
+line-height:.85;
 
 letter-spacing:-3px;
 
 }
-
 
 
 .journey-title p{
@@ -1220,17 +1175,15 @@ letter-spacing:5px;
 
 line-height:2;
 
-margin-top:50px;
+width:260px;
 
 }
 
 
 
-
-
-/* =========================
-        时间轴
-========================= */
+/* =====================
+      时间轴
+===================== */
 
 
 .timeline{
@@ -1238,10 +1191,6 @@ margin-top:50px;
 position:relative;
 
 }
-
-
-
-/* 中间线 */
 
 
 .journey-line{
@@ -1258,36 +1207,30 @@ width:1px;
 
 background:#222;
 
-z-index:1;
-
 }
 
 
 
-
-
-/* =========================
-        每一个经历
-========================= */
+/* =====================
+      每一个经历
+===================== */
 
 
 .journey-item{
 
-
 position:relative;
 
+display:grid;
 
-display:flex;
+grid-template-columns:
+
+1fr 80px 1fr;
 
 
 align-items:center;
 
 
-justify-content:space-between;
-
-
 min-height:420px;
-
 
 margin-bottom:120px;
 
@@ -1296,11 +1239,42 @@ margin-bottom:120px;
 
 
 
+/* =====================
+      时间点
+===================== */
 
 
-/* =========================
+.journey-dot{
+
+position:absolute;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+
+width:12px;
+
+height:12px;
+
+background:#111;
+
+border-radius:50%;
+
+
+z-index:5;
+
+}
+
+
+
+
+
+/* =====================
         图片卡片
-========================= */
+===================== */
 
 
 .journey-card{
@@ -1309,7 +1283,7 @@ margin-bottom:120px;
 overflow:hidden;
 
 
-border-radius:18px;
+border-radius:0;
 
 
 box-shadow:
@@ -1317,26 +1291,13 @@ box-shadow:
 0 25px 50px rgba(0,0,0,.12);
 
 
-
-animation:
-
-floatingCard 5s ease-in-out infinite;
-
-
-
 transition:.6s ease;
 
 
-
-position:relative;
-
-
-z-index:2;
+animation:floatingCard 5s ease-in-out infinite;
 
 
 }
-
-
 
 
 
@@ -1345,132 +1306,87 @@ z-index:2;
 
 width:100%;
 
-
 height:100%;
-
 
 object-fit:cover;
 
 
-transition:.8s ease;
-
-
 }
 
 
 
-
-
-.journey-card:hover{
-
-
-transform:
-
-translateY(-18px);
-
-
-
-box-shadow:
-
-0 40px 70px rgba(0,0,0,.2);
-
-
-}
-
-
-
-.journey-card:hover img{
-
-
-transform:
-
-scale(1.08);
-
-
-}
-
-
-
-
-
-/* =========================
-        2023
-        左图片 右文字
-========================= */
-
-
-.left{
-
-flex-direction:row;
-
-}
-
+/* =====================
+        左图片 2023
+===================== */
 
 
 .left .journey-card{
 
 
-width:55%;
+grid-column:1;
 
 
-height:300px;
+width:90%;
+
+
+height:320px;
+
+
+justify-self:start;
 
 
 }
+
+
 
 
 
 .left .journey-text{
 
 
-width:35%;
+grid-column:3;
 
 
-padding-left:40px;
+padding-left:80px;
 
 
 text-align:left;
 
 
-}
-
-
-
-
-
-/* =========================
-        2024
-        左文字 右图片
-========================= */
-
-
-.right{
-
-
-flex-direction:row;
+width:380px;
 
 
 }
 
 
+
+
+
+/* =====================
+        右图片 2024
+===================== */
 
 
 .right .journey-text{
 
 
-order:1;
+grid-column:1;
 
 
-width:35%;
+justify-self:end;
 
 
-padding-left:40px;
+width:380px;
+
+
+padding-right:80px;
 
 
 text-align:left;
 
 
 }
+
 
 
 
@@ -1478,21 +1394,19 @@ text-align:left;
 .right .journey-card{
 
 
-order:2;
+grid-column:3;
 
 
-width:35%;
+width:260px;
 
 
-height:260px;
+height:180px;
 
 
-/*
-关键：
-强制远离时间线
-*/
+justify-self:start;
 
-margin-right:5%;
+
+margin-left:60px;
 
 
 }
@@ -1501,9 +1415,9 @@ margin-right:5%;
 
 
 
-/* =========================
+/* =====================
         文字
-========================= */
+===================== */
 
 
 .journey-text h2{
@@ -1511,12 +1425,9 @@ margin-right:5%;
 
 font-family:serif;
 
-
 font-size:45px;
 
-
 font-weight:400;
-
 
 margin:0;
 
@@ -1530,12 +1441,9 @@ margin:0;
 
 width:30px;
 
-
 height:1px;
 
-
 background:#111;
-
 
 margin:20px 0;
 
@@ -1549,9 +1457,7 @@ margin:20px 0;
 
 font-size:14px;
 
-
-letter-spacing:5px;
-
+letter-spacing:6px;
 
 margin-bottom:25px;
 
@@ -1565,9 +1471,7 @@ margin-bottom:25px;
 
 font-size:15px;
 
-
 line-height:2;
-
 
 color:#333;
 
@@ -1576,55 +1480,9 @@ color:#333;
 
 
 
-
-
-/* =========================
-        时间节点
-========================= */
-
-
-.journey-dot{
-
-
-position:absolute;
-
-
-left:50%;
-
-
-top:50%;
-
-
-transform:
-
-translate(-50%,-50%);
-
-
-
-width:12px;
-
-
-height:12px;
-
-
-background:#111;
-
-
-border-radius:50%;
-
-
-z-index:3;
-
-
-}
-
-
-
-
-
-/* =========================
-        图片漂浮动画
-========================= */
+/* =====================
+        图片浮动
+===================== */
 
 
 @keyframes floatingCard{
@@ -1637,13 +1495,11 @@ transform:translateY(0);
 }
 
 
-
 50%{
 
 transform:translateY(-12px);
 
 }
-
 
 
 100%{
@@ -1658,17 +1514,38 @@ transform:translateY(0);
 
 
 
+.journey-card:hover{
 
-/* =========================
-        最后一项
-========================= */
+
+transform:
+
+translateY(-18px);
+
+
+box-shadow:
+
+0 40px 70px rgba(0,0,0,.2);
+
+
+}
+
+
+
+
+.journey-card:hover img{
+
+
+transform:scale(1.08);
+
+
+}
+
+
 
 
 .journey-item:last-child{
 
-
 margin-bottom:0;
-
 
 }
 
