@@ -402,7 +402,7 @@ background:white;
 
 border-radius:50%;
 
-opacity:0.35;
+opacity:0.25;
 
 /* 发光效果 */
 box-shadow:
@@ -432,7 +432,7 @@ opacity:.5;
 
 20%{
 
-opacity:.95;
+opacity:.45;
 
 }
 
@@ -1123,9 +1123,7 @@ MY JOURNEY
         Journey Section
 ========================= */
 
-/* =========================
-        JOURNEY SECTION
-========================= */
+
 
 
 .journey{
@@ -1495,6 +1493,9 @@ text-align:left;
 ========================= */
 
 
+/* 左侧文字 */
+
+
 .right .journey-text{
 
 
@@ -1507,7 +1508,7 @@ justify-self:end;
 width:330px;
 
 
-padding-right:40px;
+padding-right:80px;
 
 
 text-align:left;
@@ -1518,10 +1519,27 @@ text-align:left;
 
 
 
+
+/* 右侧图片 */
+
+
 .right .journey-card{
 
 
-grid-column:3;
+position:absolute;
+
+
+/* 强制放在时间线右边 */
+
+
+left:58%;
+
+
+top:50%;
+
+
+transform:translateY(-50%);
+
 
 
 width:260px;
@@ -1530,14 +1548,25 @@ width:260px;
 height:180px;
 
 
-justify-self:end;
 
+margin:0;
 
-margin-right:40px;
 
 
 }
 
+
+
+.right .journey-card:hover{
+
+
+transform:
+
+
+translateY(calc(-50% - 18px));
+
+
+}
 
 
 
@@ -1677,7 +1706,34 @@ margin-bottom:0;
 
 }
 
+.journey-item{
 
+
+position:relative;
+
+
+display:grid;
+
+
+grid-template-columns:
+
+
+45% 10% 45%;
+
+
+align-items:center;
+
+
+min-height:360px;
+
+
+margin-bottom:140px;
+
+
+overflow:visible;
+
+
+}
 
 
 /* =====================================
