@@ -1402,7 +1402,11 @@ TIMELINE
 
 }
 
+.journey-item.right .photo:hover{
 
+    transform:translateX(-8px);
+
+}
 
 .journey-item.left .photo{
 
@@ -1417,7 +1421,11 @@ TIMELINE
 }
 
 
+.journey-item.left .photo:hover{
 
+    transform:translateX(8px);
+
+}
 
 
 /* 图片 */
@@ -1437,7 +1445,7 @@ TIMELINE
     width:100%;
 
 
-    height:240px;
+    height:260px;
 
 
     object-fit:cover;
@@ -2330,6 +2338,209 @@ flex-direction:column;
 display:none;
 
 }
+
+
+}
+/* =========================
+   IMAGE CARD FLOATING EFFECT
+========================= */
+
+
+.photo{
+
+    perspective:1000px;
+
+}
+
+
+
+/* 图片卡片 */
+
+.photo img{
+
+
+    transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    box-shadow .45s ease;
+
+
+    will-change:transform;
+
+
+}
+
+
+
+
+
+/* 鼠标悬浮 */
+
+.photo:hover img{
+
+
+    transform:
+
+    translateY(-15px)
+
+    scale(1.03);
+
+
+    box-shadow:
+
+
+    0 35px 70px rgba(0,0,0,0.18);
+
+
+}
+
+
+
+
+
+
+/* 图片上的箭头 */
+
+
+.photo::after{
+
+
+    transition:
+
+    transform .35s ease,
+
+    background .35s ease;
+
+
+}
+
+
+
+
+
+/* 箭头悬浮 */
+
+
+.photo:hover::after{
+
+
+    transform:
+
+    rotate(45deg);
+
+
+}
+
+
+
+
+/* =========================
+   增加卡片边缘质感
+========================= */
+
+
+.photo::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    border-radius:12px;
+
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    rgba(255,255,255,.25),
+
+    transparent
+
+    );
+
+
+    opacity:0;
+
+
+    transition:.4s;
+
+
+    z-index:2;
+
+
+    pointer-events:none;
+
+
+}
+
+
+
+.photo:hover::before{
+
+
+    opacity:1;
+
+
+}
+
+
+
+
+
+
+/* =========================
+   微妙进入动画
+========================= */
+
+
+.photo{
+
+
+    animation:
+
+    cardEnter .8s ease both;
+
+
+}
+
+
+
+@keyframes cardEnter{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(30px);
+
+
+    }
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
 
 
 }
