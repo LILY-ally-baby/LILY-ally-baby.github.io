@@ -1119,12 +1119,6 @@ MY JOURNEY
 ===================================== */
 
 
-/* =========================
-        Journey Section
-========================= */
-
-
-
 
 /* =========================
    MY JOURNEY SECTION
@@ -1479,46 +1473,6 @@ TIMELINE
 
 
 
-.photo::after{
-
-
-    content:"↗";
-
-
-    position:absolute;
-
-
-    right:18px;
-
-
-    bottom:18px;
-
-
-    width:38px;
-
-
-    height:38px;
-
-
-    background:white;
-
-
-    border-radius:50%;
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    font-size:18px;
-
-
-}
 
 
 
@@ -1621,49 +1575,7 @@ TIMELINE
 ========================= */
 
 
-.photo::after{
 
-
-    content:"↗";
-
-
-    position:absolute;
-
-
-    right:18px;
-
-
-    bottom:18px;
-
-
-    width:38px;
-
-
-    height:38px;
-
-
-    border-radius:50%;
-
-
-    background:#fff;
-
-
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:center;
-
-
-    font-size:18px;
-
-
-    color:#111;
-
-
-}
 
 
 
