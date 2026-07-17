@@ -1126,46 +1126,62 @@ MY JOURNEY
 
 
 
+/* =========================
+   MY JOURNEY SECTION
+========================= */
+
+
 .journey{
 
-background:#fafafa;
+    background:#ffffff;
 
-padding:60px 5%;
+    padding:100px 6% 120px;
 
-overflow:hidden;
+    position:relative;
 
-}
-
-
-
-/* ======================
-顶部
-====================== */
-
-
-.journey-top{
-
-display:flex;
-
-align-items:center;
-
-font-size:12px;
-
-letter-spacing:5px;
+    overflow:hidden;
 
 }
 
 
 
-.top-line{
+/* =========================
+   TOP TITLE
+========================= */
 
-height:1px;
 
-background:#222;
+.journey-header{
 
-flex:1;
+    display:flex;
 
-margin-left:30px;
+    align-items:center;
+
+    gap:30px;
+
+}
+
+
+.small-title{
+
+    font-size:12px;
+
+    letter-spacing:5px;
+
+    font-weight:600;
+
+    color:#111;
+
+}
+
+
+
+.line{
+
+    height:1px;
+
+    background:#222;
+
+    flex:1;
 
 }
 
@@ -1173,20 +1189,23 @@ margin-left:30px;
 
 
 
-/* ======================
-标题
-====================== */
+
+/* =========================
+   MAIN TITLE
+========================= */
 
 
 .journey-title{
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    justify-content:space-between;
 
-margin-top:50px;
+    align-items:flex-start;
 
-margin-bottom:80px;
+    margin-top:45px;
+
+    padding-right:10%;
 
 }
 
@@ -1195,15 +1214,20 @@ margin-bottom:80px;
 .journey-title h1{
 
 
-font-family:serif;
+    font-family:
+    "Times New Roman",
+    serif;
 
-font-size:100px;
 
-font-weight:400;
+    font-size:86px;
 
-line-height:.85;
+    line-height:0.85;
 
-letter-spacing:-4px;
+    font-weight:400;
+
+    letter-spacing:-4px;
+
+    margin:0;
 
 
 }
@@ -1212,13 +1236,19 @@ letter-spacing:-4px;
 
 .journey-title p{
 
-font-size:13px;
 
-letter-spacing:5px;
+    margin-top:35px;
 
-line-height:2;
+    font-size:12px;
 
-width:250px;
+    letter-spacing:5px;
+
+    line-height:2.8;
+
+    font-weight:600;
+
+    color:#222;
+
 
 }
 
@@ -1226,39 +1256,17 @@ width:250px;
 
 
 
-
-/* ======================
-时间轴
-====================== */
+/* =========================
+   TIMELINE
+========================= */
 
 
 .timeline{
 
-position:relative;
 
-}
+    position:relative;
 
-
-
-.journey-line{
-
-
-position:absolute;
-
-
-left:50%;
-
-
-top:0;
-
-
-bottom:0;
-
-
-width:1px;
-
-
-background:#222;
+    margin-top:80px;
 
 
 }
@@ -1266,32 +1274,377 @@ background:#222;
 
 
 
+/* 中间竖线 */
 
 
-/* ======================
-每个节点
-====================== */
+.timeline-line{
+
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    width:1px;
+
+    height:100%;
+
+    background:#222;
+
+    transform:translateX(-50%);
+
+
+}
+
+
+
+
+
+/* =========================
+   EACH ITEM
+========================= */
 
 
 .journey-item{
 
 
-position:relative;
+    position:relative;
 
 
-display:flex;
+    display:flex;
 
 
-align-items:center;
+    justify-content:center;
 
 
-width:100%;
+    align-items:center;
 
 
-min-height:320px;
+    gap:90px;
 
 
-margin-bottom:100px;
+    margin-bottom:70px;
+
+
+}
+
+
+
+
+
+/* 左侧排列 */
+
+
+.journey-item.left{
+
+
+    flex-direction:row-reverse;
+
+
+}
+
+
+
+
+/* 时间节点 */
+
+
+.journey-item::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:50%;
+
+
+    top:50%;
+
+
+    width:14px;
+
+
+    height:14px;
+
+
+    background:#111;
+
+
+    border-radius:50%;
+
+
+    transform:
+    translate(-50%,-50%);
+
+
+    z-index:3;
+
+
+}
+
+
+
+
+
+/* =========================
+   IMAGE
+========================= */
+
+
+.photo{
+
+
+    width:43%;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+.photo img{
+
+
+    width:100%;
+
+
+    height:230px;
+
+
+    object-fit:cover;
+
+
+    object-position:center;
+
+
+    border-radius:12px;
+
+
+    display:block;
+
+
+    box-shadow:
+
+    0 25px 45px rgba(0,0,0,0.12);
+
+
+    transition:.4s ease;
+
+
+}
+
+
+
+
+.photo img:hover{
+
+
+    transform:translateY(-8px);
+
+
+}
+
+
+
+
+
+/* =========================
+   TEXT
+========================= */
+
+
+.content{
+
+
+    width:35%;
+
+
+}
+
+
+
+.content h2{
+
+
+    font-family:
+    "Times New Roman",
+    serif;
+
+
+    font-size:52px;
+
+
+    font-weight:400;
+
+
+    line-height:1;
+
+
+    margin:0;
+
+
+    letter-spacing:-1px;
+
+
+}
+
+
+
+
+.short-line{
+
+
+    width:38px;
+
+
+    height:1px;
+
+
+    background:#111;
+
+
+    margin:22px 0;
+
+
+}
+
+
+
+
+.content h3{
+
+
+    font-size:13px;
+
+
+    letter-spacing:6px;
+
+
+    font-weight:600;
+
+
+    margin:0;
+
+
+    line-height:2;
+
+
+}
+
+
+
+
+.content p{
+
+
+    margin-top:25px;
+
+
+    font-size:15px;
+
+
+    line-height:2;
+
+
+    color:#444;
+
+
+    font-weight:400;
+
+
+}
+
+
+
+
+
+/* =========================
+   IMAGE ARROW
+========================= */
+
+
+.photo::after{
+
+
+    content:"↗";
+
+
+    position:absolute;
+
+
+    right:18px;
+
+
+    bottom:18px;
+
+
+    width:38px;
+
+
+    height:38px;
+
+
+    border-radius:50%;
+
+
+    background:#fff;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    font-size:18px;
+
+
+    color:#111;
+
+
+}
+
+
+
+
+
+/* =========================
+   FOOTER STYLE
+========================= */
+
+
+.journey::after{
+
+
+    content:"KEEP LEARNING, KEEP GROWING.";
+
+
+    position:absolute;
+
+
+    bottom:35px;
+
+
+    right:6%;
+
+
+    font-size:11px;
+
+
+    letter-spacing:5px;
+
+
+    color:#111;
 
 
 }
@@ -1301,329 +1654,108 @@ margin-bottom:100px;
 
 
 
+/* =========================
+   RESPONSIVE
+========================= */
 
-/* ======================
-图片
-====================== */
 
+@media(max-width:900px){
 
-.journey-card{
 
+    .journey{
 
-width:260px;
+        padding:70px 30px;
 
+    }
 
-height:130px;
 
 
-overflow:hidden;
+    .journey-title{
 
+        display:block;
 
-border-radius:14px;
+    }
 
 
-box-shadow:
 
-0 20px 40px rgba(0,0,0,.12);
+    .journey-title h1{
 
+        font-size:60px;
 
-flex-shrink:0;
+    }
 
 
-transition:.5s ease;
 
+    .journey-title p{
 
-}
+        margin-top:30px;
 
+    }
 
 
 
 
-.journey-card img{
+    .timeline-line{
 
 
-width:100%;
+        left:20px;
 
 
-height:100%;
+    }
 
 
-object-fit:cover;
 
+    .journey-item,
+    .journey-item.left{
 
-}
 
+        flex-direction:column;
 
 
+        align-items:flex-start;
 
 
+        gap:30px;
 
 
-/* ======================
-左图片 右文字
-====================== */
+        margin-left:40px;
 
 
-.left{
+    }
 
 
-justify-content:flex-start;
 
 
-}
+    .journey-item::before{
 
 
+        left:20px;
 
 
+    }
 
-.left .journey-card{
 
 
-margin-left:40px;
 
+    .photo,
+    .content{
 
-}
 
+        width:100%;
 
 
+    }
 
-.left .journey-text{
 
 
-margin-left:140px;
+    .photo img{
 
 
-width:300px;
+        height:220px;
 
 
-text-align:left;
+    }
 
-
-}
-
-
-
-
-
-
-
-
-/* ======================
-左文字 右图片
-====================== */
-
-
-.right{
-
-
-justify-content:flex-end;
-
-
-}
-
-
-
-
-.right .journey-text{
-
-
-margin-right:140px;
-
-
-width:300px;
-
-
-text-align:left;
-
-
-}
-
-
-
-
-
-.right .journey-card{
-
-
-margin-right:40px;
-
-
-}
-
-
-
-
-
-
-
-
-/* ======================
-文字
-====================== */
-
-
-.journey-text{
-
-
-position:relative;
-
-
-}
-
-
-
-.journey-text h2{
-
-
-font-family:serif;
-
-
-font-size:45px;
-
-
-font-weight:400;
-
-
-margin:0;
-
-
-}
-
-
-
-
-.dash{
-
-
-width:35px;
-
-
-height:1px;
-
-
-background:#111;
-
-
-margin:20px 0;
-
-
-}
-
-
-
-
-.journey-text h3{
-
-
-font-size:13px;
-
-
-letter-spacing:5px;
-
-
-line-height:1.8;
-
-
-margin-bottom:20px;
-
-
-}
-
-
-
-
-.journey-text p{
-
-
-font-size:14px;
-
-
-line-height:2;
-
-
-color:#333;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* ======================
-中间节点
-====================== */
-
-
-.journey-dot{
-
-
-position:absolute;
-
-
-left:50%;
-
-
-top:50%;
-
-
-transform:translate(-50%,-50%);
-
-
-width:12px;
-
-
-height:12px;
-
-
-background:#111;
-
-
-border-radius:50%;
-
-
-z-index:10;
-
-
-}
-
-
-
-
-
-
-
-
-/* ======================
-图片动画
-====================== */
-
-
-.journey-card:hover{
-
-
-transform:translateY(-12px);
-
-
-box-shadow:
-
-0 35px 60px rgba(0,0,0,.18);
-
-
-}
-
-
-
-
-
-
-.journey-item:last-child{
-
-margin-bottom:0;
 
 }
 
