@@ -2342,34 +2342,40 @@ display:none;
 
 }
 /* =========================
-   IMAGE CARD FLOATING EFFECT
+ IMAGE FLOAT CARD EFFECT
 ========================= */
 
 
 .photo{
 
-    perspective:1000px;
+    position:relative;
+
+    overflow:visible;
 
 }
 
 
 
-/* 图片卡片 */
+/* 图片基础状态 */
 
 .photo img{
 
 
+    display:block;
+
+    width:100%;
+
     transition:
-    transform .45s cubic-bezier(.2,.8,.2,1),
+
+    transform .45s cubic-bezier(.22,.61,.36,1),
+
     box-shadow .45s ease;
 
 
-    will-change:transform;
+    transform-origin:center center;
 
 
 }
-
-
 
 
 
@@ -2380,15 +2386,14 @@ display:none;
 
     transform:
 
-    translateY(-15px)
+    translateY(-18px)
 
-    scale(1.03);
+    scale(1.04);
 
 
     box-shadow:
 
-
-    0 35px 70px rgba(0,0,0,0.18);
+    0 35px 80px rgba(0,0,0,.25);
 
 
 }
@@ -2398,7 +2403,7 @@ display:none;
 
 
 
-/* 图片上的箭头 */
+/* 箭头按钮 */
 
 
 .photo::after{
@@ -2406,18 +2411,15 @@ display:none;
 
     transition:
 
-    transform .35s ease,
+    transform .4s ease,
 
-    background .35s ease;
+    box-shadow .4s ease;
 
 
 }
 
 
 
-
-
-/* 箭头悬浮 */
 
 
 .photo:hover::after{
@@ -2425,67 +2427,14 @@ display:none;
 
     transform:
 
+    translateY(-18px)
+
     rotate(45deg);
 
 
-}
+    box-shadow:
 
-
-
-
-/* =========================
-   增加卡片边缘质感
-========================= */
-
-
-.photo::before{
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    border-radius:12px;
-
-
-    background:
-
-    linear-gradient(
-
-    120deg,
-
-    rgba(255,255,255,.25),
-
-    transparent
-
-    );
-
-
-    opacity:0;
-
-
-    transition:.4s;
-
-
-    z-index:2;
-
-
-    pointer-events:none;
-
-
-}
-
-
-
-.photo:hover::before{
-
-
-    opacity:1;
+    0 10px 25px rgba(0,0,0,.15);
 
 
 }
@@ -2495,24 +2444,21 @@ display:none;
 
 
 
-/* =========================
-   微妙进入动画
-========================= */
-
+/* 图片出现动画 */
 
 .photo{
 
 
     animation:
 
-    cardEnter .8s ease both;
+    fadeUp .8s ease forwards;
 
 
 }
 
 
 
-@keyframes cardEnter{
+@keyframes fadeUp{
 
 
     from{
@@ -2521,9 +2467,7 @@ display:none;
         opacity:0;
 
 
-        transform:
-
-        translateY(30px);
+        transform:translateY(40px);
 
 
     }
@@ -2535,9 +2479,7 @@ display:none;
         opacity:1;
 
 
-        transform:
-
-        translateY(0);
+        transform:translateY(0);
 
 
     }
