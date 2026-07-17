@@ -23,7 +23,7 @@ document.querySelector(".particles");
 if(particleContainer){
 
 
-for(let i=0;i<120;i++){
+for(let i=0;i<100;i++){
 
 
 const particle =
