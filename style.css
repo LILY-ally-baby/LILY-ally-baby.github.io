@@ -1225,7 +1225,7 @@ margin-top:50px;
 
 
 /* =========================
-        时间轴区域
+        时间轴
 ========================= */
 
 
@@ -1239,22 +1239,26 @@ position:relative;
 
 
 
-/* 中间竖线 */
-
-
 .journey-line{
+
 
 position:absolute;
 
+
 left:50%;
+
 
 top:0;
 
+
 bottom:0;
+
 
 width:1px;
 
+
 background:#222;
+
 
 }
 
@@ -1263,7 +1267,7 @@ background:#222;
 
 
 /* =========================
-        每一行
+        每一项
 ========================= */
 
 
@@ -1276,22 +1280,15 @@ position:relative;
 display:grid;
 
 
-/*
- 左图片
- 中线
- 右文字
-*/
-
-
 grid-template-columns:
 
-45% 10% 45%;
+40% 20% 40%;
 
 
 align-items:center;
 
 
-min-height:350px;
+min-height:420px;
 
 
 margin-bottom:120px;
@@ -1304,14 +1301,14 @@ margin-bottom:120px;
 
 
 /* =========================
-        图片
+        图片卡片
 ========================= */
 
 
 .journey-card{
 
 
-width:90%;
+width:100%;
 
 
 height:300px;
@@ -1353,10 +1350,8 @@ height:100%;
 object-fit:cover;
 
 
-transition:.8s ease;
-
-
 }
+
 
 
 
@@ -1366,7 +1361,7 @@ transition:.8s ease;
 
 transform:
 
-translateY(-15px);
+translateY(-18px);
 
 
 box-shadow:
@@ -1393,7 +1388,8 @@ scale(1.08);
 
 
 /* =========================
-        图片位置
+        左图片 右文字
+        2023
 ========================= */
 
 
@@ -1403,39 +1399,13 @@ scale(1.08);
 grid-column:1;
 
 
-}
+justify-self:start;
 
 
-
-.right .journey-card{
-
-
-grid-column:3;
-
-
-justify-self:end;
+width:95%;
 
 
 }
-
-
-
-
-
-/* =========================
-        文字区域
-========================= */
-
-
-.journey-text{
-
-
-width:380px;
-
-
-}
-
-
 
 
 
@@ -1445,11 +1415,22 @@ width:380px;
 grid-column:3;
 
 
-padding-left:60px;
+padding-left:80px;
+
+
+text-align:left;
 
 
 }
 
+
+
+
+
+/* =========================
+        左文字 右图片
+        2024
+========================= */
 
 
 .right .journey-text{
@@ -1461,16 +1442,45 @@ grid-column:1;
 justify-self:end;
 
 
-padding-right:60px;
+width:380px;
 
 
-text-align:right;
+padding-right:80px;
+
+
+text-align:left;
 
 
 }
 
 
 
+
+
+.right .journey-card{
+
+
+grid-column:3;
+
+
+justify-self:start;
+
+
+width:45%;
+
+
+height:180px;
+
+
+}
+
+
+
+
+
+/* =========================
+        文字
+========================= */
 
 
 .journey-text h2{
@@ -1514,14 +1524,6 @@ margin:20px 0;
 
 
 
-.right .dash{
-
-margin-left:auto;
-
-}
-
-
-
 
 .journey-text h3{
 
@@ -1560,7 +1562,7 @@ color:#333;
 
 
 /* =========================
-        时间节点
+        节点
 ========================= */
 
 
@@ -1613,11 +1615,7 @@ z-index:3;
 
 0%{
 
-
-transform:
-
-translateY(0);
-
+transform:translateY(0);
 
 }
 
@@ -1625,11 +1623,7 @@ translateY(0);
 
 50%{
 
-
-transform:
-
-translateY(-12px);
-
+transform:translateY(-12px);
 
 }
 
@@ -1637,11 +1631,7 @@ translateY(-12px);
 
 100%{
 
-
-transform:
-
-translateY(0);
-
+transform:translateY(0);
 
 }
 
@@ -1650,11 +1640,6 @@ translateY(0);
 
 
 
-
-
-/* =========================
-        最后一项
-========================= */
 
 
 .journey-item:last-child{
@@ -1664,8 +1649,6 @@ margin-bottom:0;
 
 
 }
-
-
 
 
 
