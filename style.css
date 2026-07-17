@@ -1226,6 +1226,7 @@ width:250px;
 
 
 
+
 /* ======================
 时间轴
 ====================== */
@@ -1266,6 +1267,7 @@ background:#222;
 
 
 
+
 /* ======================
 每个节点
 ====================== */
@@ -1298,6 +1300,8 @@ margin-bottom:100px;
 
 
 
+
+
 /* ======================
 图片
 ====================== */
@@ -1306,24 +1310,27 @@ margin-bottom:100px;
 .journey-card{
 
 
-width:330px;
+width:260px;
 
 
-height:165px;
+height:130px;
 
 
 overflow:hidden;
 
 
-border-radius:16px;
+border-radius:14px;
 
 
 box-shadow:
 
-0 25px 45px rgba(0,0,0,.15);
+0 20px 40px rgba(0,0,0,.12);
 
 
 flex-shrink:0;
+
+
+transition:.5s ease;
 
 
 }
@@ -1350,8 +1357,10 @@ object-fit:cover;
 
 
 
+
+
 /* ======================
-左图右文字
+左图片 右文字
 ====================== */
 
 
@@ -1365,23 +1374,23 @@ justify-content:flex-start;
 
 
 
+
+
 .left .journey-card{
 
 
-margin-left:0;
-
-
-margin-right:0;
+margin-left:40px;
 
 
 }
 
 
 
+
 .left .journey-text{
 
 
-margin-left:90px;
+margin-left:140px;
 
 
 width:300px;
@@ -1396,8 +1405,11 @@ text-align:left;
 
 
 
+
+
+
 /* ======================
-左文字右图片
+左文字 右图片
 ====================== */
 
 
@@ -1411,26 +1423,11 @@ justify-content:flex-end;
 
 
 
-.right .journey-card{
-
-
-order:2;
-
-
-margin-right:0;
-
-
-}
-
-
 
 .right .journey-text{
 
 
-order:1;
-
-
-margin-right:90px;
+margin-right:140px;
 
 
 width:300px;
@@ -1445,31 +1442,15 @@ text-align:left;
 
 
 
-/* ======================
-限制左右区域
-防止越过中线
-====================== */
+.right .journey-card{
 
 
-.left .journey-card,
-.left .journey-text{
-
-
-max-width:45%;
+margin-right:40px;
 
 
 }
 
 
-
-.right .journey-card,
-.right .journey-text{
-
-
-max-width:45%;
-
-
-}
 
 
 
@@ -1484,7 +1465,7 @@ max-width:45%;
 .journey-text{
 
 
-width:300px;
+position:relative;
 
 
 }
@@ -1510,6 +1491,7 @@ margin:0;
 
 
 
+
 .dash{
 
 
@@ -1526,6 +1508,7 @@ margin:20px 0;
 
 
 }
+
 
 
 
@@ -1548,6 +1531,7 @@ margin-bottom:20px;
 
 
 
+
 .journey-text p{
 
 
@@ -1566,8 +1550,12 @@ color:#333;
 
 
 
+
+
+
+
 /* ======================
-节点
+中间节点
 ====================== */
 
 
@@ -1583,10 +1571,7 @@ left:50%;
 top:50%;
 
 
-transform:
-
-translate(-50%,-50%);
-
+transform:translate(-50%,-50%);
 
 
 width:12px;
@@ -1610,27 +1595,18 @@ z-index:10;
 
 
 
+
+
+
 /* ======================
 图片动画
 ====================== */
 
 
-.journey-card{
-
-
-transition:.5s ease;
-
-
-}
-
-
-
 .journey-card:hover{
 
 
-transform:
-
-translateY(-12px);
+transform:translateY(-12px);
 
 
 box-shadow:
@@ -1639,6 +1615,7 @@ box-shadow:
 
 
 }
+
 
 
 
