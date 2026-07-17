@@ -1289,10 +1289,10 @@ margin-bottom:80px;
 .journey-card{
 
 
-width:480px;
+width:380px;
 
 
-height:240px;
+height:190px;
 
 
 overflow:hidden;
@@ -1355,7 +1355,7 @@ margin-right:auto;
 .left .journey-text{
 
 
-margin-left:100px;
+margin-left:80px;
 
 
 text-align:left;
@@ -1385,7 +1385,7 @@ justify-content:flex-end;
 .right .journey-text{
 
 
-margin-right:100px;
+margin-right:80px;
 
 
 text-align:left;
