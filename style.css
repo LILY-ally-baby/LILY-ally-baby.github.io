@@ -1124,6 +1124,10 @@ MY JOURNEY
 ========================= */
 
 
+/* =========================
+        JOURNEY SECTION
+========================= */
+
 .journey{
 
 background:#fafafa;
@@ -1133,8 +1137,6 @@ padding:40px 6%;
 overflow:hidden;
 
 }
-
-
 
 
 
@@ -1156,6 +1158,7 @@ font-size:12px;
 letter-spacing:4px;
 
 }
+
 
 
 .top-line{
@@ -1209,7 +1212,6 @@ letter-spacing:-3px;
 
 
 
-
 .journey-title p{
 
 font-size:13px;
@@ -1239,9 +1241,7 @@ position:relative;
 
 
 
-
-
-/* 中间竖线 */
+/* 中间线 */
 
 
 .journey-line{
@@ -1267,7 +1267,7 @@ z-index:1;
 
 
 /* =========================
-        每一项
+        每一个经历
 ========================= */
 
 
@@ -1277,15 +1277,13 @@ z-index:1;
 position:relative;
 
 
-display:grid;
-
-
-grid-template-columns:
-
-45% 10% 45%;
+display:flex;
 
 
 align-items:center;
+
+
+justify-content:space-between;
 
 
 min-height:420px;
@@ -1319,12 +1317,15 @@ box-shadow:
 0 25px 50px rgba(0,0,0,.12);
 
 
+
 animation:
 
 floatingCard 5s ease-in-out infinite;
 
 
+
 transition:.6s ease;
+
 
 
 position:relative;
@@ -1368,6 +1369,7 @@ transform:
 translateY(-18px);
 
 
+
 box-shadow:
 
 0 40px 70px rgba(0,0,0,.2);
@@ -1397,16 +1399,18 @@ scale(1.08);
 ========================= */
 
 
+.left{
+
+flex-direction:row;
+
+}
+
+
+
 .left .journey-card{
 
 
-grid-column:1;
-
-
-justify-self:start;
-
-
-width:95%;
+width:55%;
 
 
 height:300px;
@@ -1416,17 +1420,13 @@ height:300px;
 
 
 
-
 .left .journey-text{
 
 
-grid-column:3;
+width:35%;
 
 
-justify-self:start;
-
-
-padding-left:80px;
+padding-left:40px;
 
 
 text-align:left;
@@ -1444,16 +1444,24 @@ text-align:left;
 ========================= */
 
 
+.right{
+
+
+flex-direction:row;
+
+
+}
+
+
+
+
 .right .journey-text{
 
 
-grid-column:1;
+order:1;
 
 
-justify-self:start;
-
-
-width:380px;
+width:35%;
 
 
 padding-left:40px;
@@ -1467,20 +1475,24 @@ text-align:left;
 
 
 
-
 .right .journey-card{
 
 
-grid-column:3;
+order:2;
 
 
-justify-self:end;
-
-
-width:75%;
+width:35%;
 
 
 height:260px;
+
+
+/*
+关键：
+强制远离时间线
+*/
+
+margin-right:5%;
 
 
 }
@@ -1513,7 +1525,6 @@ margin:0;
 
 
 
-
 .dash{
 
 
@@ -1533,8 +1544,6 @@ margin:20px 0;
 
 
 
-
-
 .journey-text h3{
 
 
@@ -1548,8 +1557,6 @@ margin-bottom:25px;
 
 
 }
-
-
 
 
 
@@ -1616,7 +1623,7 @@ z-index:3;
 
 
 /* =========================
-        图片漂浮
+        图片漂浮动画
 ========================= */
 
 
