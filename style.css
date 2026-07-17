@@ -419,21 +419,21 @@ animation:floatParticle 8s linear infinite;
 
 transform:translateY(100vh);
 
-opacity:.0.8;
+opacity:.1;
 
 }
 
 
 20%{
 
-opacity:.2;
+opacity:.5;
 
 }
 
 
 50%{
 
-opacity:.3;
+opacity:.6;
 
 }
 
@@ -442,7 +442,7 @@ opacity:.3;
 
 transform:translateY(-120vh);
 
-opacity:0;
+opacity:.0.9;
 
 }
 
