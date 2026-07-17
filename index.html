@@ -125,75 +125,466 @@ ABOUT ME
 ========================= -->
 
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Me</title>
+
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background:#ffffff;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    overflow:hidden;
+
+    color:#111;
+
+}
+
+
+/* 页面主体 */
+
+.about{
+
+    width:100vw;
+    height:100vh;
+    position:relative;
+
+}
+
+
+
+/* =====================
+树图片
+===================== */
+
+
+.tree{
+
+    position:absolute;
+
+    top:-5vh;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    height:110vh;
+
+    width:auto;
+
+
+    z-index:1;
+
+
+    opacity:0.45;
+
+
+    mix-blend-mode:multiply;
+
+
+    filter:
+    contrast(1.1)
+    brightness(1.05)
+    blur(0.2px);
+
+
+}
+
+
+
+
+/* =====================
+顶部编号
+===================== */
+
+
+.number{
+
+    position:absolute;
+
+    top:70px;
+
+    left:80px;
+
+    color:#526aa3;
+
+    font-size:20px;
+
+    letter-spacing:3px;
+
+    z-index:3;
+
+}
+
+
+
+
+/* =====================
+左侧标题
+===================== */
+
+
+.left{
+
+    position:absolute;
+
+    left:80px;
+
+    top:180px;
+
+    z-index:3;
+
+}
+
+
+
+.title{
+
+
+    font-size:150px;
+
+    line-height:0.85;
+
+    font-weight:800;
+
+    letter-spacing:-8px;
+
+
+}
+
+
+
+.line{
+
+
+    width:120px;
+
+    height:3px;
+
+    background:#526aa3;
+
+    margin-top:80px;
+
+}
+
+
+
+
+.name{
+
+
+    margin-top:70px;
+
+    font-size:90px;
+
+    letter-spacing:35px;
+
+    font-weight:300;
+
+    color:#26385f;
+
+}
+
+
+
+
+.tags{
+
+
+    margin-top:35px;
+
+    font-size:18px;
+
+    letter-spacing:12px;
+
+    color:#526aa3;
+
+}
+
+
+
+
+/* =====================
+右侧内容
+===================== */
+
+
+.content{
+
+
+    position:absolute;
+
+
+    right:90px;
+
+
+    top:170px;
+
+
+    width:420px;
+
+
+    z-index:4;
+
+
+}
+
+
+
+.item{
+
+
+    position:relative;
+
+    margin-bottom:65px;
+
+    padding-left:45px;
+
+}
+
+
+
+.item:before{
+
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:8px;
+
+    width:14px;
+
+    height:14px;
+
+    background:#b8c5e8;
+
+    border-radius:50%;
+
+
+}
+
+
+
+.item:after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:6px;
+
+    top:25px;
+
+    width:1px;
+
+    height:150px;
+
+
+    background:#ddd;
+
+
+}
+
+
+
+.item:last-child:after{
+
+    display:none;
+
+}
+
+
+
+
+h2{
+
+
+    font-size:25px;
+
+    margin-bottom:22px;
+
+    font-weight:700;
+
+
+}
+
+
+
+p{
+
+
+    font-size:20px;
+
+    line-height:2;
+
+    color:#333;
+
+
+}
+
+
+
+
+.divider{
+
+
+    width:100%;
+
+    height:1px;
+
+    background:#e5e5e5;
+
+    margin-top:30px;
+
+
+}
+
+
+
+/* =====================
+底部
+===================== */
+
+
+.footer{
+
+
+    position:absolute;
+
+
+    right:100px;
+
+
+    bottom:60px;
+
+
+    z-index:4;
+
+
+    color:#526aa3;
+
+
+    letter-spacing:8px;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
 <section class="about">
 
 
-<!-- 左上编号 -->
+<!-- 树 -->
 
-<div class="about-number">
+<img src="tree.png" class="tree">
+
+
+
+<div class="number">
 01
 </div>
 
 
 
-<!-- 左侧标题 -->
+<!-- 左侧 -->
 
-<div class="about-left">
+<div class="left">
 
 
-<h1>
+<div class="title">
+
 ABOUT<br>
 ME
-</h1>
+
+</div>
 
 
-<div class="about-line"></div>
+<div class="line"></div>
 
+
+<div class="name">
+
+LIYI
+
+</div>
+
+
+<div class="tags">
+
+CURIOUS　•　CREATIVE　•　DETERMINED
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- 右侧 -->
+
+<div class="content">
+
+
+
+<div class="item">
 
 
 <h2>
-LIYI
+Who I Am
 </h2>
 
 
-
-<p class="tags">
-CURIOUS　•　CREATIVE　•　DETERMINED
-</p>
-
-
-
-
-
-
-
-
-<!-- 右侧内容 -->
-
-
-<div class="about-content">
-
-
-
-<div class="about-item">
-
-
-<div class="node"></div>
-
-
-<h3>
-Who I Am
-</h3>
-
-
 <p>
-I’m Liyi, a curious observer of the world.
+
+I'm Liyi, a curious observer of the world.
 <br>
-I find beauty in details, stories in
-<br>
-everyday moments, and meaning in
-<br>
-the connections between people.
+
+I find beauty in details, stories in everyday moments,
+and meaning in the connections between people.
+
 </p>
 
 
@@ -202,23 +593,23 @@ the connections between people.
 
 
 
-<div class="about-item">
+<div class="divider"></div>
 
 
-<div class="node"></div>
+
+<div class="item">
 
 
-<h3>
+<h2>
 What I Care About
-</h3>
+</h2>
 
 
 <p>
-I care about honesty, growth and
-<br>
-kindness. I believe small actions can
-<br>
-create real impact.
+
+I care about honesty, growth and kindness.
+I believe small actions can create real impact.
+
 </p>
 
 
@@ -227,25 +618,24 @@ create real impact.
 
 
 
-<div class="about-item">
+
+<div class="divider"></div>
 
 
-<div class="node"></div>
+
+<div class="item">
 
 
-<h3>
+<h2>
 What Drives Me
-</h3>
+</h2>
 
 
 <p>
-I’m driven by curiosity and the desire
-<br>
-to keep learning. I love turning ideas
-<br>
-into something that can inspire
-<br>
-and bring value.
+
+I'm driven by curiosity and the desire to keep learning.
+I love turning ideas into something meaningful.
+
 </p>
 
 
@@ -259,15 +649,20 @@ and bring value.
 
 
 
+<div class="footer">
 
-<div class="location">
-
-BASED IN SINGAPORE　●
+BASED IN SINGAPORE ●
 
 </div>
+
 
 
 </section>
+
+
+</body>
+
+</html>
 
 
 
