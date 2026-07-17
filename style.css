@@ -1137,6 +1137,7 @@ overflow:hidden;
 }
 
 
+
 /* ======================
 顶部
 ====================== */
@@ -1171,6 +1172,7 @@ margin-left:30px;
 
 
 
+
 /* ======================
 标题
 ====================== */
@@ -1189,7 +1191,9 @@ margin-bottom:80px;
 }
 
 
+
 .journey-title h1{
+
 
 font-family:serif;
 
@@ -1200,6 +1204,7 @@ font-weight:400;
 line-height:.85;
 
 letter-spacing:-4px;
+
 
 }
 
@@ -1233,21 +1238,30 @@ position:relative;
 }
 
 
+
 .journey-line{
+
 
 position:absolute;
 
+
 left:50%;
+
 
 top:0;
 
+
 bottom:0;
+
 
 width:1px;
 
+
 background:#222;
 
+
 }
+
 
 
 
@@ -1269,10 +1283,13 @@ display:flex;
 align-items:center;
 
 
-min-height:360px;
+width:100%;
 
 
-margin-bottom:80px;
+min-height:320px;
+
+
+margin-bottom:100px;
 
 
 }
@@ -1289,10 +1306,10 @@ margin-bottom:80px;
 .journey-card{
 
 
-width:380px;
+width:330px;
 
 
-height:190px;
+height:165px;
 
 
 overflow:hidden;
@@ -1306,7 +1323,11 @@ box-shadow:
 0 25px 45px rgba(0,0,0,.15);
 
 
+flex-shrink:0;
+
+
 }
+
 
 
 
@@ -1328,6 +1349,7 @@ object-fit:cover;
 
 
 
+
 /* ======================
 左图右文字
 ====================== */
@@ -1342,10 +1364,14 @@ justify-content:flex-start;
 }
 
 
+
 .left .journey-card{
 
 
-margin-right:auto;
+margin-left:0;
+
+
+margin-right:0;
 
 
 }
@@ -1355,7 +1381,10 @@ margin-right:auto;
 .left .journey-text{
 
 
-margin-left:80px;
+margin-left:90px;
+
+
+width:300px;
 
 
 text-align:left;
@@ -1382,10 +1411,29 @@ justify-content:flex-end;
 
 
 
+.right .journey-card{
+
+
+order:2;
+
+
+margin-right:0;
+
+
+}
+
+
+
 .right .journey-text{
 
 
-margin-right:80px;
+order:1;
+
+
+margin-right:90px;
+
+
+width:300px;
 
 
 text-align:left;
@@ -1395,13 +1443,34 @@ text-align:left;
 
 
 
-.right .journey-card{
 
 
-margin-left:auto;
+/* ======================
+限制左右区域
+防止越过中线
+====================== */
+
+
+.left .journey-card,
+.left .journey-text{
+
+
+max-width:45%;
 
 
 }
+
+
+
+.right .journey-card,
+.right .journey-text{
+
+
+max-width:45%;
+
+
+}
+
 
 
 
@@ -1415,7 +1484,7 @@ margin-left:auto;
 .journey-text{
 
 
-width:330px;
+width:300px;
 
 
 }
@@ -1427,9 +1496,12 @@ width:330px;
 
 font-family:serif;
 
-font-size:48px;
+
+font-size:45px;
+
 
 font-weight:400;
+
 
 margin:0;
 
@@ -1443,11 +1515,14 @@ margin:0;
 
 width:35px;
 
+
 height:1px;
+
 
 background:#111;
 
-margin:25px 0;
+
+margin:20px 0;
 
 
 }
@@ -1457,13 +1532,16 @@ margin:25px 0;
 .journey-text h3{
 
 
-font-size:14px;
+font-size:13px;
 
-letter-spacing:6px;
+
+letter-spacing:5px;
+
 
 line-height:1.8;
 
-margin-bottom:25px;
+
+margin-bottom:20px;
 
 
 }
@@ -1473,14 +1551,17 @@ margin-bottom:25px;
 .journey-text p{
 
 
-font-size:15px;
+font-size:14px;
+
 
 line-height:2;
+
 
 color:#333;
 
 
 }
+
 
 
 
@@ -1499,7 +1580,13 @@ position:absolute;
 left:50%;
 
 
-transform:translateX(-50%);
+top:50%;
+
+
+transform:
+
+translate(-50%,-50%);
+
 
 
 width:12px;
@@ -1514,7 +1601,7 @@ background:#111;
 border-radius:50%;
 
 
-z-index:5;
+z-index:10;
 
 
 }
@@ -1541,16 +1628,17 @@ transition:.5s ease;
 .journey-card:hover{
 
 
-transform:translateY(-15px);
+transform:
+
+translateY(-12px);
 
 
 box-shadow:
 
-0 40px 70px rgba(0,0,0,.2);
+0 35px 60px rgba(0,0,0,.18);
 
 
 }
-
 
 
 
