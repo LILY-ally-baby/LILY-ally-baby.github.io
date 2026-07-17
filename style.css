@@ -1257,43 +1257,40 @@ MY JOURNEY
 
 
 /* =========================
-   TIMELINE
+TIMELINE
 ========================= */
 
 
 .timeline{
 
-
     position:relative;
 
-    margin-top:80px;
+    margin-top:90px;
 
+    width:100%;
 
 }
 
 
-
-
-/* 中间竖线 */
-
+/* 中间线 */
 
 .timeline-line{
 
-
     position:absolute;
-
-    left:50%;
 
     top:0;
 
-    width:1px;
+    bottom:0;
 
-    height:100%;
+    left:50%;
+
+    width:1px;
 
     background:#222;
 
     transform:translateX(-50%);
 
+    z-index:0;
 
 }
 
@@ -1301,31 +1298,19 @@ MY JOURNEY
 
 
 
-/* =========================
-   EACH ITEM
-========================= */
-
+/* 每一行 */
 
 .journey-item{
 
-
     position:relative;
 
+    display:grid;
 
-    display:flex;
-
-
-    justify-content:center;
-
+    grid-template-columns:1fr 1fr;
 
     align-items:center;
 
-
-    gap:90px;
-
-
-    margin-bottom:70px;
-
+    margin-bottom:110px;
 
 }
 
@@ -1333,55 +1318,100 @@ MY JOURNEY
 
 
 
-/* 左侧排列 */
-
-
-.journey-item.left{
-
-
-    flex-direction:row-reverse;
-
-
-}
-
-
-
-
-/* 时间节点 */
-
+/* 中间黑点 */
 
 .journey-item::before{
 
-
     content:"";
-
 
     position:absolute;
 
+    top:50%;
 
     left:50%;
 
-
-    top:50%;
-
-
     width:14px;
-
 
     height:14px;
 
-
     background:#111;
 
-
     border-radius:50%;
-
 
     transform:
     translate(-50%,-50%);
 
+    z-index:5;
 
-    z-index:3;
+}
+
+
+
+
+
+/* =====================
+第一、第三张
+图片左 文字右
+===================== */
+
+
+.journey-item.right .photo{
+
+    grid-column:1;
+
+    grid-row:1;
+
+    justify-self:end;
+
+}
+
+
+.journey-item.right .content{
+
+    grid-column:2;
+
+    grid-row:1;
+
+    padding-left:80px;
+
+}
+
+
+
+
+
+
+
+/* =====================
+第二、第四张
+文字左 图片右
+===================== */
+
+
+.journey-item.left .content{
+
+    grid-column:1;
+
+    grid-row:1;
+
+    justify-self:end;
+
+    text-align:left;
+
+    padding-right:80px;
+
+}
+
+
+
+.journey-item.left .photo{
+
+
+    grid-column:2;
+
+    grid-row:1;
+
+    justify-self:start;
 
 
 }
@@ -1390,22 +1420,14 @@ MY JOURNEY
 
 
 
-/* =========================
-   IMAGE
-========================= */
+/* 图片 */
 
 
 .photo{
 
-
-    width:43%;
-
-
-    position:relative;
-
+    width:430px;
 
 }
-
 
 
 
@@ -1415,13 +1437,10 @@ MY JOURNEY
     width:100%;
 
 
-    height:230px;
+    height:240px;
 
 
     object-fit:cover;
-
-
-    object-position:center;
 
 
     border-radius:12px;
@@ -1431,22 +1450,7 @@ MY JOURNEY
 
 
     box-shadow:
-
-    0 25px 45px rgba(0,0,0,0.12);
-
-
-    transition:.4s ease;
-
-
-}
-
-
-
-
-.photo img:hover{
-
-
-    transform:translateY(-8px);
+    0 20px 45px rgba(0,0,0,.12);
 
 
 }
@@ -1455,18 +1459,77 @@ MY JOURNEY
 
 
 
-/* =========================
-   TEXT
-========================= */
+
+/* 图片箭头 */
+
+
+.photo{
+
+    position:relative;
+
+}
+
+
+
+.photo::after{
+
+
+    content:"↗";
+
+
+    position:absolute;
+
+
+    right:18px;
+
+
+    bottom:18px;
+
+
+    width:38px;
+
+
+    height:38px;
+
+
+    background:white;
+
+
+    border-radius:50%;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+
+/* =====================
+文字
+===================== */
 
 
 .content{
 
 
-    width:35%;
+    width:350px;
 
 
 }
+
 
 
 
@@ -1484,16 +1547,11 @@ MY JOURNEY
     font-weight:400;
 
 
-    line-height:1;
-
-
     margin:0;
 
 
-    letter-spacing:-1px;
-
-
 }
+
 
 
 
@@ -1503,18 +1561,14 @@ MY JOURNEY
 
     width:38px;
 
-
     height:1px;
 
-
     background:#111;
-
 
     margin:22px 0;
 
 
 }
-
 
 
 
@@ -1527,27 +1581,17 @@ MY JOURNEY
     letter-spacing:6px;
 
 
-    font-weight:600;
-
-
     margin:0;
-
-
-    line-height:2;
 
 
 }
 
 
 
-
 .content p{
 
 
-    margin-top:25px;
-
-
-    font-size:15px;
+    font-size:16px;
 
 
     line-height:2;
@@ -1556,11 +1600,10 @@ MY JOURNEY
     color:#444;
 
 
-    font-weight:400;
+    margin-top:25px;
 
 
 }
-
 
 
 
