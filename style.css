@@ -644,51 +644,34 @@ z-index:1;
 
 
 
-.tree{
+/* 树图片调整 */
+.tree.png-image{
+    position:absolute;
 
-position:absolute;
+    /* 往左移动 */
+    left: -120px;
 
-top:0;
+    /* 降低透明度 */
+    opacity:0.45;
 
-left:35%;
+    /* 边缘柔化 */
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 80%,
+        transparent 100%
+    );
 
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 80%,
+        transparent 100%
+    );
 
-width:55%;
-
-height:100%;
-
-
-object-fit:cover;
-
-
-z-index:1;
-
-
-/* 向左移动 */
-
-transform:translateX(-180px);
-
-
-
-/* 右侧渐隐 */
-
--webkit-mask-image:
-linear-gradient(
-90deg,
-black 0%,
-black 75%,
-transparent 100%
-);
-
-
-mask-image:
-linear-gradient(
-90deg,
-black 0%,
-black 75%,
-transparent 100%
-);
-
+    z-index:1;
 }
 
 
