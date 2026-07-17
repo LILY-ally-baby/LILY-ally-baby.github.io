@@ -402,7 +402,7 @@ background:white;
 
 border-radius:50%;
 
-opacity:.1;
+opacity:.2.5;
 
 animation:floatParticle 8s linear infinite;
 
@@ -426,14 +426,14 @@ opacity:.1;
 
 20%{
 
-opacity:.5;
+opacity:.50;
 
 }
 
 
 50%{
 
-opacity:.6;
+opacity:.60;
 
 }
 
@@ -668,74 +668,7 @@ color:#536aa5;
 
 
 
-/* 树 */
 
-
-.about-tree{
-
-position:absolute;
-
-left:35%;
-
-top:-5%;
-
-width:100%;
-
-height:100%;
-z-index:1;
-}
-
-
-
-/* 树图片调整 */
-.tree.png-image{
-    position:absolute;
-
-    /* 往左移动 */
-    left: -120px;
-
-    /* 降低透明度 */
-    opacity:0.75;
-
-    /* 边缘柔化 */
-    mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 15%,
-        black 80%,
-        transparent 100%
-    );
-
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent 0%,
-        black 15%,
-        black 80%,
-        transparent 100%
-    );
-
-    z-index:1;
-}
-
-.about img{
-
-position:absolute;
-
-right:20%;
-
-top:0;
-
-width:60%;
-
-height:110%;
-
-opacity:.50;
-
-transform:translateX(-120px);
-
-filter:blur(1px);
-object-position:center bottom;
-}
 
 /* 右侧 */
 
