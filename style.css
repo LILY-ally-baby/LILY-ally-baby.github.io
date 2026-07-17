@@ -1192,6 +1192,7 @@ margin-bottom:100px;
 }
 
 
+
 .journey-title h1{
 
 font-family:serif;
@@ -1205,6 +1206,7 @@ font-weight:400;
 letter-spacing:-3px;
 
 }
+
 
 
 
@@ -1239,26 +1241,24 @@ position:relative;
 
 
 
-.journey-line{
+/* 中间竖线 */
 
+
+.journey-line{
 
 position:absolute;
 
-
 left:50%;
-
 
 top:0;
 
-
 bottom:0;
-
 
 width:1px;
 
-
 background:#222;
 
+z-index:1;
 
 }
 
@@ -1282,7 +1282,7 @@ display:grid;
 
 grid-template-columns:
 
-40% 20% 40%;
+45% 10% 45%;
 
 
 align-items:center;
@@ -1308,12 +1308,6 @@ margin-bottom:120px;
 .journey-card{
 
 
-width:100%;
-
-
-height:300px;
-
-
 overflow:hidden;
 
 
@@ -1333,7 +1327,14 @@ floatingCard 5s ease-in-out infinite;
 transition:.6s ease;
 
 
+position:relative;
+
+
+z-index:2;
+
+
 }
+
 
 
 
@@ -1348,6 +1349,9 @@ height:100%;
 
 
 object-fit:cover;
+
+
+transition:.8s ease;
 
 
 }
@@ -1388,8 +1392,8 @@ scale(1.08);
 
 
 /* =========================
-        左图片 右文字
         2023
+        左图片 右文字
 ========================= */
 
 
@@ -1405,7 +1409,11 @@ justify-self:start;
 width:95%;
 
 
+height:300px;
+
+
 }
+
 
 
 
@@ -1413,6 +1421,9 @@ width:95%;
 
 
 grid-column:3;
+
+
+justify-self:start;
 
 
 padding-left:80px;
@@ -1428,8 +1439,8 @@ text-align:left;
 
 
 /* =========================
-        左文字 右图片
         2024
+        左文字 右图片
 ========================= */
 
 
@@ -1439,13 +1450,13 @@ text-align:left;
 grid-column:1;
 
 
-justify-self:end;
+justify-self:start;
 
 
 width:380px;
 
 
-padding-right:120px;
+padding-left:40px;
 
 
 text-align:left;
@@ -1466,13 +1477,10 @@ grid-column:3;
 justify-self:end;
 
 
-width:60%;
+width:75%;
 
 
-height:220px;
-
-
-margin-right:60px;
+height:260px;
 
 
 }
@@ -1502,7 +1510,6 @@ margin:0;
 
 
 }
-
 
 
 
@@ -1565,7 +1572,7 @@ color:#333;
 
 
 /* =========================
-        节点
+        时间节点
 ========================= */
 
 
@@ -1645,6 +1652,11 @@ transform:translateY(0);
 
 
 
+/* =========================
+        最后一项
+========================= */
+
+
 .journey-item:last-child{
 
 
@@ -1652,7 +1664,6 @@ margin-bottom:0;
 
 
 }
-
 
 
 
