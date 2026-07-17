@@ -402,7 +402,7 @@ background:white;
 
 border-radius:50%;
 
-opacity:.5;
+opacity:1;
 
 animation:floatParticle 8s linear infinite;
 
@@ -426,14 +426,14 @@ opacity:0.8;
 
 20%{
 
-opacity:3.8;
+opacity:2;
 
 }
 
 
 50%{
 
-opacity:5;
+opacity:3;
 
 }
 
@@ -727,12 +727,14 @@ top:0;
 
 width:60%;
 
-opacity:.35;
+height:110%;
+
+opacity:.50;
 
 transform:translateX(-120px);
 
 filter:blur(1px);
-
+object-position:center bottom;
 }
 
 /* 右侧 */
