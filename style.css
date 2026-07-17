@@ -544,10 +544,11 @@ margin-bottom:40px;
 ABOUT
 ===================================== */
 
-
 .about{
 
 position:relative;
+
+width:100%;
 
 height:100vh;
 
@@ -557,9 +558,65 @@ background:#fafafa;
 
 overflow:hidden;
 
-padding:60px 6%;
+}
 
-font-family:Arial,sans-serif;
+
+
+
+
+/* =================================
+        TREE IMAGE
+================================= */
+
+
+.about-tree{
+
+
+position:absolute;
+
+
+top:-5%;
+
+
+left:50%;
+
+
+transform:translateX(-50%);
+
+
+
+height:115vh;
+
+
+width:auto;
+
+
+
+z-index:1;
+
+
+
+/* 融合背景 */
+
+opacity:.35;
+
+
+mix-blend-mode:multiply;
+
+
+
+filter:
+
+contrast(115%)
+
+brightness(105%)
+
+blur(.3px);
+
+
+
+pointer-events:none;
+
 
 }
 
@@ -567,20 +624,38 @@ font-family:Arial,sans-serif;
 
 
 
-/* 编号 */
+
+
+/* =================================
+        NUMBER
+================================= */
 
 
 .about-number{
 
+
 position:absolute;
 
-top:80px;
 
-left:6%;
+top:70px;
+
+
+left:80px;
+
+
 
 font-size:18px;
 
-color:#536aa5;
+
+letter-spacing:4px;
+
+
+color:#526aa3;
+
+
+
+z-index:5;
+
 
 }
 
@@ -588,69 +663,123 @@ color:#536aa5;
 
 
 
-/* 左侧 */
+
+
+
+/* =================================
+        LEFT CONTENT
+================================= */
 
 
 .about-left{
 
+
 position:absolute;
 
-left:6%;
 
-top:170px;
+left:80px;
 
-z-index:2;
+
+top:150px;
+
+
+
+z-index:5;
+
 
 }
 
 
 
-.about-left h1{
 
-font-size:120px;
 
-line-height:.85;
+/* 大标题 */
 
-letter-spacing:-5px;
+
+.about-title{
+
+
+font-family:
+"Times New Roman",
+serif;
+
+
+
+font-size:150px;
+
 
 font-weight:700;
 
-margin:0;
+
+line-height:.85;
+
+
+
+letter-spacing:-8px;
+
+
 
 color:#111;
+
 
 }
 
 
 
+
+
+/* 蓝色横线 */
 
 
 .about-line{
 
+
 width:120px;
+
 
 height:3px;
 
-background:#526aa5;
 
-margin:70px 0;
+background:#526aa3;
+
+
+
+margin-top:70px;
+
 
 }
 
 
 
 
-.about-left h2{
+
+
+
+/* LIYI */
+
+
+.about-name{
+
+
+margin-top:60px;
+
+
 
 font-size:90px;
 
-font-weight:500;
 
-letter-spacing:45px;
 
-margin:0;
+font-weight:300;
 
-color:#26375d;
+
+
+letter-spacing:35px;
+
+
+
+color:#263858;
+
+
 
 }
 
@@ -658,15 +787,41 @@ color:#26375d;
 
 
 
-.tags{
+/* 标签 */
+
+
+.about-tags{
+
 
 margin-top:35px;
 
+
+
 font-size:15px;
+
+
 
 letter-spacing:8px;
 
-color:#536aa5;
+
+
+color:#526aa3;
+
+
+
+white-space:nowrap;
+
+
+
+}
+
+
+
+.about-tags span{
+
+
+margin:0 15px;
+
 
 }
 
@@ -676,90 +831,93 @@ color:#536aa5;
 
 
 
-/* 右侧 */
+/* =================================
+        RIGHT CONTENT
+================================= */
 
-.about-content{
+
+.about-right{
+
 
 position:absolute;
 
-right:8%;
 
-top:240px;
+right:90px;
 
-width:350px;
 
-border-left:1px solid #ddd;
+top:160px;
 
-padding-left:45px;
-z-index:10
+
+
+width:390px;
+
+
+
+z-index:10;
+
+
 }
 
 
 
 
 
-.about-item{
+
+/* 单个模块 */
+
+
+.about-block{
+
 
 position:relative;
 
-padding-bottom:45px;
 
-margin-bottom:35px;
 
-border-bottom:1px solid #eee;
-
-}
+padding-left:45px;
 
 
 
-.about-item:last-child{
+margin-bottom:65px;
 
-border:none;
 
 }
 
 
 
 
-.node{
+
+
+/* 圆点 */
+
+
+.about-dot{
+
 
 position:absolute;
 
-left:-52px;
 
-top:5px;
+
+left:0;
+
+
+top:8px;
+
+
 
 width:12px;
 
+
 height:12px;
+
+
+
+background:#b8c5e8;
+
+
 
 border-radius:50%;
 
-background:#a9b5db;
 
-}
-
-
-
-
-.about-item h3{
-
-font-size:22px;
-
-margin:0 0 20px;
-
-}
-
-
-
-
-.about-item p{
-
-font-size:18px;
-
-line-height:2;
-
-color:#222;
 
 }
 
@@ -767,25 +925,188 @@ color:#222;
 
 
 
-/* 地点 */
+
+/* 连接线 */
 
 
-.location{
+.about-block:not(:last-child)::after{
+
+
+content:"";
+
+
 
 position:absolute;
 
-right:7%;
 
-bottom:45px;
 
-font-size:14px;
+left:5px;
 
-letter-spacing:6px;
 
-color:#536aa5;
+
+top:25px;
+
+
+
+height:170px;
+
+
+
+width:1px;
+
+
+
+background:#dcdcdc;
+
+
 
 }
 
+
+
+
+
+
+
+/* 小标题 */
+
+
+.about-block h3{
+
+
+font-size:25px;
+
+
+
+font-weight:600;
+
+
+
+margin-bottom:20px;
+
+
+
+letter-spacing:1px;
+
+
+}
+
+
+
+
+
+
+
+/* 描述 */
+
+
+.about-block p{
+
+
+font-size:16px;
+
+
+
+line-height:2;
+
+
+
+color:#333;
+
+
+
+}
+
+
+
+
+
+/* =================================
+        LOCATION
+================================= */
+
+
+.about-location{
+
+
+position:absolute;
+
+
+
+right:80px;
+
+
+
+bottom:50px;
+
+
+
+z-index:10;
+
+
+
+font-size:13px;
+
+
+
+letter-spacing:6px;
+
+
+
+color:#526aa3;
+
+
+
+}
+
+
+
+
+
+
+
+/* =================================
+        RESPONSIVE
+================================= */
+
+
+@media(max-width:1200px){
+
+
+.about-title{
+
+font-size:110px;
+
+}
+
+
+
+.about-name{
+
+font-size:70px;
+
+}
+
+
+
+.about-right{
+
+width:330px;
+
+right:40px;
+
+}
+
+
+
+.about-block p{
+
+font-size:14px;
+
+}
+
+
+}
 
 
 
